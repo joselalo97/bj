@@ -1,0 +1,55 @@
+ <ng-container *ngIf="!isLoad">
+   <div class="row my-3">
+     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+       <span class="label-resultados"> </span>
+       <p>Total de resultados: {{pagination?.of}}</p>
+     </div>
+     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+       <button type="button" mat-button class="skin-color-bg text-in-dark mr-2" (click)="getResults(pagination?.previous)"
+         *ngIf="pagination?.previous" ngbTooltip="Página anterior de resultados" placement="left"><i class="fas fa-angle-left"></i></button>
+       <button type="button" mat-button class="skin-color-bg text-in-dark" (click)="getResults(pagination?.next)" *ngIf="pagination?.next"
+         ngbTooltip="Siguiente página de resultados" placement="left"><i class="fas fa-angle-right"></i></button>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-lx-12 col-lg-12 col-md-12">
+       <div class="card mb-2" *ngFor="let resultado of resultados ">
+         <div class="card-body card-conent">
+           <div class="row">
+             <div class="col-xl-2 col-lg-2 col-md-2 text-center">
+               <ng-container *ngIf="resultado?.image_url.length > 0">
+                 <img class="img-fluid" src="{{resultado?.image_url[0]}}" alt="imagen" style="width:75px; height: 100px;" />
+               </ng-container>
+               <ng-container *ngIf="resultado?.image_url.length == 0">
+                 <a class="skin-color-text" href="{{resultado?.id}}" target="_blank">
+                   <img src="./assets/img-int/external/icon_journal.png" style="width:75px; height: 85px;" alt="Portada" /></a>
+               </ng-container>
+             </div>
+             <div class="col-xl-10 col-lg-10 col-md-10">
+               <a class="skin-color-text" href="{{resultado?.id}}" target="_blank">
+                 <strong>{{resultado?.title}}</strong>
+               </a>
+               <p [innerHTML]="resultado?.description"></p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div *ngIf="pagination?.of == 0" class="col-lx-12 col-lg-12 col-md-12 text-center">
+       <p class="not-result"> No se encontraron resultados, intente con otra palabra</p>
+     </div>
+   </div>
+ </ng-container>
+
+ <div class=" mt-2 mb-2" *ngIf="isLoad">
+   <div class="d-flex justify-content-between">
+     <div class="mb-2 view-skeleton" style="width: 20%; height: 2rem;"></div>
+     <div class="mb-2 ml-auto view-skeleton" style="width: 20%; height: 3rem;"></div>
+   </div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+   <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+ </div>

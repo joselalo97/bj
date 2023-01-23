@@ -1,0 +1,43 @@
+@mixin table_row_variant( $state, $background ) {
+
+   .table-#{$state} {
+      &,
+      > th,
+      > td {
+         background-color: $background;
+      }
+   }
+   .table-hover {
+      $hover_background: darken( $background, 5% );
+
+      .table-#{$state} {
+         @include hover {
+            background-color: $hover_background;
+
+            > td,
+            > th {
+               background-color: $hover_background;
+            }
+         }
+      }
+   }
+
+}
+
+@mixin hover {
+   &:hover { @content }
+}
+
+@function str_replace( $string, $search, $replace: '' ) {
+
+   $index: str-index( $string, $search );
+
+   @if $index {
+
+      @return str-slice( $string, 1, $index - 1 ) + $replace + str_replace( str-slice( $string, $index + str-length( $search ) ), $search, $replace );
+
+   }
+
+   @return $string;
+
+}

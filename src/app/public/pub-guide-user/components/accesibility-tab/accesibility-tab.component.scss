@@ -1,0 +1,72 @@
+.tab-access {
+    padding: 2rem 0;
+  
+    & .components-bg {
+      & .tab-access__sections {
+        height: calc(100vh - 5rem - 140px + .66vh);
+        overflow: auto;
+        margin-top: 0;
+        transition: all 1s ease-in-out;
+
+        @media (max-width:768px) {
+          margin-top: 0!important;
+        }
+  
+        &::-webkit-scrollbar {
+          width: .3rem;
+          height: .3rem;
+        }
+  
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba($color: #24135f, $alpha: .6);
+        }
+  
+        &::-webkit-scrollbar-button {
+          border-radius: 50%;
+        }
+  
+        &--indice {
+          & .indice-nav {
+  
+  
+            &__firts {
+              font-weight: 600;
+            }
+  
+            &__second {
+              font-weight: 600;
+            }
+  
+            & p {
+              background-color: transparent;
+              transition: all .3s ease-in-out;
+              padding: .3rem;
+              border-radius: .3rem;
+  
+              &:hover {
+                background-color: rgba($color: #24135f, $alpha: .8);
+                color: white !important;
+                cursor: pointer;
+              }
+            }
+  
+          }
+        }
+  
+      }
+    }
+  
+    &__content{
+      &--bl{
+          &-title,&-subtitle{
+              margin: 1rem 0 !important;
+          }
+      }
+    }
+  
+  }
+  
+  .img-mbj{
+      width: 100%;
+      min-height: calc(4rem + .66vh);
+  }

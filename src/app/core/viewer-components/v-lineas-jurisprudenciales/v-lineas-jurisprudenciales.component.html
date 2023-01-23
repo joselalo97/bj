@@ -1,0 +1,125 @@
+<div class="v-lineas-jurisprudencial">
+  <div class="row my-4" *ngIf="!isTesis">
+    <div class="col-12 col-md-6 col-xl-6 col-lg-6">
+      <div class="row stick">
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 ">
+          <img *ngIf="data?.urlImage" class="w-100 border-skin-color" [src]="data.urlImage" [alt]="data.name">
+          <div *ngIf="data?.urlDownload" class="d-flex justify-content-center align-items-center flex-column py-2">
+            <a [href]="getUrl(data,sentencia)" target="_blank" class="components-color link-libro">
+              <div class="d-flex">
+                <i class="mr-2 fas fa-file-pdf"></i>
+                <p>Visualizar en cuaderno</p>
+              </div>
+            </a>
+            <a [href]="data.urlDescripcion" target="_blank" class="components-color mt-2 link-libro">
+              <div class="d-flex">
+                <i class="mr-2 fas fa-external-link-alt"></i>
+                <p> Reseña </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 ">
+          <p *ngIf="sentencia['lineaJurisprudencial']?.nombre"><strong>Línea
+              Jurisprudencial</strong></p>
+          <a role="link" *ngIf="sentencia['lineaJurisprudencial']?.nombre" class="skin-color-text" [routerLink]="['/busqueda']"
+            [queryParams]="{q: 'lineaJurisprudencial.nombre:'+sentencia['lineaJurisprudencial'].nombre,indice: entity }">
+            <span class=" d-block py-2">{{sentencia['lineaJurisprudencial']?.nombre}}</span></a>
+          <p *ngIf="sentencia['lineaJurisprudencial']?.sublineaJurisprudencial" class="ident-desc">
+            <strong>Temas</strong></p>
+          <p class="my-2" *ngFor="let sub of sentencia['lineaJurisprudencial']?.sublineaJurisprudencial">
+            {{sub}} <br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-6 col-lg-6">
+      <mat-accordion *ngIf="sentenciasRelacionadas?.length>0">
+        <mat-expansion-panel [expanded]="true" ngClass="mb-4">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="skin-color-text">Sentencias relacionadas a la línea jurisprudencial</span>
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="linea-head d-flex justify-content-between">
+            <p>Sentencia</p>
+            <p>Temas</p>
+          </div>
+          <div class="linea-body py-3 row" *ngFor="let s of sentenciasRelacionadas">
+            <a role="link" [routerLink]="['/doc/',entity,s.id,'/*']" class="irSentencia col-6 skin-color-text"><strong>{{s.organoRadicacion}} </strong> - {{s.tipoAsunto}}
+              {{s.numExpediente}}</a>
+            <div class="col-6">
+              <p class="text-truncate" *ngFor="let tema of s?.lineaJurisprudencial?.sublineaJurisprudencial ">
+                {{tema}}
+              </p>
+            </div>
+            <div class="border-bottom-skin-color col-12 mt-3"></div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+
+  <div class="row my-4" *ngIf="isTesis">
+    <div class="col-12 col-md-6 col-xl-6 col-lg-6">
+      <div class="row stick" *ngFor="let data of dataTesis">
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 ">
+          <img *ngIf="data?.urlImage" class="w-100 border-skin-color" [src]="data.urlImage" [alt]="data.name">
+          <div *ngIf="data?.urlDownload" class="d-flex justify-content-center align-items-center flex-column py-2">
+            <a [href]="getUrl(data,sentencia)" target="_blank" class="components-color link-libro">
+              <div class="d-flex">
+                <i class="mr-2 fas fa-file-pdf"></i>
+                <p>Visualizar en cuaderno</p>
+              </div>
+            </a>
+            <a [href]="data.urlDescripcion" target="_blank" class="components-color mt-2 link-libro">
+              <div class="d-flex">
+                <i class="mr-2 fas fa-external-link-alt"></i>
+                <p> Reseña </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 ">
+          <p *ngIf="data?.name"><strong>Línea
+              Jurisprudencial</strong></p>
+          <a role="link" class="skin-color-text" *ngIf="data?.name" [routerLink]="['/busqueda']"
+            [queryParams]="{ q: '*',subFiltros: 'lineaJurisprudencial.linea.keyword:' + data.name, indice: entitys.Thesis }">
+            {{data?.name}}</a>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-6 col-lg-6">
+      <div *ngIf="tesisRelacionadas">
+        <div *ngFor="let dataTes of dataTesis">
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="true" ngClass="mb-4">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <p class="skin-color-text"><strong>Tesis relacionadas a la línea jurisprudencial</strong></p>
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="linea-head">
+                <p>{{dataTes.name}}</p>
+              </div>
+              <div class="linea-body py-3" *ngFor="let t of tesisRelacionadas[dataTes.name]">
+                <a role="link" [routerLink]="['/doc/',entitys.Thesis,t.id,'/*']" class="irSentencia skin-color-text"><strong>Registro Digital:
+                  </strong>{{t?.registroDigital}} </a>
+                <p class="text-truncate">
+                  {{t?.rubro}}
+                </p>
+                <div class="border-bottom-skin-color"></div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

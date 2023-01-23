@@ -1,0 +1,36 @@
+.pub-search {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    min-height: calc(100vh - 5rem - 145px);
+
+    &__filters {
+      width: 400px;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 2;
+      border-right-width: .2rem;
+      border-right-style: solid;
+    }
+  
+    &__results {
+      width: calc(100% - 400px);
+      padding: 1.5rem;
+    }
+  
+    @media (max-width:800px) {
+      flex-direction: column;
+      -ms-flex-direction: column;
+
+      &__filters,&__results {
+        width: 100%;
+      }
+
+    }
+
+    @media (min-width: 1200px) {
+      padding: 0 3.5rem;
+    }
+
+  }
+  

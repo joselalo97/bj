@@ -1,0 +1,66 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es5",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@environment/*": [
+        "environments/*"
+      ],
+      "@core/components": [
+        "app/core/components"
+      ],
+      "@core/viewer-components": [
+        "app/core/viewer-components"
+      ],
+      "@core/services": [
+        "app/core/services"
+      ],
+      "@core/pipes": [
+        "app/core/pipes"
+      ],
+      "@core/models": [
+        "app/core/models"
+      ],
+      "@core/constants": [
+        "app/core/constants"
+      ],
+      "@core/interceptors": [
+        "app/core/interceptors"
+      ],
+      "@auth/services": [
+        "app/auth/services"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@intranet/*": [
+        "app/intranet/*"
+      ],
+      "@public/*": [
+        "app/public/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictTemplate": true,
+    "enableI18nLegacyMessageIdFormat": false
+  }
+}

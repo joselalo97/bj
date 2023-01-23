@@ -1,0 +1,61 @@
+<div class="v-ficha-tecnica-s">
+  <div class="v-ficha-tecnica-s__expedientes">
+    <a class="d-flex" [href]="url" ngbTooltip="Ir al expediente" placement="bottom" target="_blank"><img
+        src="./assets/img-int/ficha-tecnica/datos-expediente.png" alt="ir al expediente" /></a>
+  </div>
+  <div class="" *ngIf="isLoad">
+    <div class="mt-5 mb-5">
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+    <div class="mb-5">
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+    <div class="mb-5">
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+  </div>
+  <ng-container *ngIf="!isLoad">
+    <div class="v-ficha-tecnica-s__ficha" *ngIf="nameType == entities.Qa">
+      <div class="mt-4" [innerHTML]="html | safeHTML"></div>
+    </div>
+    <table class="table table-bordered mt-3 ml-3" *ngIf="nameType == entities.Pub">
+      <tbody>
+        <tr>
+          <th scope="row">Expediente:</th>
+          <td>{{documento?.numExpediente}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Tipo de asunto:</th>
+          <td>
+            <span>
+              {{ documento?.tipoAsunto }}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Ministro:</th>
+          <td>
+            <span>
+              {{ documento?.ponente }}
+            </span>
+          </td>
+        </tr>
+        <tr *ngIf="documento?.tema">
+          <th scope="row">Tema:</th>
+          <td>
+            <p>{{documento?.tema}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+
+</div>

@@ -1,0 +1,51 @@
+/**
+ * Definición de Angular material
+*/
+
+$primary_mat: mat-palette($mat-skin);
+$accent_mat: mat-palette($mat-skin, A200, A100, A400);
+$warn_mat: mat-palette($mat-orange);
+$theme_mat: mat-light-theme($primary_mat, $accent_mat, $warn_mat);
+
+@include angular-material-theme($theme_mat);
+
+@import 'mixins';
+@import 'bootstrapoverride';
+@import 'matoverride';
+@import 'classes';
+@import 'appoverride';
+
+.wrapper {
+  background-color: $components_bg;
+  color: $components_color;
+}
+
+.loader {
+  &__overlay {
+    &-item {
+      &::before {
+        background-color: $skin_color_text;
+      }
+    }
+  }
+}
+
+.end-footer__social--circle {
+  @if $style_name=='yellowblack'
+  or $style_name=='whiteblack' {
+    background-color: $components_bg !important;
+    color: $components_color !important;
+  }
+}
+
+img {
+  @if $style_name=='yellowblack'
+
+  or $style_name=='whiteblack' {
+    filter: $filter-img;
+  }
+
+  @else {
+    filter: $filter;
+  }
+}

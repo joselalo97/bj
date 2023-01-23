@@ -1,0 +1,127 @@
+@import "../../../../../assets/styles/variables";
+
+$icon-plataform-size: 2rem;
+
+.int-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & .header__logo {
+    padding: 10px;
+
+    & .icon-scjn-logo {
+      font-size: 3.5rem;
+      color: #24135f;
+    }
+  }
+
+  & .header__navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.07rem;
+
+    & .navigation__login {
+      padding: 0.35rem;
+      position: relative;
+
+      & .login__round--user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+          box-shadow: 0px 0px 10px rgba($color: #24135f, $alpha: 0.5);
+        }
+
+        &:focus {
+          box-shadow: 0px 0px 10px rgba($color: #24135f, $alpha: 0.5);
+        }
+      }
+
+      & .navigation__logout {
+        display: none;
+      }
+    }
+  }
+
+  & .header__navigation>div {
+    margin: 0.35rem;
+  }
+
+  & .navigation__library {
+    position: relative;
+
+    & .navigation__library--folder {
+      border: 2px solid #24135f;
+      border-radius: 4px;
+      background: none;
+      overflow: hidden;
+      padding: 0.3rem 0.5rem;
+      color: #24135f;
+      position: relative;
+      text-decoration: none;
+      transition: 0.3s transform ease-in-out;
+      will-change: transform;
+      z-index: 0;
+
+      &::after {
+        background-color: #24135f;
+        border-radius: 4px;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-100%, 0);
+        transform-origin: top left;
+        transition: 0.3s transform ease-out;
+        will-change: transform;
+        z-index: -1;
+      }
+
+      &:hover::after {
+        transform: translate(0, 0);
+      }
+
+      &:hover {
+        border: 2px solid transparent;
+        color: white;
+        will-change: transform;
+      }
+    }
+  }
+
+  & .navigation__opendata {
+    & a {
+      font-size: $icon-plataform-size;
+    }
+  }
+
+  & .navigation__tesauro {
+    & a {
+      font-size: $icon-plataform-size;
+    }
+  }
+
+  & .navigation__guide {
+    & a>i {
+      font-size: $fontsize_lg;
+    }
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  min-height: auto;
+}

@@ -1,0 +1,34 @@
+<div class="int-doc-acuerdos">
+  <div class="int-doc-acuerdos__metadata row p-2 m-0">
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="item-document"><strong>Registro digital: </strong>{{document?.registroDigital}}</p>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="item-document"><strong>{{document?.epoca.nombre}}</strong></p>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="item-document"> <strong>Fuente:</strong> {{document?.fuente}}</p>
+      <p class="item-document">{{document?.localizacion?.libro}},
+        <span *ngIf="document?.localizacion?.mes">{{document?.localizacion?.mes | mesLetra}} de</span>
+        {{document?.localizacion?.anio}}<span *ngIf="document?.localizacion.tomo">,
+        </span>{{document?.localizacion?.tomo}}<span *ngIf="document?.localizacion.pagina>0">, </span>
+        <span *ngIf="document?.localizacion.pagina">página {{document?.localizacion.pagina}}.</span>
+      </p>
+    </div>
+  </div>
+  <div class="int-doc-acuerdos__information">
+    <p class="my-4"><strong>{{document?.rubro?.toUpperCase()}}</strong></p>
+  </div>
+  <div class="int-doc-acuerdos__bord"></div>
+  <div class="int-doc-acuerdos__content">
+    <p class="int-doc-acuerdos__content-text" [innerHTML]="document?.texto">
+      {{document?.texto}}
+    </p>
+  </div>
+  <div class="int-doc-acuerdos__notas">
+    <div class="int-doc-acuerdos__notas--ta my-2">
+      <p class="fechaPublicacion" *ngIf="document?.fechaPublicacionSemanario"><br> Este acuerdo se publicó el
+        {{document?.fechaPublicacionSemanario}} horas en el Semanario Judicial de la Federación.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,395 @@
+<div class="search-udc">
+  <div class="search-udc-content">
+    <div class="search-udc-content__tab-l">
+      <a role="link" routerLink="/" class="search-udc-content__tab-l--item skin-color-text border-skin-color"
+        ngbTooltip="Fuente de información" placement="bottom" [ngClass]="{'active':activeTab == 0}"
+        (click)="activeTab = 0" matRipple>
+        <mat-icon>apps</mat-icon>
+        <span>Fuentes de información</span>
+      </a>
+      <a role="link" routerLink="analisis-de-texto"
+        class="search-udc-content__tab-l--item skin-color-text border-skin-color" matRipple
+        ngbTooltip="Analiza el texto y recomienda documentos similares" placement="bottom"
+        [ngClass]="{'active':activeTab == 1}" (click)="activeTab = 1; tabActive = 0;">
+        <mat-icon>insights</mat-icon>
+        <span>Análisis de texto</span>
+      </a>
+    </div>
+    <a routerLink="/" role="link" class="search-udc-content__tab-r">
+      <div class="search-udc-content__tab-r--item skin-color-text border-skin-color" matRipple
+        ngbTooltip="Acceder a la plantilla de búsqueda avanzada" placement="bottom"
+        [ngClass]="{'active':activeTab == 2}" (click)="activeTab = 2">
+        <mat-icon>find_in_page</mat-icon>
+        <span>Búsqueda avanzada</span>
+      </div>
+    </a>
+  </div>
+  <div class="search-udc-bar components-bg--a3">
+    <div class="search-udc-bar__select" [ngSwitch]="activeTab">
+      <div [ngClass]="{'border-skin-color bord-active':activeTab == 0}">
+        <mat-icon *ngSwitchCase="0" class="skin-color-text">
+          {{figures[activeTab]}}</mat-icon>
+      </div>
+      <div *ngSwitchCase="1" class="d-flex">
+        <div [ngClass]="{'border-skin-color bord-active':tabActive == 0}">
+          <mat-icon ngbTooltip="Análisis de texto" class="skin-color-text" placement="bottom" (click)="tabActive = 0">
+            {{figures[activeTab].split(' ')[0]}}</mat-icon>
+        </div>
+        <div [ngClass]="{'border-skin-color bord-active':tabActive == 1}" class="ml-3">
+          <mat-icon ngbTooltip="Análisis por archivo" class="skin-color-text" placement="bottom"
+            (click)="tabActive = 1">
+            {{figures[activeTab].split(' ')[1]}}</mat-icon>
+        </div>
+      </div>
+      <div *ngSwitchCase="2" [ngClass]="{'border-skin-color bord-active':activeTab == 2}">
+        <mat-icon class="skin-color-text">
+          {{figures[activeTab]}}</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div class="search-udc-sections">
+    <div class="search-udc-sections__found" [ngClass]="{'in-view': activeTab == 0}">
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Sentences_pub}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="entity-circle__figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-sentencias-color.svg" alt="Sentencias">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Sentencias</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Votes}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-votos-color.svg" alt="Votos">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Votos</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Thesis}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-tesis-color.svg" alt="Tesis">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Tesis</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Agreements}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-acuerdos-color.svg" alt="Acuerdos generales">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Acuerdos Generales</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Orderings}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-ordenamientos-color.svg" alt="Ordenaminetos">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Ordenamientos</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Library}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-acervo-color.svg" alt="Acervo bibliotecario">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Acervo Bibliotecario</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Versions}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/icono-versiones-tac-color.svg" alt="Versiones taquigráficas">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Versiones Taquigráficas</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link" routerLink="busqueda"
+        [queryParams]="{ q: '*', indice: entitys.Ccj}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/ccj_scjn.svg" alt="Casas de la cultura jurídica">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Casas de la Cultura Jurídica</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+        href="https://sistemadenu.scjn.gob.mx/buscadornu/" target="_blank">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/onu-logo.png" alt="Sistema de naciones unidas">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Sistema de Naciones Unidas</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+        href="https://corteidh.scjn.gob.mx/buscador/" target="_blank">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+            src="./assets/pub/img/svg_icons_pub_home/logo-court-international.png"
+            alt="Corte Interamericana de Derechos humanos">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Corte Interamericana de Derechos Humanos</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color"
+      role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.CIDH}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-cidh.png" alt="Comisión Interamericana de Derechos Humanos">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Comisión Interamericana de Derechos Humanos</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Hudoc}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-hudoc.png" alt="Corte Europea de Derechos Humanos">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Corte Europea de Derechos Humanos</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda"
+      [queryParams]="{ q: '*', indice: entitys.CIJ}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-corte-internacional.png"
+              alt="Corte Internacional de Justicia">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Corte Internacional de Justicia</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda"
+      [queryParams]="{ q: '*', indice: entitys.TSpanish}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/logo_tce.png" alt="Tribunal Constitucional de España">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Tribunal Constitucional de España</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda"
+      [queryParams]="{ q: '*', indice: entitys.TColombia}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-colombia.png"
+          alt="Corte Constitucional de la República de Colombia">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Corte Constitucional de la República de Colombia</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda"
+      [queryParams]="{ q: '*', indice: entitys.TChile}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-chile.png" alt="Tribunal Constitucional de Chile">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Tribunal Constitucional de Chile</p>
+        </div>
+      </a>
+      <a class="search-udc-sections__found--entity shadow-sm components-bg border-bottom-skin-color" role="link"
+      routerLink="busqueda"
+      [queryParams]="{ q: '*', indice: entitys.CSJNArgentina}">
+        <div class="entity-circle border-lg shadow-sm components-bg">
+          <img class="graphic__link-img--figure" height="40px" width="40px"
+          src="./assets/pub/img/svg_icons_pub_home/scjn-argentina.png"
+          alt="Corte Suprema de Justicia de la Nación Argentina">
+        </div>
+        <div class="entity-description">
+          <p class="skin-color-text">Corte Suprema de Justicia de la Nación Argentina</p>
+        </div>
+      </a>
+    </div>
+
+
+    <!-- <div class="search-udc-sections__graphic" [ngClass]="{'in-view': activeTab == 0}">
+      <div class="graphic" id="gr-1">
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Sentences_pub}"
+          class="graphic__link skin-color-text" style="--i:0;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-sentencias-color.svg" alt="Sentencias"></div>
+          <span class="graphic__link-txt shadow components-bg"> Sentencias</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Votes}"
+          class="graphic__link skin-color-text" style="--i:1;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-votos-color.svg" alt="Votos"></div>
+          <span class="graphic__link-txt shadow components-bg"> Votos</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Thesis}"
+          class="graphic__link skin-color-text" style="--i:2;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-tesis-color.svg" alt="Tesis"></div>
+          <span class="graphic__link-txt shadow components-bg"> Tesis</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Agreements}"
+          class="graphic__link skin-color-text" style="--i:3;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-acuerdos-color.svg" alt="Acuerdos generales"></div>
+          <span class="graphic__link-txt shadow components-bg"> Acuerdos</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Orderings}"
+          class="graphic__link skin-color-text" style="--i:4;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-ordenamientos-color.svg" alt="Ordenaminetos"></div>
+          <span class="graphic__link-txt shadow components-bg">
+            Ordenamientos</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Library}"
+          class="graphic__link skin-color-text" style="--i:5;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-acervo-color.svg" alt="Acervo bibliotecario"></div>
+          <span class="graphic__link-txt shadow components-bg"> Acervo</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Versions}"
+          class="graphic__link skin-color-text" style="--i:6;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-versiones-tac-color.svg" alt="Versiones taquigráficas">
+          </div>
+          <span class="graphic__link-txt shadow components-bg">
+            Taquigráficas</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Ccj}"
+          class="graphic__link skin-color-text" style="--i:7;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/ccj_scjn.svg" alt="Casas de cultura jurídica"></div>
+          <span class="graphic__link-txt shadow components-bg"> CCJ</span>
+        </a>
+        <a role="link" href="https://sistemadenu.scjn.gob.mx/buscadornu/" target="_blank"
+          class="graphic__link skin-color-text" style="--i:8;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/onu-logo.png" alt="Sistema de naciones unidas"></div>
+          <span class="graphic__link-txt shadow components-bg"> ONU</span>
+        </a>
+        <a role="link" href="https://corteidh.scjn.gob.mx/buscador/" target="_blank"
+          class="graphic__link skin-color-text" style="--i:9;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/logo-court-international.png"
+              alt="Corte Internacional de Derechos humanos"></div>
+          <span class="graphic__link-txt shadow components-bg"> CoIDH</span>
+        </a>
+        <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.CIDH}"
+          class="graphic__link skin-color-text" style="--i:10;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-cidh.png" alt="Comisión Internacional de Derechos Humanos">
+          </div>
+          <span class="graphic__link-txt shadow components-bg"> CIDH</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.Hudoc}" style="--i:11;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-hudoc.png" alt="Corte Europea de Derechos Humanos"></div>
+          <span class="graphic__link-txt shadow components-bg"> Hudoc</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.CIJ}" style="--i:12;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-corte-internacional.png"
+              alt="Corte Internacional de Justicia"></div>
+          <span class="graphic__link-txt shadow components-bg"> CIJ</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.TSpanish}" style="--i:13;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/logo_tce.png" alt="Tribunal Constitucional de España"></div>
+          <span class="graphic__link-txt shadow components-bg"> TC Español</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.TColombia}" style="--i:14;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-colombia.png"
+              alt="Corte Constitucional de la República de Colombia"></div>
+          <span class="graphic__link-txt shadow components-bg"> Colombia</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.TChile}" style="--i:15;">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-chile.png" alt="Tribunal Constitucional de Chile"></div>
+          <span class="graphic__link-txt shadow components-bg"> TC Chile</span>
+        </a>
+        <a class="graphic__link skin-color-text" role="link" routerLink="busqueda"
+          [queryParams]="{ q: '*', indice: entitys.CSJNArgentina}" style="--i:16">
+          <div class="graphic__link-img shadow"> <img class="graphic__link-img--figure" height="40px" width="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-argentina.png"
+              alt="Corte Suprema de Justicia de la Nación de Argentina"></div>
+          <span class="graphic__link-txt shadow components-bg"> CSJN</span>
+        </a>
+      </div>
+    </div> -->
+
+    <div class="search-udc-sections__analytic container" [ngClass]="{'in-view': activeTab == 1}">
+      <div class="body__text-analityc" [ngClass]="{'view': tabActive == 0}">
+        <div class="body__text-analityc--filters">
+          <div class="text-cont">
+            <textarea [(ngModel)]="query" name="textAna" id="textAn" cols="30" rows="10" class="form-control"
+              placeholder="Escriba o pegue extractos de texto para que nuestro motor inteligente le sugiera documentos relacionados."
+              autocomplete="off">
+                </textarea>
+            <i *ngIf="query.trim()" (click)="query =''" ngbTooltip="Limpiar texto" placement="left"
+              class="fas fa-eraser skin-color-text ic-clear"></i>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button (click)="openAnalyticText()" aria-label="analizar" mat-button class="bj-color-bg text-in-dark">
+              <mat-icon>search</mat-icon> Analizar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body__load-file" [ngClass]="{'view': tabActive == 1}">
+        <div class="body__load-file--doc">
+          <p class="text-center">Suba un documento de texto (.txt) para que nuestro motor de inteligencia le sugiera
+            documentos
+            relacionados.</p>
+          <div filetext [files]="file" (mouseOver)="fileGet($event)">
+            <div class="cont-file txt-analizar">
+              <input type="file" class="file-select" id="file-upload" placeholder="seleccione archivo"
+                (change)="upload($event.target.files)">
+              <div class="cont-view text-center">
+                <i class="fas fa-upload skin-color-text"></i>
+                <p class="text-center card-title">
+                  Arrastre y suelte un
+                  documento de texto (.TXT) o haga
+                  clic para seleccionarlo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <div class="search-udc-sections__advance container" [ngClass]="{'in-view': activeTab == 2}">
+      <advance-search></advance-search>
+    </div>
+  </div>
+</div>
+
+<text-analytics [open]="isOpen" [text]="text" (close)="isOpen = $event"></text-analytics>

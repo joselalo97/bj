@@ -1,0 +1,16 @@
+.paginated{
+    &__found{
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &--pages{
+                margin-top: 1.2rem;
+            }
+
+        }
+
+    }
+}

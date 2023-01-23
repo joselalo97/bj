@@ -1,0 +1,90 @@
+<div class="sug-busqueda components-bg shadow" id="sug-busqueda" data-sug>
+  <div class="sug-busqueda__head">
+    <span class="skin-color-text">Ejemplos de búsqueda</span>
+    <a *ngIf="!isPublic" [routerLink]="['ayuda']" class="skin-color-text">Universo de información <i class="fas fa-question-circle"></i> </a>
+  </div>
+  <div class="sug-busqueda__list">
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Palabras:</strong></p>
+      </div>
+      <div class="link">
+        <a class="skin-color-text" [routerLink]="['busqueda']" [queryParams]="{  q: 'libre desarrollo personalidad' }">
+          <strong> libre desarrollo personalidad</strong>
+        </a>
+      </div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Frase exacta</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{ q:'&quot;interés superior de la niñez&quot;'}">
+          <strong>"interés superior de la niñez"</strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Operador lógico "Y":</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: '&quot;guarda y custodia&quot; AND &quot;derecho a la igualdad&quot;'}">
+          <strong>"guarda y
+            custodia" AND "derecho a la
+            igualdad"</strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Operador lógico "O":</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: '&quot;saneamiento por evicción&quot; OR &quot;existencia de un mejor derecho&quot;'}">
+          <strong>"saneamiento
+            por evicción" OR "existencia de un mejor derecho"
+          </strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Operadores lógicos combinados Y/O:</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: '(&quot;libertad de expresion&quot; OR &quot;libertad de conciencia&quot;) AND &quot;esfera personal&quot;'}">
+          <strong>("libertad de expresion" OR "libertad de conciencia") AND "esfera
+            personal"</strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>Palabras próximas</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: '&quot;interés superior extensiva&quot;~10'}">
+          <strong>"interés superior
+            extensiva"~10
+          </strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>En los descriptores de un documento</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: 'titulo:cateo rubro:&quot;inviolabilidad del domicilio&quot;'}">
+          <strong>titulo:cateo
+            rubro:"inviolabilidad del domicilio"
+          </strong>
+        </a></div>
+    </div>
+    <div class="sug-busqueda__list--words">
+      <div class="word">
+        <p><strong>En los universos de información</strong></p>
+      </div>
+      <div class="link"><a class="skin-color-text" [routerLink]="['busqueda']"
+          [queryParams]="{q: '@Titulo: cateo @Subtitulo: inviolabilidad domicilio', indice: 'tesis'}">
+          <strong>@Titulo: cateo @Subtitulo:
+            inviolabilidad domicilio</strong></a></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="ficha-tcespanol">
+  <h5 class="skin-color-text">Identificación</h5>
+  <table class="table table-bordered mt-3">
+    <tbody>
+      <tr>
+        <th scope="row">Órgano</th>
+        <td>{{competencia}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Magistrados</th>
+        <td>
+          <p *ngFor="let magistrado of magistrados">{{magistrado?.nombre}}</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Tipo y número de registro</th>
+        <td>{{asunto[0]?.tiposRecurso?.nombre}} {{asunto[0]?.numero}} - {{asunto[0]?.anio}}</td>
+      </tr>
+      <tr style="display: none;">
+        <th scope="row">Fecha de resolución</th>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="skin-color-text">Síntesis y resumen</h5>
+  <table class="table table-bordered mt-3">
+    <tbody>
+      <tr>
+        <th scope="row">Síntesis Descriptiva</th>
+        <td>{{sd}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Síntesis Analítica</th>
+        <td>{{sa}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

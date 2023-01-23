@@ -1,0 +1,136 @@
+<div class="int-international-bodies">
+
+
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12 col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <span placement="top" ngbTooltip="Referencias Internacionales">
+                 <h3 class="entidad-title">Órganos <span class="entidad-subtitle">internacionales</span></h3>
+                </span>
+            </div>
+            <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="additional" placement="top" ngbTooltip="Consulta los tratados internacionales">
+                    <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'legislacion',subFiltros:'ambito:TRATADOS INTERNACIONALES'}" class="courts__card--name">
+                        <h4 class="e-title"><span class="go-arrow"> → </span> Tratados <span class="e-subtitle">internacionales</span></h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0" aria-label="Alto Comisionado ONU - DH">
+                <a href="{{urlSistemaOnu}}" target="_blank">                   
+
+                    <div class="box">
+                        <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/SistemaNacionesUnidas.png" alt="Logo del Alto Comisionado de las Naciones Unidas de Derechos Humanos"> 
+            </span>
+                        <div class="overlay">
+                            <div class="card-title-oi">
+                                <h3 class="fa-title">Sistema de Naciones Unidas</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0" aria-label="Corte Interamericana DH">
+                <a href="{{urlCoidh}}" target="_blank">
+                    <div class="box">
+                        <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-coidh.png" alt="Logo de la Corte Interamericana de Derechos Humanos"> 
+            </span>
+                        <div class="overlay">
+                            <div class="card-title-oi">
+                                    <h3 class="fa-title">Corte Interamericana de Derechos Humanos</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0">
+                <div class="box">
+                    <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-cidh-.png" alt="Logo de la Comisión Interamericana de Derechos Humanos"> 
+            </span>
+                    <div class="overlay">
+                        <div class="card-title-oi">
+                            <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'cidh'}" class="courts__card--name">
+                                <h3 class="fa-title">Comisión Interamericana de Derechos Humanos</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0">
+                <div class="box">
+                    <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-hudoc.png" alt="Logo de la Corte Europea de Derechos Humanos"> 
+            </span>
+                    <div class="overlay">
+                        <div class="card-title-oi">
+                            <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'hudoc'}" class="courts__card--name">
+                                <h3 class="fa-title">Corte Europea de Derechos Humanos</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0">
+                <div class="box">
+                    <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-africa.png" alt="Logo de la Corte Africana de Derechos Humanos y de los Pueblos"> 
+            </span>
+                    <div class="overlay">
+                        <div class="card-title-oi">
+                            <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'cadh' }" class="courts__card--name">
+                                <h3 class="fa-title">Corte Africana de Derechos Humanos y de los Pueblos</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0">
+                <div class="box">
+                    <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-corte-internacional.png" alt="Logo de la Corte Internacional de Justicia"> 
+            </span>
+                    <div class="overlay">
+                        <div class="card-title-oi">
+                            <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'cij'}" class="courts__card--name">
+                                <h3 class="fa-title">Corte Internacional de Justicia</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card slide-down-delay components-bg border-lg" tabIndex="0">
+                <div class="box">
+                    <span class="original">
+               <img class="card-img-down" src="./assets/Img_OrganosInter_TribunalesYCortesConst/scjn-corte-penal-internacional.png" alt="Logo de la Corte Penal Internacional"> 
+            </span>
+                    <div class="overlay">
+                        <div class="card-title-oi">
+                            <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: 'cpi'}" class="courts__card--name">
+                                <h3 class="fa-title">Corte Penal Internacional</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

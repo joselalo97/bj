@@ -1,0 +1,39 @@
+.loader {
+   &--hidden {
+      visibility: hidden;
+   }
+
+   &__overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: auto;
+      z-index: 100;
+
+      &-item {
+         height: 0.4rem;
+         width: 100%;
+         position: relative;
+         overflow: hidden;
+
+         &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 14.3rem;
+            width: 14.3rem;
+            height: 0.4rem;
+            animation: loading 2s linear infinite;
+         }
+      }
+   }
+}
+
+@keyframes loading {
+   from  { left: -14.3rem; width: 30%; }
+   50%   { width: 30%; }
+   70%   { width: 70%; }
+   80%   { left: 50%; }
+   95%   { left: 120%; }
+   to    { left: 100%; }
+}

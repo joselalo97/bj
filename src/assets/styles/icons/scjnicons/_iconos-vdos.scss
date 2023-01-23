@@ -1,0 +1,1020 @@
+@font-face {
+  font-family: 'iconos-vdos';
+  src:  url('../../../fonts/scjnicon/iconos-vdos/iconos-vdos.eot?te9ta0');
+  src:  url('../../../fonts/scjnicon/iconos-vdos/iconos-vdos.eot?te9ta0#iefix') format('embedded-opentype'),
+    url('../../../fonts/scjnicon/iconos-vdos/iconos-vdos.ttf?te9ta0') format('truetype'),
+    url('../../../fonts/scjnicon/iconos-vdos/iconos-vdos.woff?te9ta0') format('woff'),
+    url('../../../fonts/scjnicon/iconos-vdos/iconos-vdos.svg?te9ta0#iconos-vdos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icons-vdos {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconos-vdos' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-agregar-doc:before {
+  content: "\ea41";
+}
+.icon-avion:before {
+  content: "\ea42";
+}
+.icon-bandeja:before {
+  content: "\ea43";
+}
+.icon-borrar:before {
+  content: "\ea44";
+}
+.icon-calendario:before {
+  content: "\ea45";
+}
+.icon-candado-bien:before {
+  content: "\ea46";
+}
+.icon-candado:before {
+  content: "\ea47";
+}
+.icon-cerrar:before {
+  content: "\ea48";
+}
+.icon-documento-bien:before {
+  content: "\ea49";
+}
+.icon-usuario-bien:before {
+  content: "\ea4a";
+}
+.icon-dhumanos-logo:before {
+  content: "\ea40";
+}
+.icon-camino-scjn:before {
+  content: "\ea3c";
+}
+.icon-cidh:before {
+  content: "\ea3d";
+}
+.icon-comites-nu:before {
+  content: "\ea3e";
+}
+.icon-traduccion-rs:before {
+  content: "\ea3f";
+}
+.icon-colaboracion-bcc:before {
+  content: "\ea3b";
+}
+.icon-criterios-relevantes:before {
+  content: "\ea39";
+}
+.icon-estrella:before {
+  content: "\ea3a";
+}
+.icon-galeria-imagenes:before {
+  content: "\ea38";
+}
+.icon-archivo-historico:before {
+  content: "\ea2e";
+}
+.icon-comision-genero:before {
+  content: "\ea2f";
+}
+.icon-comite-inter:before {
+  content: "\ea30";
+}
+.icon-diversidad-personas:before {
+  content: "\ea31";
+}
+.icon-expediente-tesis:before {
+  content: "\ea32";
+}
+.icon-importante:before {
+  content: "\ea33";
+}
+.icon-infografia:before {
+  content: "\ea34";
+}
+.icon-marihuana-consumo:before {
+  content: "\ea35";
+}
+.icon-oficialia-mayor:before {
+  content: "\ea36";
+}
+.icon-sitio-interes:before {
+  content: "\ea37";
+}
+.icon-cursos-web:before {
+  content: "\ea2d";
+}
+.icon-hombre-mujer-simbolo:before {
+  content: "\ea2c";
+}
+.icon-cjf:before {
+  content: "\ea26";
+}
+.icon-controversias-acciones:before {
+  content: "\ea27";
+}
+.icon-escudo-mexico:before {
+  content: "\ea28";
+}
+.icon-tepjf:before {
+  content: "\ea29";
+}
+.icon-tesis-1917:before {
+  content: "\ea2a";
+}
+.icon-tesis-semanales:before {
+  content: "\ea2b";
+}
+.icon-calendario-dias:before {
+  content: "\ea1e";
+}
+.icon-cuaderno-trabajo:before {
+  content: "\ea1f";
+}
+.icon-tesis-aisladas:before {
+  content: "\ea20";
+}
+.icon-tesis-comentarios:before {
+  content: "\ea21";
+}
+.icon-tesis-indice:before {
+  content: "\ea22";
+}
+.icon-tesis-jurisprudenciales:before {
+  content: "\ea23";
+}
+.icon-tesis-pendiente:before {
+  content: "\ea24";
+}
+.icon-tesis-resuelta:before {
+  content: "\ea25";
+}
+.icon-cortos-animados:before {
+  content: "\e91f";
+}
+.icon-agenda:before {
+  content: "\e920";
+}
+.icon-aimj-igualdad:before {
+  content: "\e921";
+}
+.icon-asistencia-cursos:before {
+  content: "\e922";
+}
+.icon-audifono:before {
+  content: "\e923";
+}
+.icon-audiolibro:before {
+  content: "\e924";
+}
+.icon-bandera:before {
+  content: "\e925";
+}
+.icon-belem-do-para:before {
+  content: "\e926";
+}
+.icon-bjdh-siglas:before {
+  content: "\e927";
+}
+.icon-boletin-suscripcion:before {
+  content: "\e928";
+}
+.icon-boletin:before {
+  content: "\e929";
+}
+.icon-boton-subir:before {
+  content: "\e92a";
+}
+.icon-cargos-honorarios:before {
+  content: "\e92b";
+}
+.icon-catalogo-cambridge:before {
+  content: "\e92c";
+}
+.icon-catalogo-enlines:before {
+  content: "\e92d";
+}
+.icon-catalogo:before {
+  content: "\e92e";
+}
+.icon-cedaw:before {
+  content: "\e92f";
+}
+.icon-coleccion-infantil:before {
+  content: "\e930";
+}
+.icon-comite-igualdad:before {
+  content: "\e931";
+}
+.icon-contenido:before {
+  content: "\e932";
+}
+.icon-cronicas-resenias:before {
+  content: "\e933";
+}
+.icon-ctrl:before {
+  content: "\e934";
+}
+.icon-cuadro-dh:before {
+  content: "\e935";
+}
+.icon-cumbre-jud-ibero:before {
+  content: "\e936";
+}
+.icon-cursos-impartidos:before {
+  content: "\e937";
+}
+.icon-cursos:before {
+  content: "\e938";
+}
+.icon-derechos-personas:before {
+  content: "\e97e";
+}
+.icon-descargar:before {
+  content: "\e990";
+}
+.icon-dias-agenda:before {
+  content: "\e9a3";
+}
+.icon-discos:before {
+  content: "\e9a4";
+}
+.icon-eijpg:before {
+  content: "\e9a5";
+}
+.icon-estadisticas:before {
+  content: "\e9a6";
+}
+.icon-estudios:before {
+  content: "\e9a7";
+}
+.icon-excel-lleno:before {
+  content: "\e9a8";
+}
+.icon-excel:before {
+  content: "\e9a9";
+}
+.icon-experiencia-academica:before {
+  content: "\e9aa";
+}
+.icon-experiencia-profesional:before {
+  content: "\e9ab";
+}
+.icon-glosario:before {
+  content: "\e9ac";
+}
+.icon-inicio:before {
+  content: "\e9ad";
+}
+.icon-libro-electonico:before {
+  content: "\e9ae";
+}
+.icon-libro:before {
+  content: "\e9af";
+}
+.icon-ministra:before {
+  content: "\e9b0";
+}
+.icon-mundo:before {
+  content: "\e9b1";
+}
+.icon-newsletter:before {
+  content: "\e9b2";
+}
+.icon-nota-historica:before {
+  content: "\e9b3";
+}
+.icon-novedades:before {
+  content: "\e9b4";
+}
+.icon-pacto-genero:before {
+  content: "\e9b5";
+}
+.icon-programa-tv:before {
+  content: "\e9b6";
+}
+.icon-recomendaciones-internacionales:before {
+  content: "\e9b7";
+}
+.icon-recomendaciones:before {
+  content: "\e9b8";
+}
+.icon-reconocimientos-nombre:before {
+  content: "\e9b9";
+}
+.icon-reconocimientos:before {
+  content: "\e9ba";
+}
+.icon-redessociales:before {
+  content: "\e9bb";
+}
+.icon-resena:before {
+  content: "\e9bc";
+}
+.icon-revista-igualdad:before {
+  content: "\e9bd";
+}
+.icon-servicios-colecciones:before {
+  content: "\e9be";
+}
+.icon-sinopsis-pleno:before {
+  content: "\e9bf";
+}
+.icon-sinopsis-salas:before {
+  content: "\e9c0";
+}
+.icon-sitio-web:before {
+  content: "\e9c1";
+}
+.icon-soporte-discos:before {
+  content: "\e9c2";
+}
+.icon-triangulo-area-encargada:before {
+  content: "\e9c3";
+}
+.icon-ubicacion-directorio:before {
+  content: "\e9c4";
+}
+.icon-videoconferencias:before {
+  content: "\e9c5";
+}
+.icon-videos:before {
+  content: "\e9c6";
+}
+.icon-votos:before {
+  content: "\e9c7";
+}
+.icon-zip-lleno:before {
+  content: "\e9c8";
+}
+.icon-zip:before {
+  content: "\e9c9";
+}
+.icon-alex:before {
+  content: "\e9ca";
+}
+.icon-busqueda-ventana:before {
+  content: "\e9cb";
+}
+.icon-casas-cultura-2:before {
+  content: "\e9cc";
+}
+.icon-cec-logo:before {
+  content: "\e9cd";
+}
+.icon-cedaw-logo:before {
+  content: "\e9ce";
+}
+.icon-ceremonias-solemnes:before {
+  content: "\e9cf";
+}
+.icon-creacion-mo:before {
+  content: "\e9d0";
+}
+.icon-cursos-conocer-mas:before {
+  content: "\e9d1";
+}
+.icon-cursos-duracion:before {
+  content: "\e9d2";
+}
+.icon-cursos-envivo:before {
+  content: "\e9d3";
+}
+.icon-cursos-filtro-tipo:before {
+  content: "\e9d4";
+}
+.icon-cursos-flecha:before {
+  content: "\e9d5";
+}
+.icon-derechos-agua:before {
+  content: "\e9d6";
+}
+.icon-derechos-civiles:before {
+  content: "\e9d7";
+}
+.icon-derechos-cultura:before {
+  content: "\e9d8";
+}
+.icon-derechos-educacion:before {
+  content: "\e9d9";
+}
+.icon-derechos-indigenas:before {
+  content: "\e9da";
+}
+.icon-derechos-lgbttti:before {
+  content: "\e9db";
+}
+.icon-derechos-migrantes:before {
+  content: "\e9dc";
+}
+.icon-derechos-mujeres:before {
+  content: "\e9dd";
+}
+.icon-derechos-ninios:before {
+  content: "\e9de";
+}
+.icon-derechos-personas-mayores:before {
+  content: "\e9df";
+}
+.icon-derechos-salud:before {
+  content: "\e9e0";
+}
+.icon-derechos-verdad:before {
+  content: "\e9e1";
+}
+.icon-derechos-vivienda:before {
+  content: "\e9e2";
+}
+.icon-disc-convencion-interamericana:before {
+  content: "\e9e3";
+}
+.icon-disc-convencion:before {
+  content: "\e9e4";
+}
+.icon-disc-corto:before {
+  content: "\e9e5";
+}
+.icon-disc-criterios-scjn:before {
+  content: "\e9e6";
+}
+.icon-disc-ley-federal:before {
+  content: "\e9e7";
+}
+.icon-disc-ley-general:before {
+  content: "\e9e8";
+}
+.icon-disc-observaciones-comite:before {
+  content: "\e9e9";
+}
+.icon-disc-observaciones-mexico:before {
+  content: "\e9ea";
+}
+.icon-disc-protocolo:before {
+  content: "\e9eb";
+}
+.icon-disc-vocabulario-lsm:before {
+  content: "\e9ec";
+}
+.icon-discapacidad:before {
+  content: "\e9ed";
+}
+.icon-editar:before {
+  content: "\e9ee";
+}
+.icon-ejecutorias:before {
+  content: "\e9ef";
+}
+.icon-equidadgenero:before {
+  content: "\e9f0";
+}
+.icon-estructura:before {
+  content: "\e9f1";
+}
+.icon-expediente:before {
+  content: "\e9f2";
+}
+.icon-fecha-aprobacion:before {
+  content: "\e9f3";
+}
+.icon-fecha-publicacion:before {
+  content: "\e9f4";
+}
+.icon-googleplus:before {
+  content: "\e9f5";
+}
+.icon-grafica-pay:before {
+  content: "\e9f6";
+}
+.icon-imagenes-brd:before {
+  content: "\e9f7";
+}
+.icon-info-clas:before {
+  content: "\e9f8";
+}
+.icon-informe-labores:before {
+  content: "\e9f9";
+}
+.icon-logro-mo:before {
+  content: "\e9fa";
+}
+.icon-mac:before {
+  content: "\e9fb";
+}
+.icon-magis-mundo:before {
+  content: "\e9fc";
+}
+.icon-mariano:before {
+  content: "\e9fd";
+}
+.icon-nuevo-elemento:before {
+  content: "\e9fe";
+}
+.icon-pdf-brd:before {
+  content: "\e9ff";
+}
+.icon-podcast:before {
+  content: "\ea00";
+}
+.icon-prensa:before {
+  content: "\ea01";
+}
+.icon-protocolo-discapacidad:before {
+  content: "\ea02";
+}
+.icon-protocolo-english:before {
+  content: "\ea03";
+}
+.icon-protocolo-genero:before {
+  content: "\ea04";
+}
+.icon-protocolo-indigena:before {
+  content: "\ea05";
+}
+.icon-protocolo-infraestructura:before {
+  content: "\ea06";
+}
+.icon-protocolo-migrantes:before {
+  content: "\ea07";
+}
+.icon-protocolo-ninios:before {
+  content: "\ea08";
+}
+.icon-protocolo-orientacion-sexual:before {
+  content: "\ea09";
+}
+.icon-protocolo-tortura:before {
+  content: "\ea0a";
+}
+.icon-public-articulos:before {
+  content: "\ea0b";
+}
+.icon-public-protocolos:before {
+  content: "\ea0c";
+}
+.icon-radio:before {
+  content: "\ea0d";
+}
+.icon-rompecabezas:before {
+  content: "\ea0e";
+}
+.icon-scjn-sitio-web:before {
+  content: "\ea0f";
+}
+.icon-sipot-texto:before {
+  content: "\ea10";
+}
+.icon-spotify:before {
+  content: "\ea11";
+}
+.icon-subir:before {
+  content: "\ea12";
+}
+.icon-tesis:before {
+  content: "\ea13";
+}
+.icon-ubicacion:before {
+  content: "\ea14";
+}
+.icon-usb:before {
+  content: "\ea15";
+}
+.icon-videoteca-ir-video:before {
+  content: "\ea16";
+}
+.icon-videoteca-tusderechos:before {
+  content: "\ea17";
+}
+.icon-vinculos:before {
+  content: "\ea18";
+}
+.icon-visitar:before {
+  content: "\ea19";
+}
+.icon-web-brd:before {
+  content: "\ea1a";
+}
+.icon-whatsapp:before {
+  content: "\ea1b";
+}
+.icon-windows:before {
+  content: "\ea1c";
+}
+.icon-zapata:before {
+  content: "\ea1d";
+}
+.icon-aceptado:before {
+  content: "\e900";
+}
+.icon-audio:before {
+  content: "\e901";
+}
+.icon-calendario-estadistica:before {
+  content: "\e902";
+}
+.icon-censo:before {
+  content: "\e903";
+}
+.icon-comite-ministros:before {
+  content: "\e904";
+}
+.icon-condiciones-trabajo:before {
+  content: "\e905";
+}
+.icon-consejo:before {
+  content: "\e906";
+}
+.icon-curriculum:before {
+  content: "\e907";
+}
+.icon-desincorporacion-bienes:before {
+  content: "\e908";
+}
+.icon-directorio-servidores:before {
+  content: "\e909";
+}
+.icon-enlaces-ligas:before {
+  content: "\e90a";
+}
+.icon-flecha-abajo-llena:before {
+  content: "\e90b";
+}
+.icon-flecha-arriba-llena:before {
+  content: "\e90c";
+}
+.icon-flecha-derecha-llena:before {
+  content: "\e90d";
+}
+.icon-flecha-izquierda-llena:before {
+  content: "\e90e";
+}
+.icon-gasto-honorarios:before {
+  content: "\e90f";
+}
+.icon-guia:before {
+  content: "\e910";
+}
+.icon-indicadores:before {
+  content: "\e911";
+}
+.icon-info-adicional:before {
+  content: "\e912";
+}
+.icon-informacion:before {
+  content: "\e913";
+}
+.icon-integracion:before {
+  content: "\e914";
+}
+.icon-modulo-jurisdiccional:before {
+  content: "\e915";
+}
+.icon-modulo-justicia:before {
+  content: "\e916";
+}
+.icon-plantilla:before {
+  content: "\e917";
+}
+.icon-profesionista:before {
+  content: "\e918";
+}
+.icon-rechazado:before {
+  content: "\e919";
+}
+.icon-reconsiderar:before {
+  content: "\e91a";
+}
+.icon-red:before {
+  content: "\e91b";
+}
+.icon-revision:before {
+  content: "\e91c";
+}
+.icon-sanciones:before {
+  content: "\e91d";
+}
+.icon-triptico:before {
+  content: "\e91e";
+}
+.icon-adquisiciones:before {
+  content: "\e972";
+}
+.icon-auditoria:before {
+  content: "\e973";
+}
+.icon-austeridad:before {
+  content: "\e974";
+}
+.icon-base-datos:before {
+  content: "\e975";
+}
+.icon-bienes-mueble-inmueble:before {
+  content: "\e976";
+}
+.icon-boletin-electronico:before {
+  content: "\e977";
+}
+.icon-calendario-inhabil:before {
+  content: "\e978";
+}
+.icon-comites:before {
+  content: "\e979";
+}
+.icon-conferencista:before {
+  content: "\e97a";
+}
+.icon-consulta-info:before {
+  content: "\e97b";
+}
+.icon-correo-electronico:before {
+  content: "\e97c";
+}
+.icon-correo-postal:before {
+  content: "\e97d";
+}
+.icon-cotradiccion-tesis:before {
+  content: "\e97f";
+}
+.icon-dhumanos:before {
+  content: "\e980";
+}
+.icon-discursos-mp:before {
+  content: "\e981";
+}
+.icon-donaciones:before {
+  content: "\e982";
+}
+.icon-duda:before {
+  content: "\e983";
+}
+.icon-estadistica-judicial:before {
+  content: "\e984";
+}
+.icon-estado-fianciero:before {
+  content: "\e985";
+}
+.icon-estudio-financiero:before {
+  content: "\e986";
+}
+.icon-fideicomiso:before {
+  content: "\e987";
+}
+.icon-funcionarios-judiciales:before {
+  content: "\e988";
+}
+.icon-gasto-publico:before {
+  content: "\e989";
+}
+.icon-gastos-comunicacion:before {
+  content: "\e98a";
+}
+.icon-guia-acceso:before {
+  content: "\e98b";
+}
+.icon-guia-audio:before {
+  content: "\e98c";
+}
+.icon-guia-indigenas:before {
+  content: "\e98d";
+}
+.icon-guia-info:before {
+  content: "\e98e";
+}
+.icon-guia-internet:before {
+  content: "\e98f";
+}
+.icon-informe-fianciero:before {
+  content: "\e991";
+}
+.icon-institucional:before {
+  content: "\e992";
+}
+.icon-justiciatv:before {
+  content: "\e993";
+}
+.icon-magistratura-mundo:before {
+  content: "\e994";
+}
+.icon-mas-solicitado:before {
+  content: "\e995";
+}
+.icon-montos-dinero:before {
+  content: "\e996";
+}
+.icon-notificacion-electronica:before {
+  content: "\e997";
+}
+.icon-presupuesto:before {
+  content: "\e998";
+}
+.icon-publicaciones:before {
+  content: "\e999";
+}
+.icon-servidores-publicos:before {
+  content: "\e99a";
+}
+.icon-sga:before {
+  content: "\e99b";
+}
+.icon-tarifa-documento:before {
+  content: "\e99c";
+}
+.icon-temas-amparos:before {
+  content: "\e99d";
+}
+.icon-temas-controversias:before {
+  content: "\e99e";
+}
+.icon-unidad:before {
+  content: "\e99f";
+}
+.icon-viaticos:before {
+  content: "\e9a0";
+}
+.icon-videoteca-juridica:before {
+  content: "\e9a1";
+}
+.icon-votos-ministros:before {
+  content: "\e9a2";
+}
+.icon-cjf-listas:before {
+  content: "\e939";
+}
+.icon-jtv:before {
+  content: "\e93a";
+}
+.icon-actividad-institucional:before {
+  content: "\e93b";
+}
+.icon-avisos:before {
+  content: "\e93c";
+}
+.icon-biblioteca-digital:before {
+  content: "\e93d";
+}
+.icon-casas-cultura-1:before {
+  content: "\e93e";
+}
+.icon-ccj-scjn-logovertical:before {
+  content: "\e93f";
+}
+.icon-cec:before {
+  content: "\e940";
+}
+.icon-centro-daacl:before {
+  content: "\e941";
+}
+.icon-comunicados:before {
+  content: "\e942";
+}
+.icon-conmemoraciones:before {
+  content: "\e943";
+}
+.icon-constitucion-mexico:before {
+  content: "\e944";
+}
+.icon-correo:before {
+  content: "\e945";
+}
+.icon-cronicas:before {
+  content: "\e946";
+}
+.icon-denuncia-resp-admin:before {
+  content: "\e947";
+}
+.icon-doc-word-lleno:before {
+  content: "\e948";
+}
+.icon-doc-word:before {
+  content: "\e949";
+}
+.icon-eventos:before {
+  content: "\e94a";
+}
+.icon-f-abajo:before {
+  content: "\e94b";
+}
+.icon-f-arriba:before {
+  content: "\e94c";
+}
+.icon-f-derecha:before {
+  content: "\e94d";
+}
+.icon-f-izquierda:before {
+  content: "\e94e";
+}
+.icon-facebook:before {
+  content: "\e94f";
+}
+.icon-gaceta-compromio:before {
+  content: "\e950";
+}
+.icon-imprimir:before {
+  content: "\e951";
+}
+.icon-infomex:before {
+  content: "\e952";
+}
+.icon-lista-controversias:before {
+  content: "\e953";
+}
+.icon-listas-notificacion:before {
+  content: "\e954";
+}
+.icon-marco-juridico:before {
+  content: "\e955";
+}
+.icon-mas:before {
+  content: "\e956";
+}
+.icon-mazo:before {
+  content: "\e957";
+}
+.icon-memorias:before {
+  content: "\e958";
+}
+.icon-noticias:before {
+  content: "\e959";
+}
+.icon-pdf-lleno:before {
+  content: "\e95a";
+}
+.icon-pdf:before {
+  content: "\e95b";
+}
+.icon-personas-dh:before {
+  content: "\e95c";
+}
+.icon-phone:before {
+  content: "\e95d";
+}
+.icon-pjf:before {
+  content: "\e95e";
+}
+.icon-plataforma-nac-transparencia:before {
+  content: "\e95f";
+}
+.icon-pleno:before {
+  content: "\e960";
+}
+.icon-proyectos-resolucion:before {
+  content: "\e961";
+}
+.icon-scjn-aguila:before {
+  content: "\e962";
+}
+.icon-scjn-logo:before {
+  content: "\e963";
+}
+.icon-sentencia-igualdad:before {
+  content: "\e964";
+}
+.icon-servicio-social:before {
+  content: "\e965";
+}
+.icon-signo-hombre-mujer:before {
+  content: "\e966";
+}
+.icon-sisconsulta:before {
+  content: "\e967";
+}
+.icon-sjf-siglas:before {
+  content: "\e968";
+}
+.icon-sjf:before {
+  content: "\e969";
+}
+.icon-telefono:before {
+  content: "\e96a";
+}
+.icon-temas:before {
+  content: "\e96b";
+}
+.icon-transparencia:before {
+  content: "\e96c";
+}
+.icon-twitter:before {
+  content: "\e96d";
+}
+.icon-videoteca:before {
+  content: "\e96e";
+}
+.icon-visitas-guiadas:before {
+  content: "\e96f";
+}
+.icon-vstenograficas:before {
+  content: "\e970";
+}
+.icon-youtube:before {
+  content: "\e971";
+}

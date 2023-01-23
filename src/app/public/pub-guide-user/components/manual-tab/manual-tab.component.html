@@ -1,0 +1,2280 @@
+<div class="tab-manual row">
+  <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 components-bg">
+    <div class="tab-manual__sections" [(style.margin-top)]="margin">
+      <span>Índice</span>
+      <ul class="tab-manual__sections--indice">
+        <li class="indice-nav" (click)="scrollInToView('introducción')">
+          <p class="indice-nav__firts skin-color-text">Introducción</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('acceso-al-buscador-jurídico')">
+          <p class="indice-nav__firts skin-color-text">Acceso al Buscador
+            Jurídico</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('página-de-inicio')">
+          <p class="ml-3 indice-nav__second">Página de inicio</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('búsqueda-de-información')">
+          <p class="indice-nav__firts skin-color-text">Búsqueda de
+            Información</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('palabras-clave-o-sintaxis-de-búsqueda')">
+          <p class="ml-3 indice-nav__second">Palabras
+            clave o sintaxis de búsqueda</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('ánalisis-de-texto')">
+          <p class="ml-3 indice-nav__second">Análisis de texto</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('búsqueda-avanzada')">
+          <p class="ml-3 indice-nav__second">Búsqueda Avanzada</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('herramientas-adicionales-de-búsqueda')">
+          <p class="ml-3 indice-nav__second">Herramientas adicionales de búsqueda</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('fuentes-de-datos')">
+          <p class="indice-nav__firts skin-color-text">Fuentes de Información</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('sentencias')">
+          <p class="ml-3 indice-nav__second">Sentencias</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('consulta-de-precedentes')">
+          <p class="ml-5 indice-nav__second">Precedentes</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('línea-jurisprudencial-sentencia')">
+          <p class="ml-5 indice-nav__second">Lineas Jurisprudenciales de Sentencias</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('protocolos-actuación')">
+          <p class="ml-5 indice-nav__second">Protocolos de Actuación</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('tesis')">
+          <p class="ml-3 indice-nav__second">Tesis</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('línea-jurisprudencial-tesis')">
+          <p class="ml-5 indice-nav__second">Lineas Jurisprudenciales de Tesis</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('votos')">
+          <p class="ml-3 indice-nav__second">Votos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('acuerdos-generales-y-otros-documentos-publicados')">
+          <p class="ml-3 indice-nav__second">
+            Acuerdos generales y otros
+            documentos publicados</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('ordenamientos')">
+          <p class="ml-3 indice-nav__second">Ordenamientos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('acervo-bibliotecario')">
+          <p class="ml-3 indice-nav__second">Acervo bibliotecario</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('versiones-taquigráficas')">
+          <p class="ml-3 indice-nav__second">Versiones
+            taquigráficas</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('casas-cultura-jurídica')">
+          <p class="ml-3 indice-nav__second">Casas de la Cultura Jurídica</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('acervo-de-información-en-materia-de-derechos-humanos')">
+          <p class="indice-nav__firts skin-color-text">Acervo en Materia de Derechos Humanos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('sistema-de-naciones-unidas')">
+          <p class="ml-3 indice-nav__second">Sistema de Naciones
+            Unidas</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('corte-interamericana-de-derechos-humanos')">
+          <p class="ml-3 indice-nav__second">Corte
+            Interamericana de Derechos Humanos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('comisión-interamericana-de-derechos-humanos')">
+          <p class="ml-3 indice-nav__second">
+            Comisión Interamericana de Derechos
+            Humanos (CIDH)</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('corte-europea-de-derechos-humanos')">
+          <p class="ml-3 indice-nav__second">Corte Europea
+            de Derechos Humanos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('corte-internacional-de-justicia')">
+          <p class="ml-3 indice-nav__second">Corte
+            Internacional de Justicia</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('tribunales-y-cortes-institucionales')">
+          <p class="indice-nav__firts skin-color-text">Tribunales y
+            Cortes Internacionales</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('tribunal-constitucional-de-españa')">
+          <p class="ml-3 indice-nav__second">Tribunal
+            Constitucional de España</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('corte-constitucional-de-la-república-de-colombia')">
+          <p class="ml-3 indice-nav__second">
+            Corte Constitucional de la
+            República de Colombia</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('tribunal-constitucional-de-chile')">
+          <p class="ml-3 indice-nav__second">Tribunal
+            Constitucional de Chile</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('corte-suprema-de-justicia-de-la-nación-de-argentina')">
+          <p class="ml-3 indice-nav__second">Corte Suprema de Justicia de
+            la Nación de Argentina</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('accesibilidad-web')">
+          <p class="indice-nav__firts skin-color-text">Accesibilidad Web</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('tesauro')">
+          <p class="indice-nav__firts skin-color-text">Tesauro</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('busqueda-terminos')">
+          <p class="ml-3 indice-nav__second">Búsqueda de Términos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('busqueda-tavanzada')">
+          <p class="ml-3 indice-nav__second">Búsqueda Avanzada</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('termino')">
+          <p class="ml-3 indice-nav__second">Término</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('metadatos')">
+          <p class="ml-3 indice-nav__second">Metadatos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('grafo-semantico')">
+          <p class="ml-3 indice-nav__second">Grafo Semántico</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('acerca-de-vocabulario')">
+          <p class="ml-3 indice-nav__second">Acerca del Vocabulario</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('datos-abiertos')">
+          <p class="indice-nav__firts skin-color-text">Datos Abiertos</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('recomendación')">
+          <p class="indice-nav__firts skin-color-text">Recomendación</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('material')">
+          <p class="indice-nav__firts skin-color-text">Material para presentación</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('generales')">
+          <p class="ml-3 indice-nav__second">Generales</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('agraria')">
+          <p class="ml-3 indice-nav__second">Materia Agraria</p>
+        </li>
+        <li class="indice-nav" (click)="scrollInToView('mercantil')">
+          <p class="ml-3 indice-nav__second">Competencia económica</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 tab-manual__content">
+    <div class="d-flex justify-content-end">
+      <a role="link" href="./assets/pub/img/img-manual/UGACJManualDeUsuarioBJ.pdf" target="_blank"
+        download="UGACJManualDeUsuarioBJ"
+        class="d-flex justify-content-end align-items-center download skin-color-text"><i
+          class="material-icons">download</i> Descargar
+        manual</a>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'introducción'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Introducción</h2>
+      <p>De conformidad con lo establecido en el Acuerdo General de Administración número
+        XIII/209 del Presidente de la Suprema Corte de Justicia de la Nación (SCJN), de
+        doce de noviembre de dos mil diecinueve, Acuerdo General de Administración, en
+        su punto tercero, atribuciones de la Unidad General de Administración del
+        Conocimiento Jurídico (UGACJ) numeral II, III, IV, se crea el Buscador Jurídico (BJ),
+        el cual tiene como propósito fundamental implementar una estrategia de planeación,
+        organización, dirección y control de la información para la optimización del
+        conocimiento que facilite la identificación, extracción, almacenamiento, resguardo y
+        comunicación de la información esencial de la Suprema Corte de Justicia de la
+        Nación de manera transparente y eficiente, además de coadyuvar en el desempeño
+        de los profesionales del derecho, órganos de procuración de justicia, justiciables y
+        juristas.
+
+        <p> Es el objetivo del Buscador Jurídico mostrar la filosofía innovadora de
+          administración y difusión del conocimiento, así como la operación de esta
+          plataforma tecnológica que permite acercar al consultante la información oportuna
+          para su labor jurídica.
+
+          <p>El presente manual muestra de manera detallada las secciones, herramientas y
+            funcionamiento del BJ; permite a cualquier usuario, ya sea especialista en derecho
+            o no, acceder a una herramienta ágil, accesible y amigable que contiene todos los
+            criterios emitidos por el Alto Tribunal y facilita la labor jurídica y jurisdiccional de
+            estudiantes e investigadores, por esa razón es importante conocer cada uno de sus
+            apartados.
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'acceso-al-buscador-jurídico'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Acceso al Buscador Jurídico</h2>
+      <p>Para tener acceso al Buscador Jurídico de la Suprema Corte de Justicia de la
+        Nación se realizan las siguientes acciones:
+        <ul class="ml-5">
+          <li><span>1. Abra su navegador (Google Chrome, Firefox, Safari, Microsoft
+              Edge, etc.).</span>
+          </li>
+          <li><span>2. Acceda a la siguiente dirección:
+              <a role="link" class="skin-color-text" href="https://bj.scjn.gob.mx"
+                target="_blank">https://bj.scjn.gob.mx</a>
+            </span> </li>
+        </ul>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_1p.png" alt="Buscador Jurídico">
+          </div>
+        </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'página-de-inicio'">
+      <h3 class="tab-manual__content--bl-subtitle">Página de Inicio</h3>
+      <p>
+        La página de inicio muestra una serie de apartados de consulta y localización de
+        información jurídica, con la finalidad de integrar a través de una sola plataforma la
+        mayor cantidad de información que emite la SCJN.
+      </p>
+      <ul class="ml-5">
+        <li><span>1. Recuadro Central de Búsqueda. En la parte superior se encuentra
+            este
+            apartado que permite realizar consultas sobre el universo de información del
+            Buscador Jurídico; al dar clic sobre él puede realizar una búsqueda por
+            palabras, frases o sintaxis. Además, en el lado derecho del mismo, se
+            encuentra un ícono de ayuda que despliega “ejemplos de búsqueda”, los
+            cuales facilitan la consulta</span></li>
+        <li><span>2. Fuentes de información. Al acceder al BJ se despliegan diversas
+            opciones
+            de consulta como Sentencias, Votos emitidos, Tesis, Acuerdos Generales y
+            otros documentos publicados, Ordenamientos, Acervo Bibliotecario, Versiones Taquigráficas del
+            Pleno y Salas, Casas de la Cultura Jurídica,
+            Sistema de Naciones Unidas, Corte Interamericana de Derechos Humanos,
+            Comisión Interamericana de Derechos Humanos, Corte Europea de
+            Derechos Humanos, Corte Internacional de Justicia, Tribunal Constitucional
+            de España, Corte Constitucional de la República de Colombia, Tribunal
+            Constitucional de Chile y Corte Suprema de Justicia de la Nación de
+            Argentina.
+          </span></li>
+        <li><span>3. Análisis de texto. Se despliega un motor de búsqueda inteligente
+            en el que
+            se ingresa un documento en formato .txt, palabra, sintaxis o fragmento de
+            texto con el fin de que la plataforma recomiende documentos similares.</span></li>
+
+        <li><span>4. Búsqueda avanzada. Se despliega una serie de recuadros de
+            captura para
+            realizar una búsqueda más específica de las fuentes de información
+            mediante el uso de sintaxis.</span></li>
+
+        <p>También podrá encontrar del lado superior derecho de la página de inicio, distintas
+          opciones de consulta como las redes sociales del Buscador Jurídico; el ícono que
+          lleva a la plataforma Tesauro, el vocabulario controlado de la Suprema Corte de
+          Justicia de la Nación; el ícono que lleva a la Plataforma de Datos Abiertos, la cual
+          promueve el libre uso, reúso y redistribución de datos, términos, relaciones,
+          indicadores y vínculos de las unidades de conocimiento; la guía de usuario, y el
+          menú que desglosa todas las fuentes de información.
+
+          <p>Asimismo, en el lado superior izquierdo encontrará el ícono de Accesibilidad Web,
+            el cual despliega un menú de herramientas como lector de pantalla, color y contraste, fuente y
+            tamaño de letra, que le permiten realizar configuraciones en el
+            diseño del Buscador Jurídico.
+
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_2p.png" alt="Página de inicio">
+              </div>
+            </div>
+      </ul>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'búsqueda-de-información'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Búsqueda de Información</h2>
+      <p>Para acceder a la información existen las siguientes opciones en la página de inicio:
+      </p>
+      <ul class="ml-5">
+        <li>1. Palabras clave o sintaxis de búsqueda.</li>
+        <li>2. Análisis de texto.</li>
+        <li>3. Búsqueda avanzada.</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_3p.png" alt="Búsquedas de información">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'palabras-clave-o-sintaxis-de-búsqueda'">
+      <h3 class="tab-manual__content--bl-subtitle">Palabras Clave o Sintaxis de Búsqueda</h3>
+      <p>Para hacer uso de esta opción, se deben escribir términos o frases sobre el recuadro
+        central de la página de inicio, o bien hacer uso de la sintaxis de búsqueda mediante
+        palabras, conceptos, caracteres, operadores y luego dar clic en el botón "ejecutar”.</p>
+
+      <p>Sobre el recuadro central se encuentra un ícono de ayuda que despliega “ejemplos
+        de sintaxis de búsqueda”, en el cual se desglosan sugerencias de cómo realizar
+        consultas utilizando palabras clave, caracteres especiales y operadores lógicos o
+        booleanos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_4p.png"
+            alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+        </div>
+      </div>
+      <p>Si al realizar una búsqueda básica no se encuentran resultados relevantes, se
+        recomienda seleccionar alguna fuente de información en el recuadro “Buscar en”
+        y/o hacer uso de caracteres especiales:</p>
+      <ul class="ml-5">
+        <li><span><strong>Arroba (@) </strong>con el fin de limitar la consulta a
+            través de los campos de la fuente de información que se seleccione.</span>
+          <p class="ml-3">Ej. @Considerando: bullying</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_5p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span>Las<strong> comillas ("") </strong>se utilizan para encontrar frases
+            exactas.</span>
+          <p class="ml-3">Ej. "pérdida de patria potestad"</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_6p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span>El<strong> guion (-) </strong>sirve para excluir alguna
+            palabra.</span>
+          <p class="ml-3">Ej. -delincuencia</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_7p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span>Los<strong> paréntesis () </strong>se emplean para dar prioridad a
+            un término o frase.</span>
+          <p class="ml-3">Ej. ("desaparición forzada") OR secuestro</p>
+          <p class="ml-3">Ej. ("pueblos indígenas") discriminación</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_8p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span>El<strong> asterisco (*) </strong>sirve para completar palabras o
+            frases. Puede ser usado como prefijo, infijo, sufijo.</span>
+          <p class="ml-3">Ej. *echo (derecho, desecho, hecho…)</p>
+          <p class="ml-3">Ej. pr*tos (propuestos, preceptos, procedimientos…)</p>
+          <p class="ml-3">Ej. micro* (microbiología, microsistema, micronegocio…)</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_9p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span>La<strong> virgulilla (~) </strong>para incluir palabras similares,
+            o si se escribe un
+            número después de este signo, realiza una búsqueda de términos con la condición de que las
+            palabras o frases se encuentran dentro de un rango de
+            distancia una de otra.</span>
+          <p class="ml-3">Ej. mubying~ (correcto: mobbing)</p>
+          <p class="ml-3">Ej. consanguineidad~ (correcto: consanguinidad)</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_10p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_11p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+      </ul>
+      <p>Asimismo, se pueden utilizar operadores lógicos o booleanos:</p>
+      <ul class="ml-5">
+        <li><span><strong>Operador "AND"</strong>para recuperar la información que
+            incluya todos los términos o frases.</span>
+          <p class="ml-3">Ej. "desaparición forzada" AND secuestro AND "delincuencia organizada"</p>
+        </li>
+        <div class="d-flexp-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_12p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span><strong>Operador "OR" </strong>para rescatar documentos que tengan
+            cualquiera de las palabras o conceptos.</span>
+          <p class="ml-3">Ej. estupro OR "abuso sexual a menores"</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_13p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+        <li><span><strong>Operador "NOT" </strong>para recuperar las referencias en
+            las que se omitan los términos o frases que se escriben después de éste.</span>
+          <p class="ml-3">Ej. NOT (delincuencia)</p>
+        </li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_14p.png"
+              alt="Búsqueda por palabra clave o su sintaxis de búsqueda">
+          </div>
+        </div>
+      </ul>
+      <p>El Buscador Jurídico está diseñado para soportar desde consultas sencillas hasta
+        consultas más complejas haciendo uso de combinaciones de palabras clave,
+        caracteres especiales y operadores lógicos o booleanos:</p>
+      <ul class="ml-5">
+        <li><span><strong>Operadores combinados </strong> para hacer consultas usando
+            operadores lógicos
+            y demás sintaxis de búsqueda.</span>
+          <p class="ml-3">Ej. "doble nacionalidad" AND (privilegios) NOT (internacional)</p>
+          <p class="ml-3">Ej. ("desaparición forzada" OR secuestro) AND "delincuencia organizada"</p>
+        </li>
+      </ul>
+      <p>Además, el BJ no hace distinción en el uso de mayúsculas y minúsculas; sin
+        importar la manera en la que se escriba, se obtendrá el mismo resultado. </p>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'ánalisis-de-texto'">
+      <h3 class="tab-manual__content--bl-subtitle">Análisis de Texto</h3>
+      <p>En esta opción se despliega un motor de inteligencia en el que es posible ingresar
+        un fragmento de texto, así como seleccionar o arrastrar desde un dispositivo un
+        archivo en formato ".txt", para que la plataforma recomiende documentos similares. </p>
+
+      <p>Ejemplo de uso del motor inteligente por fragmento de texto:</p>
+      <p class="ml-5">"El reconocimiento como tal de las familias diversas es reciente y no
+        existen estudios propios sobre la relación entre la salud de los niños
+        y la crianza por parejas homosexuales"</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_15p.png" alt="Análisis de texto">
+        </div>
+      </div>
+
+      <p>Cuando se da clic en el botón de “Analizar”, la plataforma abre una ventana en la
+        que se visualizan recomendaciones de documentos; al seleccionar una fuente de
+        información, el motor de inteligencia despliega filtros con los cuales se pueden
+        realizar consultas más específicas.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_16p.png" alt="Análisis de texto">
+        </div>
+      </div>
+      <p>Al elegir uno de los documentos sugeridos, el sistema redirige a la pantalla de
+        detalle de ese documento, en la que se puede realizar una consulta complementaria
+        utilizando el análisis inteligente, simplemente con seleccionar un fragmento de texto
+        y dar clic en la opción de "Analizar texto" que se muestra.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_17p.png" alt="Documentos sugeridos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'búsqueda-avanzada'">
+      <h3 class="tab-manual__content--bl-subtitle">Búsqueda Avanzada</h3>
+      <p>Al dar clic en esta opción se visualizan una serie de recuadros de captura que
+        permiten realizar una búsqueda más específica de la información, los cuales
+        permiten elegir la fuente de información, así como escribir palabras clave, frase
+        exacta, palabras que debe o no contener, palabras próximas y el número de
+        proximidad entre palabras. La sintaxis de búsqueda se estará mostrando en el
+        recuadro gris de esta sección.
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_18p.png" alt="Búsqueda avanzada">
+          </div>
+        </div>
+        <p>Al seleccionar una fuente de información se despliega en la parte inferior de la
+          pantalla un recuadro con los campos específicos del universo de información
+          elegido, lo cual permite precisar la búsqueda.</p>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_19p.png" alt="Búsqueda avanzada">
+          </div>
+        </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'herramientas-adicionales-de-búsqueda'">
+      <h3 class="tab-manual__content--bl-subtitle">Herramientas adicionales de búsqueda</h3>
+      <p>El Buscador Jurídico cuenta con herramientas adicionales que facilitan la consulta
+        de información tanto en la página de resultados como en la de detalle de un
+        documento.
+        <p>Al escoger una fuente de información en el recuadro “Buscar en”, se mostrará una
+          barra de selección en la que se podrá elegir algún campo de la fuente y enseguida
+          escribir palabras o frases que se desean consultar en los documentos en el recuadro
+          de captura “Buscar en resultados”.
+          <p>Asimismo, se encuentran dos opciones de selección en las que se pueden elegir la
+            cantidad de resultados por página y el número de caracteres visibles en el recuadro
+            “Ver extractos de documento” que aparece en la parte inferior de cada resultado.
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_20p.png" alt="Búsqueda avanzada">
+              </div>
+            </div>
+            <p>Al ingresar al detalle de un documento se visualiza una barra de herramientas en
+              donde se pueden realizar las siguientes funciones:</p>
+            <ul class="ml-5">
+              <li><span>Regresar a la página de inicio.</span></li>
+              <li><span>Regresar a la búsqueda.</span></li>
+              <li><span>Regresar al documento anterior.</span></li>
+              <li><span>Avanzar al siguiente documento.</span></li>
+              <li><span>Copiar todo el documento.</span></li>
+              <li><span>Imprimir documento.</span></li>
+            </ul>
+            <p>Además, se encuentra un recuadro de captura “Buscar en documento”, el cual
+              permite ingresar las palabras o frases que se quieren encontrar dentro del texto.</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_21p.png" alt="Búsqueda avanzada">
+              </div>
+            </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'fuentes-de-datos'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Fuentes de Información</h2>
+      <p>
+        Para acceder a alguna fuente de información, se da clic en la que se desea consultar
+        y la plataforma mostrará el conjunto de documentos que contienen la parte
+        considerativa de las ejecutorias que integran jurisprudencia por reiteración; las que
+        resuelven una contradicción de criterios; las que interrumpen jurisprudencia; las que
+        la sustituyen; las dictadas en controversias constitucionales y acciones de
+        inconstitucionalidad, así como las tesis respectivas y los votos correspondientes; la
+        Normativa y los diversos acuerdos emitidos por la SCJN y el Consejo de la
+        Judicatura Federal (CJF), y cualquier otra ejecutoria o tesis relevante que aún sin
+        integrar jurisprudencia, se ordene su publicación por el Pleno o Salas de la SCJN o
+        por un Tribunal Colegiado de Circuito.</p>
+
+      <p>De igual forma, es posible encontrar el acervo bibliotecario, versiones taquigráficas,
+        cursos de la Casas de la Cultura Jurídica, así como sentencias de órganos
+        internacionales: Sistema de Naciones Unidas (ONU), Corte Interamericana de
+        Derechos Humanos (CoIDH), Comisión Interamericana de Derechos Humanos
+        (CIDH), Corte Europea de Derechos Humanos, Corte Internacional de Justicia,
+        Tribunal Constitucional de España, Corte Constitucional de la República de
+        Colombia, Tribunal Constitucional de Chile y Corte Suprema de Justicia de la Nación
+        de Argentina.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_22p.png" alt="Fuentes de Información">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'sentencias'">
+      <h3 class="tab-manual__content--bl-subtitle">Sentencias</h3>
+      <p>En esta fuente de información se cuentan con diversos criterios que
+        permiten realizar búsquedas específicas:</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_23p.png" alt="Sentencias">
+        </div>
+      </div>
+      <ul class="ml-5">
+        <li> Tipo Asunto</li>
+        <li> Órgano de radicación</li>
+        <li> Ponente</li>
+        <li> Año</li>
+        <li> Línea Jurisprudencial</li>
+        <li> Protocolo de Actuación</li>
+      </ul>
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        resolución", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_24p.png" alt="Consulta de sentencias">
+        </div>
+      </div>
+
+      <p>Se puede consultar y descargar el documento origen de una Sentencia desde la
+        página de resultados a través del ícono de Word que se muestra al lado de cada
+        resultado.</p>
+      <p>Al abrir una Sentencia, se visualiza en la parte superior del texto la opción
+        "descargue aquí el documento origen" en formato Word, así como unas pestañas
+        que permiten visualizar información complementaria.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_25p.png" alt="Ficha técnica sentencia">
+        </div>
+      </div>
+      <ul class="ml-5">
+        <li>Ficha técnica. Se muestran los datos principales de la Sentencia como el
+          número de expediente, tipo de asunto, ministro y tema correspondiente;
+          además contiene un botón "Sentencias y Datos de Expedientes" que redirige
+          al expediente dentro del sitio web de la SCJN.
+          <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+            <div class="col-12">
+              <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_26p.png"
+                alt="Ficha técnica sentencia">
+            </div>
+          </div>
+        </li>
+        <li>Documentos sugeridos. Se muestran aquellos documentos que se
+          encuentran relacionados con el contenido de la Sentencia que se está
+          consultando, haciendo uso de la analítica de texto empleada por la
+          plataforma.
+          <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+            <div class="col-12">
+              <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_27p.png" alt="Documentos sugeridos">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'consulta-de-precedentes'">
+      <h4>Precedentes</h4>
+      <p>
+        En las Sentencias es posible consultar los precedentes de algunas Controversias
+        Constitucionales o Acciones de Inconstitucionalidad, para ello es necesario hacer la
+        selección de esos criterios de búsqueda en el subfiltro "Tipo de asunto"; una vez
+        elegido el criterio, el sistema mostrará el conjunto de resultados disponibles, al dar
+        clic sobre un resultado se navega por los documentos, a través del ícono de avanzar
+        al siguiente documento, hasta encontrar alguna Sentencia que contenga Rubros
+        temáticos.
+      </p>
+      <p>También es posible consultar los precedentes al seleccionar la fuente de
+        información "Sentencias", hacer uso de la arroba (@) para elegir el campo "Rubros
+        temáticos" y escribir las palabras o frases que se quieren encontrar:</p>
+      <p class="ml-5">Ej. @Rubros temáticos: reviviscencia</p>
+
+      <p>A partir de los Rubros Temáticos es posible consultar precedentes de la misma
+        figura jurídica con sólo dar clic en el ícono de "+" que aparece en la parte superior
+        izquierda de cada rubro y revisar los precedentes con rubros temáticos similares al dar clic en el
+        ícono de búsqueda que se encuentra a un lado de cada rubro.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_28p.png" alt="Líneas Jurisprudenciales ">
+        </div>
+      </div>
+      <p>
+        Si desea ir a la sección de la Sentencia donde se menciona un rubro temático, sólo
+        se da clic sobre un rubro y la plataforma lo redirige al párrafo que lo contiene el cual
+        resaltará en un rectángulo de color azul; también se podrán consultar documentos
+        relacionados tanto del Poder Judicial de la Federación como de órganos
+        internacionales.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_29p.png"
+            alt="Consulta de Líneas Jurisprudenciales">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'línea-jurisprudencial-sentencia'">
+      <h4>Líneas Jurisprudenciales de Sentencias</h4>
+      <p>
+        En las Sentencias es posible consultar las que se encuentran vinculadas a líneas
+        jurisprudenciales estudiadas por el Centro de Estudios Constitucionales (CEC), las
+        cuales se identificarán con el ícono "LJ" que se encuentra al lado derecho del tipo
+        de asunto y el número de expediente, sólo basta con elegir una línea jurisprudencial
+        dentro del filtrado para que la plataforma muestre los resultados disponibles.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_30p.png" alt="Líneas Jurisprudenciales ">
+        </div>
+      </div>
+      <p>
+        Si la Sentencia es parte de una línea jurisprudencial, se puede consultar la reseña
+        y el cuaderno de jurisprudencia integrado por el CEC en formato PDF en la pestaña
+        "Líneas Jurisprudenciales" que aparece en la parte superior de la página de detalle
+        del documento. También encontrará otras Sentencias relacionadas con la línea
+        jurisprudencial consultada.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_31p.png"
+            alt="Consulta de Líneas Jurisprudenciales">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'protocolos-actuación'">
+      <h4>Protocolos de Actuación</h4>
+      <p>
+        Tienen la finalidad de orientar a quienes imparten la justicia sobre las
+        particularidades, principios y estándares que se deben observar cuando se
+        resuelven casos en los que se ven involucradas personas de determinados
+        colectivos sociales.
+      </p>
+      <p>
+        Para consultar las Sentencias que tienen vinculatoriedad con un protocolo, se da
+        clic en el subfiltro "protocolos de actuación" que aparece en los criterios de
+        búsqueda de la fuente de información; una vez realizada la acción, se mostrarán
+        documentos que poseen el logo de la Dirección General de Derechos Humanos de
+        la SCJN a un lado del tipo de asunto y número de expediente.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_32p.png" alt="Líneas Jurisprudenciales ">
+        </div>
+      </div>
+      <p>
+        Al abrir una Sentencia, se visualiza en la parte superior del texto la pestaña
+        "protocolos de actuación" en la cual podrá visualizar el conjunto de reglas del
+        protocolo; también puede consultar la reseña y el documento completo en formato
+        PDF.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_33p.png"
+            alt="Consulta de Líneas Jurisprudenciales">
+        </div>
+      </div>
+      <p>
+        Asimismo, se pueden consultar y descargar los protocolos en formato PDF,
+        simplemente se dirige a la página de resultados y da clic en el filtro "protocolos de
+        actuación", el cual mostrará imágenes previas de las portadas de los documentos
+        junto con la temática correspondiente.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_34p.png"
+            alt="Consulta de Líneas Jurisprudenciales">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'tesis'">
+      <h3 class="tab-manual__content--bl-subtitle">Tesis</h3>
+      <p>
+        Es posible consultar los pronunciamientos aplicables y vigentes publicados por la
+        Suprema Corte de Justicia de la Nación, los Plenos de Circuito y los Tribunales
+        Colegiados de Circuito, simplemente con dar clic en Tesis.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_35p.png" alt="Tesis">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Tipo</li>
+        <li> Formas de integración</li>
+        <li> Época</li>
+        <li> Materia</li>
+        <li> Fuente</li>
+        <li> Instancia</li>
+        <li> Órgano Jurisdiccional</li>
+        <li> Año</li>
+        <li> Línea Jurisprudencial</li>
+      </ul>
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        publicación", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_36p.png" alt="Consulta tesis">
+        </div>
+      </div>
+
+      <p>
+        Al abrir una Tesis, se visualiza en la parte superior del texto una pestaña que permite
+        visualizar documentos sugeridos, la cual muestra aquellos documentos que se
+        encuentran relacionados con el contenido de la Tesis, esto como resultado de la
+        analítica de texto implementada en la plataforma.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_37p.png" alt="Contenido tesis">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'línea-jurisprudencial-tesis'">
+      <h4>Líneas Jurisprudenciales de Tesis</h4>
+      <p>
+        En las Tesis es posible consultar las que se encuentran vinculadas a líneas
+        jurisprudenciales estudiadas por el Centro de Estudios Constitucionales (CEC), las
+        cuales se identificarán por el ícono "LJ" que se encuentra al lado derecho del registro
+        digital, sólo basta con elegir una línea jurisprudencial dentro del filtrado para que la
+        plataforma muestre los resultados disponibles.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_38p.png" alt="Líneas Jurisprudenciales ">
+        </div>
+      </div>
+      <p>
+        Si la Tesis es parte de un cuaderno de jurisprudencia, se puede consultar la reseña
+        y el cuaderno integrado por el CEC en formato PDF en la pestaña "Líneas
+        Jurisprudenciales" que aparece en la parte superior de la vista del documento.
+        También encontrará otras Tesis relacionadas con la línea jurisprudencial consultada.
+      </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_39p.png"
+            alt="Consulta de Líneas Jurisprudenciales">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'votos'">
+      <h3 class="tab-manual__content--bl-subtitle">Votos</h3>
+      <p>Es posible consultar las posturas singulares o conjuntas de Ministras y Ministros,
+        así como de Magistradas y Magistrados respecto a las consideraciones o sentidos
+        en que se resuelve un asunto, simplemente con dar clic en Votos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_40p.png" alt="Votos">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:
+      </p>
+      <ul class="ml-5">
+        <li>Instancia</li>
+        <li>Órgano Jurisdiccional</li>
+        <li>Época</li>
+      </ul>
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        publicación", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_41p.png" alt="Consulta votos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'acuerdos-generales-y-otros-documentos-publicados'">
+      <h3 class="tab-manual__content--bl-subtitle">Acuerdos generales y otros documentos publicados</h3>
+      <p>Es posible consultar acuerdos generales y demás instrumentos normativos e
+        informativos jurídico-administrativos emitidos por la Presidencia de la Suprema
+        Corte de Justicia de la Nación, Plenos y/o Salas, Comisiones o Comités de la SCJN
+        de manera conjunta con el Consejo de la Judicatura Federal y/o el Tribunal Electoral
+        del Poder Judicial de la Federación, a través de los cuales establecen regulaciones o información de
+        importancia para el Poder Judicial de la Federación en diversos
+        segmentos, simplemente con dar clic en Acuerdos generales y otros documentos
+        publicados.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_42p.png"
+            alt="Acuerdos generales y otros documentos publicados">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Instancia</li>
+        <li> Época</li>
+        <li> Fuente</li>
+      </ul>
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        publicación", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_43p.png"
+            alt="Consulta acuerdos generales y otros documentos publicados">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'ordenamientos'">
+      <h3 class="tab-manual__content--bl-subtitle">Ordenamientos</h3>
+      <p>Las normas que rigen la organización legal de un determinado lugar y época pueden
+        ser consultadas simplemente con dar clic en Ordenamientos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_44p.png" alt="Ordenamientos">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Ámbito</li>
+        <li> Categoría</li>
+        <li> Vigencia</li>
+        <li> Entidad federativa</li>
+        <li> Municipio</li>
+      </ul>
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        actualización", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_45p.png" alt="Consulta ordenamientos">
+        </div>
+      </div>
+      <p>
+        Al abrir un documento encontrará el conjunto de reformas con su respectiva barra
+        de visualización y descarga, las cuales pueden contener las siguientes opciones:
+      </p>
+      <ul class="ml-5">
+        <li> Ver extracto de reforma</li>
+        <li> Ver artículos</li>
+        <li> Ver procesos legislativos: cada proceso tiene un ícono para consultar y
+          descargar en PDF</li>
+        <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+          <div class="col-12">
+            <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_47p.png" alt="Contenido ordenamiento">
+          </div>
+        </div>
+        <li> Descargar reforma en PDF</li>
+        <li> Descargar reforma en Word</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_46p.png" alt="Contenido ordenamiento">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'acervo-bibliotecario'">
+      <h3 class="tab-manual__content--bl-subtitle">Acervo Bibliotecario</h3>
+      <p>Es posible consultar la colección bibliohemerográfica de la SCJN, compuesta por
+        libros, revistas, periódicos y demás material digital, simplemente con dar clic en
+        Acervo bibliotecario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_48p.png" alt="Acervo bibliotecario">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Colección</li>
+        <li> Año</li>
+        <li> Contenido del enlace </li>
+      </ul>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_49p.png"
+            alt="Consulta acervo bibliotecario">
+        </div>
+      </div>
+
+      <p>Los resultados contienen una lista de temas, se puede consultar más material del
+        acervo bibliotecario al dar clic sobre uno de ellos. También se visualiza el resumen
+        de algunos resultados, éste aparecerá con un botón de "ver más", el cual desglosará
+        toda la sinopsis del contenido bibliográfico.</p>
+
+      <p>Asimismo, existen resultados que poseen enlaces para ver, escuchar o descargar
+        el archivo, para identificarlos se requiere seleccionar algún criterio en el subfiltro
+        "contenido del enlace".</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_50p.png"
+            alt="Consulta acervo bibliotecario">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'versiones-taquigráficas'">
+      <h3 class="tab-manual__content--bl-subtitle">Versiones Taquigráficas</h3>
+      <p>Es posible consultar las transcripciones taquigráficas de las sesiones públicas
+        ordinarias del Pleno y Salas de la SCJN, simplemente con dar clic en Versiones
+        taquigráficas.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_51p.png" alt="Versiones taquigráficas">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Año</li>
+        <li> Instancia</li>
+      </ul>
+
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        sesión", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_52p.png"
+            alt="Consulta versiones taquigráficas">
+        </div>
+      </div>
+
+      <p>Al abrir una versión taquigráfica se visualiza el texto de la versión como el video
+        correspondiente de la sesión si se trata del Pleno; además algunas versiones tienen
+        la pestaña de ficha técnica.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_53p.png"
+            alt="Contenido versiones taquigráficas">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'casas-cultura-jurídica'">
+      <h3 class="tab-manual__content--bl-subtitle">Casas de la Cultura Jurídica</h3>
+      <p>Es posible consultar sesiones de diversos cursos que se han impartido,
+        simplemente con dar clic en Casas de la Cultura Jurídica.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_54p.png" alt="Versiones taquigráficas">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Curso</li>
+        <li> Tipo de curso</li>
+        <li> Módulo</li>
+        <li> Sesión</li>
+        <li> Disertante</li>
+      </ul>
+
+      <p>Además, existe la posibilidad de filtrar por periodo personalizado; en la parte inferior
+        de la sección de criterios de búsqueda se visualiza el filtro de "periodo de fecha de
+        sesión", al dar clic en el ícono se muestra un calendario en el cual se puede
+        seleccionar un rango de fecha.</p>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_55p.png"
+            alt="Consulta versiones taquigráficas">
+        </div>
+      </div>
+
+      <p>Al abrir un resultado encontrará la lista del contenido de la sesión del curso; al
+        seleccionar un tema, la plataforma reproduce el video desde donde están
+        abordando la temática seleccionada. También se muestra el video correspondiente
+        de la sesión; la pestaña de material de apoyo con enlaces a casos, obras y demás
+        referencias, y la pestaña de ficha técnica.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_56p.png"
+            alt="Contenido versiones taquigráficas">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'acervo-de-información-en-materia-de-derechos-humanos'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Acervo en Materia de Derechos Humanos</h2>
+      <p>Es posible consultar sobre el conjunto de prerrogativas sustentadas en la dignidad
+        humana, cuya realización efectiva resulta indispensable para el desarrollo integral
+        de la persona, es decir, sobre derechos inherentes, interrelacionados,
+        interdependientes e indivisibles que cualquier ser humano posee, sin distinción por
+        su sexo, edad, lengua, etnia, religión, nacionalidad, lugar de residencia, o cualquier
+        otra condición, simplemente con dar clic en Sistema de Naciones Unidas (ONU),
+        Corte Interamericana de Derechos Humanos (CoIDH), Comisión Interamericana de
+        Derechos Humanos (CIDH), Corte Europea de Derechos Humanos o Corte
+        Internacional de Justicia.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_57p.png"
+            alt="Acervo de información en mateira de derechos humanos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'sistema-de-naciones-unidas'">
+      <h3 class="tab-manual__content--bl-subtitle">Sistema de Naciones Unidas</h3>
+      <p>Para realizar búsquedas especializadas de información emitida por las diferentes
+        organizaciones internacionales que protegen los derechos humanos, se da clic en
+        el Sistema de Naciones Unidas.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_58p.png"
+            alt="Sistema de naciones unidas">
+        </div>
+      </div>
+      <p>Se abrirá una plataforma en la que es posible navegar y consultar los documentos
+        de los Comités de Naciones Unidas desde la barra de búsqueda o a través de los
+        apartados Procedimientos especiales, Casos y Opiniones, Tratados Internacionales
+        de Derechos Humanos y Comités.</p>
+
+      <p>El buscador especializado del Sistema de Naciones Unidas le permite regresar al
+        Buscador Jurídico, simplemente con dar clic en el logo que aparece en la parte
+        inferior del sitio web.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_59p.png"
+            alt="Consulta de sistemas de naciones unidas">
+        </div>
+      </div>
+
+      <p>Al realizar una consulta, la plataforma acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario y se podrá acotar aún más debido a la taxonomía de derechos humanos
+        que aparece del lado izquierdo.</p>
+
+      <p>En la página de resultados se encuentran varias herramientas que facilitan la
+        consulta de información:</p>
+      <ul class="ml-5">
+        <li> Mostrar párrafo</li>
+        <li> Ver documento completo</li>
+        <li> Agregar párrafo a la bandeja</li>
+        <li> Ver párrafo completo</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_60p.png"
+            alt="Contenido trataods internacionales de derechos humanos">
+        </div>
+      </div>
+
+      <p>También puede visualizar los nombres de documentos del Sistema de Naciones
+        Unidas en el BJ, colocando la fuente de información ONU en el recuadro "Buscar
+        en" o seleccionando el filtro ONU en la página de resultados; al dar clic sobre un
+        documento, la plataforma lo redirige al buscador especializado del Sistema de
+        Naciones Unidas.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_61p.png"
+            alt="Contenido trataods internacionales de derechos humanos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'corte-interamericana-de-derechos-humanos'">
+      <h3 class="tab-manual__content--bl-subtitle">Corte Interamericana de Derechos Humanos</h3>
+      <p>Para realizar búsquedas especializadas de información emitidas por uno de los tres
+        tribunales regionales de protección de los derechos humanos, se da clic en la Corte
+        Interamericana de Derechos Humanos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_62p.png"
+            alt="Corte interamericana de derechos humanos">
+        </div>
+      </div>
+      <p>Se abrirá una plataforma en la que es posible navegar y consultar los documentos
+        de la CoIDH desde la barra de búsqueda o a través de los apartados Temas
+        relevantes, Artículos de la Convención Americana sobre Derechos Humanos, Casos
+        contenciosos, Países y Opiniones consultivas.</p>
+
+      <p>La plataforma de la Corte Interamericana de Derechos Humanos le permite regresar
+        al Buscador Jurídico, simplemente con dar clic en el logo que aparece en la parte
+        inferior del sitio web.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_63p.png"
+            alt="Consulta corte interamericana de derechos humanos">
+        </div>
+      </div>
+
+      <p>Al realizar una consulta, la plataforma acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario y se podrá acotar aún más debido a la taxonomía de derechos humanos
+        que aparece del lado izquierdo.</p>
+
+      <p>En la página de resultados se encuentran varias herramientas que facilitan la
+        consulta de información:</p>
+      <ul class="ml-5">
+        <li> Ver documento</li>
+        <li> Mostrar párrafo</li>
+        <li> Ficha técnica</li>
+        <li> Agregar párrafo a la bandeja</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_64p.png"
+            alt="Contenido trataods internacionales de derechos humanos">
+        </div>
+      </div>
+
+      <p>También puede visualizar los nombres de documentos de la Corte Interamericana
+        de Derechos Humanos en el BJ, colocando la fuente de información CoIDH en el
+        recuadro "Buscar en" o seleccionando el filtro CoIDH en la página de resultados; al
+        dar clic en el documento de su interés, la plataforma lo redirige al buscador
+        especializado de la Corte Interamericana de Derechos Humanos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_65p.png"
+            alt="Contenido trataods internacionales de derechos humanos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'comisión-interamericana-de-derechos-humanos'">
+      <h3 class="tab-manual__content--bl-subtitle">Comisión Interamericana de Derechos Humanos (CIDH)</h3>
+      <p>Para acceder a los documentos del órgano principal y autónomo de la Organización
+        de los Estados Americanos (OEA) encargado de la promoción y protección de los
+        derechos humanos en el continente americano, se da clic en la Comisión
+        Interamericana de Derechos Humanos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_66p.png"
+            alt="Comisión interamericana de derechos humanos (CIDH)">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>País</li>
+        <li>Tipo</li>
+        <li>Año </li>
+      </ul>
+
+      <p>Al aplicar alguno de estos filtros de consulta, el sistema acotará el total de
+        resultados, mostrando únicamente aquellos que cuenten con los criterios de
+        búsqueda indicados por el usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_67p.png"
+            alt="Conteido comisión interamericana de derechos humanos">
+        </div>
+      </div>
+      <p>Al dar clic sobre un resultado, el documento se descarga en formato Word.</p>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'corte-europea-de-derechos-humanos'">
+      <h3 class="tab-manual__content--bl-subtitle">Corte Europea de Derechos Humanos</h3>
+      <p>Para acceder a los documentos del tribunal que supervisa que se cumplan con los
+        tratados europeos sobre derechos humanos y sus protocolos adicionales, se da clic
+        en la Corte Europea de Derechos Humanos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_68p.png"
+            alt="Corte Europea de derechos humanos">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>Branch</li>
+      </ul>
+
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_69p.png"
+            alt="Contenido corte Europea de derechos humanos">
+        </div>
+      </div>
+
+      <p>Al ingresar al contenido de la Corte Europea de Derechos Humanos, se visualiza el
+        documento seleccionado y la pestaña de "documentos sugeridos" que muestra
+        aquellos documentos que se encuentran relacionados con el contenido.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_70p.png"
+            alt="Documentos relacionados corte europea de derechos humanos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'corte-internacional-de-justicia'">
+      <h3 class="tab-manual__content--bl-subtitle">Corte Internacional de Justicia</h3>
+      <p>Para acceder a los documentos del principal órgano judicial de la Organización de
+        Naciones Unidas, se da clic en la Corte Internacional de Justicia.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_71p.png"
+            alt="Corte Internacional de justicia">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>Año </li>
+      </ul>
+
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_72p.png"
+            alt="Contenido corte internacional de justicia">
+        </div>
+      </div>
+
+      <p>Al ingresar al contenido de la Corte Internacional de Justicia, se visualiza el
+        documento en su versión impresa digitalizada.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_73p.png"
+            alt="Contenido corte internacional de justicia">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'tribunales-y-cortes-institucionales'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Tribunales y Cortes Internacionales</h2>
+      <p>La importancia de integrar documentos de carácter internacional se fundamenta en
+        la necesidad de que el Buscador Jurídico se convierta en un ejemplo a nivel mundial;
+        por ello se integró contenido jurídico y jurisdiccional del Tribunal Constitucional de
+        España, Corte Constitucional de la República de Colombia, Tribunal Constitucional
+        de Chile y Corte Suprema de Justicia de la Nación de Argentina, con miras de incluir
+        información de más Tribunales y Cortes Internacionales.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_74p.png"
+            alt="Tribunales y cortes constitucionales">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'tribunal-constitucional-de-españa'">
+      <h3 class="tab-manual__content--bl-subtitle">Tribunal Constitucional de España</h3>
+      <p>Para acceder a los documentos del órgano jurisdiccional que tiene como función
+        principal el ejercer el control de constitucionalidad de las leyes en España, se da clic
+        en el Tribunal Constitucional de España.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_75p.png"
+            alt="Tribunal constitucional de españa">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>Competencia</li>
+      </ul>
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_76p.png"
+            alt="Contenido tribunal constitucional de españa">
+        </div>
+      </div>
+      <p>Al ingresar al contenido del Tribunal Constitucional de España, se
+        visualizan tres pestañas:</p>
+      <ul class="ml-5">
+        <li>Ficha técnica. Se muestran los datos principales del documento como el
+          órgano, magistrados, tipo y número de registro, síntesis y resumen.
+        </li>
+        <li> Índices. Se muestra una lista de indicadores que al darles clic desglosan
+          resultados con el mismo índice.
+        </li>
+        <li> Descriptores. Se muestra una lista de conceptos que permiten ver más
+          resultados con el mismo descriptor.
+        </li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_77p.png"
+            alt="Contenido tribunal constitucional de españa">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'corte-constitucional-de-la-república-de-colombia'">
+      <h3 class="tab-manual__content--bl-subtitle">Corte Constitucional de la Républica de Colombia</h3>
+      <p>Para acceder a los documentos de la institución de la rama judicial del poder público
+        que tiene como fin salvaguardar la integridad y supremacía de la constitución en
+        Colombia, se da clic en la Corte Constitucional de la República de Colombia.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_78p.png"
+            alt="Corte contitucional de la républica de colombia">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>Proceso</li>
+      </ul>
+
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_79p.png"
+            alt="Contenido contitucional de la républica de colombia">
+        </div>
+      </div>
+
+      <p>Al dar clic en algún documento, se abre el archivo en el sitio web de la Corte
+        Constitucional de la República de Colombia.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_80p.png"
+            alt="Contenido contitucional de la républica de colombia">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'tribunal-constitucional-de-chile'">
+      <h3 class="tab-manual__content--bl-subtitle">Tribunal Constitucional de Chile</h3>
+      <p>Para acceder a los documentos del órgano jurisdiccional que tiene como función
+        principal el ejercer el control de constitucionalidad de las leyes en Chile, se da clic
+        en el Tribunal Constitucional de Chile.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_81p.png"
+            alt="Tribunal constitucional de chile">
+        </div>
+      </div>
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li> Año</li>
+        <li> Sala </li>
+      </ul>
+
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_82p.png"
+            alt="Consulta tribunal constitucional de chile">
+        </div>
+      </div>
+
+      <p>Al ingresar al contenido del Tribunal Constitucional de Chile, se visualiza el
+        documento en su versión impresa digitalizada.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_83p.png"
+            alt="Contenido tribunal constitucional de chile">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'corte-suprema-de-justicia-de-la-nación-de-argentina'">
+      <h3 class="tab-manual__content--bl-subtitle">Corte Suprema de Justicia de la Nacion de Argentina</h3>
+      <p>Para acceder a los documentos del máximo tribunal judicial de Argentina, se da clic
+        en la Corte Suprema de Justicia de la Nación de Argentina.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_84p.png"
+            alt="Corte suprema de justicia de la nación de argentina">
+        </div>
+      </div>
+
+      <p>En esta fuente de información se cuentan con diversos criterios que permiten
+        realizar búsquedas específicas:</p>
+      <ul class="ml-5">
+        <li>Año</li>
+      </ul>
+
+      <p>Al aplicar este filtro de consulta, el sistema acotará el total de resultados, mostrando
+        únicamente aquellos que cuenten con los criterios de búsqueda indicados por el
+        usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_85p.png"
+            alt="Contenido corte suprema de justicia de la nación de argentina">
+        </div>
+      </div>
+
+      <p>Al ingresar al contenido de la Corte Suprema de Justicia de la Nación de Argentina,
+        se visualiza el documento en su versión impresa digitalizada.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_85p.png"
+            alt="Contenido corte suprema de justicia de la nación de argentina">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'accesibilidad-web'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Accesibilidad Web</h2>
+      <p>El diseño de una plataforma web condiciona en gran medida cómo navegan e
+        interactúan los usuarios; por esa razón, resulta fundamental realizar una original
+        atractiva, funcional e intuitiva propuesta técnica y visual.</p>
+
+      <p>Se entiende por accesibilidad web a la utilidad con la que un mayor número de
+        usuarios hacen de una plataforma, independientemente de sus conocimientos,
+        capacidades físicas y de las características técnicas de sus dispositivos, es decir,
+        toda persona debe lograr percibir, entender, navegar e interactuar dentro de un sitio
+        web sin importar sus capacidades físicas, intelectuales y técnicas.</p>
+
+      <p>El Buscador Jurídico tiene como objetivo ser una web accesible, de tal forma que
+        para transmitir la información jurídica y disminuir las barreras de comunicación e
+        interacción con las cuales muchas personas se enfrentan, ha sido desarrollado y
+        diseñado conforme a las recomendaciones y estándares del W3C; por ello se ha
+        integrado una herramienta de accesibilidad para agregar opciones de configuración
+        de pantalla y lectura de voz, con el objetivo de eliminar aquellas barreras que
+        impiden a las personas acceder al universo de información que se publica en el BJ.</p>
+
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_88p_Accesibilidad_TamanoLetra.png"
+            alt="Accesibilidad Web">
+        </div>
+      </div>
+      <p>
+        Para conocer mas de las implementaciones que el BJ tiene en materia de accesibilidad, consulte la
+        sección de accesibilidad web, dentro del módulo de guía de usuario.
+      </p>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'tesauro'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Tesauro</h2>
+      <p>En la página principal se visualiza el ícono para acceder a la plataforma Tesauro, el
+        vocabulario controlado de términos para el análisis temático de la Suprema Corte
+        de Justicia de la Nación, con la finalidad de coadyuvar a quienes trabajan en la labor
+        jurisdiccional y de investigación, así como a todos los interesados en conocer un
+        lenguaje jurídico de referencia.</p>
+
+      <p>El Tesauro es un vocabulario estructurado y dinámico en el cual los conceptos están
+        representados por términos organizados del tal modo que las relaciones entre ellos
+        son explicitadas y los términos preferentes están acompañados por sus sinónimos
+        o cuasi-sinónimos. Se trata de un instrumento de normalización y control de
+        vocabulario cuyo objetivo reside en eliminar la ambigüedad del lenguaje,
+        convirtiendo el lenguaje natural de los documentos en un lenguaje controlado.</p>
+
+      <p>Para acceder es necesario dar clic sobre el ícono “Tesauro” que se encuentra en la
+        página de inicio del Buscador Jurídico.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_97p.png" alt="Tesauro">
+        </div>
+      </div>
+
+      <p>En la plataforma del Tesauro se muestran una serie de opciones.</p>
+      <ul class="ml-5">
+        <li>Botón de “home” para regresar a la página de inicio</li>
+        <li>Barra de búsqueda</li>
+        <li>Búsqueda avanzada</li>
+        <li>Grafo semántico</li>
+        <li>Acerca del vocabulario</li>
+        <li>Botón de “ayuda” para acceder a la guía de usuario</li>
+        <li>Navegación alfabética</li>
+        <li>Navegación sistemática</li>
+      </ul>
+
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_98p.png" alt="Contenido tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'busqueda-terminos'">
+      <h3 class="tab-manual__content--bl-subtitle">Búsqueda de Términos</h3>
+      <p>Para consultar el universo de información del Tesauro existen las opciones de
+        navegación alfabética, simplemente se selecciona una letra para que el sistema
+        muestre todos los términos que inicien con la misma, y la navegación sistemática a
+        través de las materias propuestas por la Suprema Corte de Justicia de la Nación.</p>
+
+      <p>Otra opción de búsqueda de términos es la de ingresar las palabras o conceptos
+        que se desean consultar para que la plataforma realice búsquedas en las que
+        proponga mediante el autocompletado un listado de términos que contienen la
+        expresión insertada.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_99p.png" alt="Tesauro">
+        </div>
+      </div>
+
+      <p>Al escribir un término y dar clic sobre el botón “Buscar”, se abre una página donde
+        aparecen tres pestañas.</p>
+      <ul class="ml-5">
+        <li>Resultados terminológicos generales</li>
+        <li>Términos con una relación jerárquica (resultados complementarios)</li>
+        <li>Términos con una relación asociativa (resultados relacionados)</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_100p.png" alt="Tesauro">
+        </div>
+      </div>
+
+      <p>Si por alguna razón en la barra de búsqueda se teclea algún error ortográfico, la
+        herramienta sugiere términos.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_101p.png" alt="Contenido tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'busqueda-tavanzada'">
+      <h3 class="tab-manual__content--bl-subtitle">Búsqueda Avanzada</h3>
+      <p>Al seleccionar la búsqueda avanzada (Figura 101) se muestra el campo “¿Qué
+        buscar?”, en el cual se pueden elegir las opciones de término, meta-término, término
+        no preferido (UP), notas o definiciones, término externo, es decir, los que se han
+        vinculado con otros vocabularios, y el campo para agregar palabras, así como el
+        recuadro para activar “frase exacta”.</p>
+
+      <p>Asimismo, existen otras opciones de búsqueda avanzada, las cuales se visualizan
+        al dar clic en el botón de “opciones”, en él se desglosan los campos “tiene este
+        término tope”,” tipo de nota (alcance, histórica, bibliográfica y de catalogación)”,
+        “creado en o después de” y “ubicado en profundidad”.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_102p.png" alt="Tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'termino'">
+      <h3 class="tab-manual__content--bl-subtitle">Término</h3>
+      <p>Al dar clic sobre uno de los términos del Tesauro, se abre una página con la
+        siguiente información del término seleccionado.</p>
+
+      <ul class="ml-5">
+        <li>Término</li>
+        <li>Ruta de ubicación</li>
+        <li>Menú del término</li>
+        <li>Notas o definiciones</li>
+        <li>Términos no preferidos (UP/USE)</li>
+        <li>Términos genéricos (TG)</li>
+        <li>Términos específicos (TE)</li>
+        <li>Términos relacionados (TR)</li>
+        <li>Equivalencias terminológicas (EQ)</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_103p.png" alt="Tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'metadatos'">
+      <h3 class="tab-manual__content--bl-subtitle">Metadatos</h3>
+      <p>Para obtener más información sobre un término, se da clic en la pestaña de
+        metadatos, en la cual se visualizan los datos: fecha de creación, fecha en la que se
+        cambio de término candidato a término aceptado, número de términos
+        descendentes, específicos, alternativos, relacionados, cantidad de notas, botones
+        para exportar el término y sus relaciones terminológicas en diversos formatos
+        internacionales, y vínculos al Buscador Jurídico (sentencias, tesis, acervo
+        bibliotecario), Wikipedia y Google (scholar, images, books), con el objetivo de
+        consultar información relacionada con el término.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_104p.png" alt="Tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'grafo-semantico'">
+      <h3 class="tab-manual__content--bl-subtitle">Grafo Semántico</h3>
+      <p>Con la finalidad de identificar las relaciones terminológicas se implementó un grafo
+        semántico, es decir, una red de conocimiento en la que es posible buscar un término
+        para que se desglosen sus términos específicos (términos hijos o subordinados),
+        términos genéricos (término padre), términos adyacentes (aquellos que se
+        encuentran en un mismo nivel de jerarquía, es decir, los términos específicos de su
+        término genérico) y términos relacionados.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_105p.png" alt="Tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'acerca-de-vocabulario'">
+      <h3 class="tab-manual__content--bl-subtitle">Acerca del Vocabulario</h3>
+      <p>En la barra de navegación se da clic en la opción de “Acerca" para conocer más
+        información del vocabulario controlado de la Suprema Corte de Justicia de la
+        Nación, en la cual se visualizan los siguientes datos.</p>
+      <ul class="ml-5">
+        <li>Título del vocabulario</li>
+        <li>URI</li>
+        <li>Idioma origen del vocabulario</li>
+        <li>Fecha de creación</li>
+        <li>Fecha de última modificación</li>
+        <li>Palabras clave con las que se puede encontrar con mayor facilidad el
+          vocabulario en la Internet</li>
+        <li>Cobertura, es decir, el alcance espacial o temporal que comprende una
+          amplia variedad de términos relacionados con la actividad desarrollada por
+          la SCJN</li>
+        <li>Número total de términos generales, equivalentes, relaciones jerárquicas y
+          asociativas</li>
+        <li>Número total de notas de alcance, bibliográficas y privadas</li>
+        <li>Número total de definiciones</li>
+        <li>API</li>
+        <li>Institución que generó el vocabulario</li>
+      </ul>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_106p.png" alt="Tesauro">
+        </div>
+      </div>
+
+      <p>Asimismo, se visualizan gráficas de los términos según su nivel de profundidad,
+        términos preferidos contra términos alternativos, relaciones jerárquicas contra
+        relaciones asociativas, así como una nube de palabras de los términos centrales
+        que se muestran a partir de su importancia o recurrencia en la plataforma.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_107p.png" alt="Tesauro">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'datos-abiertos'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Datos Abiertos</h2>
+      <p>Los datos abiertos son aquellos que pueden ser utilizados y compartidos por
+        cualquier persona de una forma gratuita, usualmente a través de Internet. Desde las
+        políticas públicas, la mayoría del tiempo se refieren a datos que los gobiernos ponen
+        a disposición de la sociedad para que ésta los analice.</p>
+
+      <p>En la página de inicio del Buscador Jurídico se encuentra el ícono que permite el
+        acceso a la Plataforma de Datos Abiertos, un sistema que promueve el libre uso,
+        reúso y redistribución de los conjuntos de datos de carácter público, generados por
+        la Suprema Corte de Justica de la Nación para facilitar la divulgación de la Justicia
+        abierta a operadores jurídicos, justiciables y órganos interesados, así como a la
+        ciudadanía en general. </p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_108p.png" alt="Datos abiertos">
+        </div>
+      </div>
+
+      <p>En la sección de Información se muestra la descripción de la entidad de información,
+        con base en los acuerdos que estén dispuestos en la actualidad, también la
+        definición de los datos o campos que integran cada uno de estos documentos, así
+        como el total de documentos disponibles para su consulta.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_109p.png"
+            alt="Plataforma de datos abiertos">
+        </div>
+      </div>
+
+      <p>En la sección de Gráficas y estadísticas es posible visualizar los datos abiertos
+        representados estadísticamente mediante distintos tipos de gráficas y tablas que
+        facilitan al usuario la interpretación de la información. Cada una de las gráficas se
+        pueden descargar en distintos formatos según las preferencias del usuario.</p>
+      <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+        <div class="col-12">
+          <img class="w-100" src="./assets/pub/img/img-manual/UGACJ_Imagen_MBJ_110p.png" alt="Gráfica Datos abiertos">
+        </div>
+      </div>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'recomendación'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Recomendación</h2>
+      <p>Para el mejor aprovechamiento del Buscador Jurídico, y en virtud de su permanente
+        evolución, se recomienda hacer un análisis exploratorio para identificar más
+        características innovadoras, técnicas y de diseño, así como de integración de otros
+        universos de información.</p>
+
+      <p>El uso y la navegación constante en el Buscador Jurídico le permitirá adquirir mayor
+        agilidad al momento de realizar búsquedas.</p>
+    </div>
+    <div class="tab-manual__content--bl" [attr.id]="'material'">
+      <h2 class="tab-manual__content--bl-title skin-color-text">Material para presentación</h2>
+      <div class="tab-manual__content--bl" [attr.id]="'generales'">
+        <h4>Generales</h4>
+        <p>Ejemplos de búsqueda haciendo uso de la sintaxis empleada en el BJ</p>
+        <div class="p-2" (click)="copyText($event.target)">
+          <h5>Búsqueda por palabras clave</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="libre desarrollo personalidad"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>libre desarrollo personalidad</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="guarda custodia"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>guarda custodia</div>
+            </div>
+          </div>
+          <h5>Búsqueda por frase exacta</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'patria potestad'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"patria potestad"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'matrimonio de menores'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"matrimonio de menores"</div>
+            </div>
+          </div>
+          <h5>Búsqueda con frase exacta para Corte Europea</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'interés superior'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"interés superior"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico AND</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="'interés superior de la niñez' AND 'desarrollo personal'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"interés superior de la niñez" AND "desarrollo personal"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="'doble nacionalidad' AND (privilegios)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"doble nacionalidad" AND (privilegios)</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico OR</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="estupro OR 'abuso sexual a menores'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>estupro OR "abuso sexual a menores"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico NOT y - </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="'doble nacionalidad' NOT (internacional)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"doble nacionalidad" NOT (internacional)</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'doble nacionalidad' -internacional"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"doble nacionalidad" -internacional</div>
+            </div>
+          </div>
+          <h5>Búsqueda combinando Operadores y Sintaxis</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="('desaparición forzada' OR secuestro )AND 'delincuencia organizada'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>("desaparición forzada" OR secuestro )AND "delincuencia organizada"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con el uso del caracter @ </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'juicio sucesorio'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Sentencias: @Considerando= "juicio sucesorio"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'juicio sucesorio'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>O en los campos(resultados) "juicio sucesorio"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con asterísco (*)</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="*echo"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>*echo</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="pr*tos"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>pr*tos</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="trabaja*"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>trabaja*</div>
+            </div>
+          </div>
+          <h5>Búsqueda con virgulilla (~) para encontrar palabras similares</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="mubying~"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>mubying~</div>
+            </div>
+          </div>
+          <h5>Búsqueda avanzada</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="reviviscencia"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>reviviscencia</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="sistema normativo"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>sistema normativo</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="emancipación"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>emancipación</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="acceso a la justicia"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>acceso a la justicia</div>
+            </div>
+            <div class="col-12">
+              <strong>&nbsp;&nbsp;&nbsp;--- Búsquedas indicando proximidad entre palabras></strong>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="sucesión intestamentaria alicuota"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"sucesión intestamentaria alicuota"~20</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="interdicción arbitrariedad menor"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"interdicción arbitrariedad menor"~10</div>
+            </div>
+          </div>
+          <h5>Análisis de texto</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="Estudios sobre la relación entre la salud de los niños y la crianza por parejas homoparentales"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Estudios sobre la relación entre la salud de los niños y la crianza por
+                parejas homoparentales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-manual__content--bl" [attr.id]="'agraria'">
+        <h4>Materia Agraria</h4>
+        <p>Ejemplos de búsqueda haciendo uso de la sintaxis empleada en el BJ</p>
+        <div class="p-2" (click)="copyText($event.target)">
+          <h5>Búsqueda por palabras clave</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="subsidio ejidal"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>subsidio ejidal</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="subvención ejidal"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>subvención ejidal</div>
+            </div>
+          </div>
+          <h5>Búsqueda por frase exacta</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'usufructo parcelario'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"usufructo parcelario"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'acción reivindicatoria'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"acción reivindicatoria"</div>
+            </div>
+          </div>
+          <h5>Uso de paréntesis para priorizar sobre una búsqueda"</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="impuesto predial (ejidal)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>impuesto predial (ejidal)</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico AND</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'tierras agrícolas' AND cultivo"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"tierras agrícolas" AND cultivo</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="agostadero AND reproducción"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>agostadero AND reproducción</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico OR</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="tierra (agrícolas OR ganadera OR forestales)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>tierra (agrícolas OR ganadera OR forestales)</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico NOT y - </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'terreno baldío' NOT abandonado"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"terreno baldío" NOT abandonado</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'terreno baldío' -abandonado"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"terreno baldío" -abandonado</div>
+            </div>
+          </div>
+          <h5>Búsqueda combinando Operadores y Sintaxis</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="('tierras para asentamiento humano' OR 'tierras de uso común') AND parcelada"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>("tierras para asentamiento humano" OR "tierras de uso común") AND parcelada
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="enajenación AND prelación  NOT despojo"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>enajenación AND prelación NOT despojo</div>
+            </div>
+          </div>
+          <h5>Búsquedas con el uso del caracter @ </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'Ley Agraria'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Ordenamientos: @Nombre ordenamiento: "Ley Agraria" @Artículo: 44</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'Ley Agraria'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>O en los campos(resultados) "Ley Agraria"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con asterísco (*)</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="eji*"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>eji*</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="traba*"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>traba*</div>
+            </div>
+          </div>
+          <h5>Búsqueda con virgulilla (~) para encontrar palabras similares</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="enajenar~"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>enajenar~</div>
+            </div>
+          </div>
+          <h5>Búsqueda avanzada</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="ejidales"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>ejidales</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="sociedades mercantiles"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>sociedades mercantiles</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="emancipación"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>parcela</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="lindero"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>lindero (como palabra que debe contener)</div>
+            </div>
+            <div class="col-12">
+              <strong>&nbsp;&nbsp;&nbsp;--- Búsquedas indicando proximidad entre palabras></strong>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="población ejidataria sucesión"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"población ejidataria sucesión"~20</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="núcleo población ejido"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"núcleo población ejido"~10</div>
+            </div>
+          </div>
+          <h5>Análisis de texto</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="Posesión de tierras ejidales cuando las partes no tienen un título que ampare sus derechos sobre las tierras"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Posesión de tierras ejidales cuando las partes no tienen un título que ampare
+                sus derechos sobre las tierras</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-manual__content--bl" [attr.id]="'mercantil'">
+        <h4>Competencia económica</h4>
+        <p>Ejemplos de búsqueda haciendo uso de la sintaxis empleada en el BJ</p>
+        <div class="p-2" (click)="copyText($event.target)">
+          <h5>Búsqueda por palabras clave</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="Monopolio"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Monopolio</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="crédito habilitación avío"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>crédito habilitación avío</div>
+            </div>
+          </div>
+          <h5>Búsqueda por frase exacta</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'comercio exterior'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"comercio exterior"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'certificado de origen'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"certificado de origen"</div>
+            </div>
+          </div>
+          <h5>Uso de paréntesis para priorizar sobre una búsqueda"</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="productos mercancía(acopio)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>productos mercancía(acopio)</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico AND</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="franquicia AND 'derecho de propiedad'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>franquicia AND "derecho de propiedad"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="'Prácticas monopólicas absolutas' AND 'Prácticas monopólicas relativas'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"Prácticas monopólicas absolutas" AND "Prácticas monopólicas relativas"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico OR</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'mercado organizado' OR bróker"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"mercado organizado" OR bróker</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="subvención OR subsidio"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>subvención OR subsidio</div>
+            </div>
+          </div>
+          <h5>Búsquedas con operador lógico NOT y - </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'libre competencia' NOT económica"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"libre competencia" NOT económica</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'libre competencia' -económica"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"libre competencia" -económica</div>
+            </div>
+          </div>
+          <h5>Búsqueda combinando Operadores y Sintaxis </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="('Inscripción de licencia de uso' OR franquicia) AND 'registro de marca'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>("Inscripción de licencia de uso" OR franquicia) AND "registro de marca"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="'balanza comercial' OR 'balanza de pagos' AND (mercado)"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>"balanza comercial" OR "balanza de pagos" AND (mercado)</div>
+            </div>
+          </div>
+          <h5>Búsquedas con el uso del caracter @ </h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'actividad comercial'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Sentencias: @Considerando: "actividad comercial"</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="'actividad comercial'"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>O en los campos(resultados) "actividad comercial"</div>
+            </div>
+          </div>
+          <h5>Búsquedas con asterísco (*)</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="monopo*"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>monopo*</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="comer*"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>comer*</div>
+            </div>
+          </div>
+          <h5>Búsqueda con virgulilla (~) para encontrar palabras similares</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="holding~"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i>
+              </div>
+              <div>holding~</div>
+            </div>
+          </div>
+          <h5>Búsqueda avanzada</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="importaciones"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>importaciones</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="investigación antidumping"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>investigación antidumping</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="INCOTERMS"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>INCOTERMS</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="comercio internacional"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>comercio internacional</div>
+            </div>
+            <div class="col-12">
+              <strong>&nbsp;&nbsp;&nbsp;--- Búsquedas indicando proximidad entre palabras></strong>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="certificado embarque importacion"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"certificado embarque importacion" ~20</div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom" data-copy="impuesto ad valorem"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>"impuesto ad valorem" ~10</div>
+            </div>
+          </div>
+          <h5>Análisis de texto</h5>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row align-items-center">
+              <div><i ngbTooltip="Clic para copiar" placement="bottom"
+                  data-copy="Préstamo de servicios de almacenaje y custodia de mercancías de comercio exterior"
+                  class="mr-2 fa fa-copy copy-btn components-bg--a3"></i></div>
+              <div>Préstamo de servicios de almacenaje y custodia de mercancías de comercio exterior</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

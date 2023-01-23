@@ -1,0 +1,70 @@
+$mat-theme-ignore-duplication-warnings: true;
+
+@font-face {
+  font-family: 'Arial';
+  src: url('../fonts/font-family/Arial/ARIAL.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/font-family/Myriad/MYRIADPRO-REGULAR.OTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Geneva';
+  src: url('../fonts/font-family/Geneva/GENEVA.TTF') format('truetype');
+}
+
+@font-face {
+   font-family: 'Lucida Bright';
+   src: url('../fonts/font-family/Lucida/LBRITE.TTF') format('truetype');
+ }
+
+html,
+body {
+  height: auto;
+}
+
+.main,
+.scjn-app {
+  background-color: #f5f5f5;
+  height: auto;
+
+  &.default {
+    @import 'skins/default';
+    @import 'skin';
+  }
+
+  &.yellowblack {
+    @import 'skins/yellowblack';
+    @import 'skin';
+  }
+
+  &.whiteblack {
+    @import 'skins/whiteblack';
+    @import 'skin';
+  }
+
+  &.default-font {
+    font-family: inherit !important;
+  }
+
+  &.arial {
+
+    font-family: 'Arial' !important;
+  }
+
+  &.lucida {
+    font-family: "Lucida Bright" !important;
+  }
+
+  &.myriad {
+    font-family: 'Myriad Pro' !important;
+  }
+
+  &.geneva {
+
+    font-family: 'Geneva' !important;
+  }
+
+}

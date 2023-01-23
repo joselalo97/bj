@@ -1,0 +1,236 @@
+[
+  {
+    "tag": {
+      "title": "Página de inicio",
+      "description": "Se encuentra la barra de navegación, encabezado y filtros de las diversas fuentes de datos de la Suprema Corte de Justicia de la Nación."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_PaginaDeInicio.png",
+    "description": [
+      {
+        "title": "Logo de la SCJN",
+        "description": "Regresa a la página de inicio si se encuentra en cualquier otra página del Buscador Jurídico.",
+        "point": "pt1"
+      },
+      {
+        "title": "Inicio de sesión",
+        "description": "Si se requiere iniciar sesión, dirige a la página de acceso donde solicita el correo electrónico y la contraseña de la Corte. Una vez iniciada la sesión, se puede cerrar dando clic en el mismo botón y seleccionado la opción (Cerrar sesión).",
+        "point": "pt2"
+      },
+      {
+        "title": "Mi biblioteca",
+        "description": "Herramienta de administración del conocimiento que permite analizar a mayor profundidad la información a manera de un portafolio colaborativo. Desglosa un menú con las opciones Mi biblioteca, nombre de las carpetas, si es que ya se tienen creadas, crear carpeta y buscar carpetas.",
+        "point": "pt3"
+      },
+      {
+        "title": "Datos abiertos",
+        "description": "Dirige a la Plataforma de Datos Abiertos, la cual promueve el libre uso, reúso y redistribución de los conjuntos de datos abiertos.",
+        "point": "pt4"
+      },
+      {
+        "title": "Ayuda",
+        "description": "Dirige a la página de guía de usuario, la cual contiene imágenes interactivas de las páginas del Buscador Jurídico.",
+        "point": "pt5"
+      },
+      {
+        "title": "Historial de búsqueda",
+        "description": "Dirige a la página de historial de búsqueda. La plataforma guarda todas las búsquedas que se han realizado, las cuales se pueden consultar y filtrar por fecha.",
+        "point": "pt6"
+      },
+      {
+        "title": "Fuentes de datos",
+        "description": "Se puede seleccionar cualquier fuente de datos internas y externas que dispone la Suprema Corte de Justicia de la Nación con el objetivo de realizar una búsqueda más específica.",
+        "point": "pt7"
+      },
+      {
+        "title": "Barra de búsqueda",
+        "description": "Al dar clic se desglosa una lista de ejemplos de búsqueda, en la cual tiene un enlace llamado (Universos de información) que muestra los elementos de cada fuente de datos de la Suprema Corte de Justicia de la Nación.",
+        "point": "pt8"
+      },
+      {
+        "title": "Análisis de texto",
+        "description": "Abre una ventana en la cual se puede ingresar cualquier texto o archivos con formato .txt con el fin de descubir documentos similares al ingresado.",
+        "point": "pt9"
+      },
+      {
+        "title": "Búsqueda avanzada",
+        "description": "Dirige a la página de búsqueda avanzada. Se puede realizar una búsqueda más específica seleccionado la fuente de datos e ingresando las palabras o frases que se deseen.",
+        "point": "pt10"
+      },
+      {
+        "title": "Sentencias",
+        "description": "Muestra todas las resoluciones que pronuncia la Suprema Corte de Justicia de la Nación para resolver el fondo del litigio, conflicto o controversia.",
+        "point": "pt11"
+      },
+      {
+        "title": "Votos",
+        "description": "Muestra todas las posturas particulares de uno o varios Ministros o Magistrados en relación de un asunto en concreto.",
+        "point": "pt12"
+      },
+      {
+        "title": "Tesis",
+        "description": "Muestra todas las Tesis de Jurisprudencia y Aisladas, expresiones por escrito, en forma abstracta, de un criterio jurídico establecido al resolver un caso concreto.",
+        "point": "pt13"
+      },
+      {
+        "title": "Acuerdos generales",
+        "description": "Muestra todos los Acuerdos Generales emitidos por la Suprema Corte de Justicia de la Nación, Pleno o Salas, Comisiones o Comités, de manera conjunta con el Consejo de la Judicatura Federal y/o el Tribunal Electoral del Poder Judicial de la Federación a través de los cuales establecen regulaciones o información de importancia.",
+        "point": "pt14"
+      },
+      {
+        "title": "Ordenamientos",
+        "description": "Muestra toda la normativa jurídica de la Suprema Corte de Justicia de la Nación.",
+        "point": "pt15"
+      },
+      {
+        "title": "Acervo bibliotecario",
+        "description": "Muestra todos los documentos del acervo bibliotecario de la Suprema Corte de Justicia de la Nación.",
+        "point": "pt16"
+      },
+      {
+        "title": "Bibliotecas internacionales",
+        "description": "Dirige a la página donde se puede consultar documentos de algunas bibliotecas especializadas internacionales.",
+        "point": "pt17"
+      }
+    ]
+  },
+  {
+    "tag": {
+      "title": "Referencias Internacionales",
+      "description": "Se encuentran los filtros de tratados internacionales, órganos internacionales y tribunales y cortes constitucionales."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_ReferenciasInternacionales.png",
+    "description": [
+      {
+        "title": "Sistema Universal de Derechos Humanos",
+        "description": "Dirige al universo de datos de la principal entidad de las Naciones Unidas en derechos humanos, la cual representa el compromiso del mundo para la promoción y protección del conjunto de derechos humanos y libertades.",
+        "point": "pt18"
+      },
+      {
+        "title": "Corte Interamericana de Derechos Humanos",
+        "description": "Dirige al universo de datos de la Institución judicial autónoma, cuyo objetivo es aplicar e interpretar la Convención Americana.",
+        "point": "pt19"
+      },
+      {
+        "title": "Comisión Interamericana de Derechos Humanos",
+        "description": "Dirige al universo de datos del Órgano principal y autónomo de la Organización de los Estados Americanos (OEA), encargado de la promoción y protección de los derechos humanos en el continente americano.",
+        "point": "pt20"
+      },
+      {
+        "title": "Corte Europea de Derechos Humanos",
+        "description": "Dirige al universo de datos del Tribunal internacional que supervisa que los Estados miembros cumplan con los tratados europeos sobre derechos humanos y sus protocolos adicionales.",
+        "point": "pt21"
+      },
+      {
+        "title": "Corte Africana de Derechos Humanos y de los Pueblo",
+        "description": "Dirige al universo de datos del principal Órgano de promoción y protección de los derechos humanos en el continente africano de acuerdo con la Carta Africana de Derechos Humanos y de los Pueblos.",
+        "point": "pt22"
+      },
+      {
+        "title": "Corte Internacional de Justicia",
+        "description": "Dirige al universo de datos del principal Órgano judicial de la Organización de las Naciones Unidas, el cual se encargada de decidir las controversias jurídicas entre Estados.",
+        "point": "pt23"
+      },
+      {
+        "title": "Corte Penal Internacional",
+        "description": "Dirige al universo de datos del Tribunal de justicia para el enjuiciamiento de crímenes graves internacionales, como el genocidio, los crímenes de guerra y los delitos de lesa humanidad.",
+        "point": "pt24"
+      },
+      {
+        "title": "Tribunal Constitucional Español",
+        "description": "Dirige al universo de datos del Órgano constitucional español, intérprete supremo de la Constitución española, el cual se rige de ésta y de la Ley Orgánica del Tribunal Constitucional.",
+        "point": "pt25"
+      },
+      {
+        "title": "Corte Constitucional de la República de Colombia",
+        "description": "Dirige al universo de datos de la Entidad judicial encargada de velar por la integridad y la democracia de la Constitución de Colombia.",
+        "point": "pt26"
+      },
+      {
+        "title": "Suprema Corte de Estados Unidos de América",
+        "description": "Dirige al universo de datos del Alto Tribunal de la Nación para todos los casos y controversias que surjan bajo la Constitución o las leyes de los Estados Unidos.",
+        "point": "pt27"
+      },
+      {
+        "title": "Tribunal Constitucional de Chile",
+        "description": "Dirige al universo de datos del Órgano jurisdiccional del Estado chileno, cuya función principal es ejercer el control de la constitucionalidad de las leyes.",
+        "point": "pt28"
+      },
+      {
+        "title": "Corte Suprema de Justicia de la Nación de Argentina",
+        "description": "Dirige al universo de datos del más Alto Tribunal de la República Argentina, el cual tiene como objetivo asegurar la supremacía de la Constitución, custodiar los derechos y garantías y participar en el gobierno de la República.",
+        "point": "pt29"
+      },
+      {
+        "title": "Suprema Corte de Reino Unido",
+        "description": "Dirige al universo de datos del más Alto Tribunal Civil del Reino Unido y máximo tribunal de apelación y de recursos de la nación, el cual resuelve conflictos entre los poderes del Estado y sobre leyes aprobadas por el Gobierno.",
+        "point": "pt30"
+      },
+      {
+        "title": "Tribunal Constitucional de Alemania",
+        "description": "Dirige al universo de datos del Órgano constitucional encargado del control de constitucionalidad de las leyes en la República Federal de Alemania.",
+        "point": "pt31"
+      },
+      {
+        "title": "Corte Constitucional de Italia",
+        "description": "Dirige al universo de datos del Órgano a cargo del control de constitucionalidad de las leyes en Italia.",
+        "point": "pt32"
+      },
+      {
+        "title": "Tribunal Superior de Australia",
+        "description": "Dirige al universo de datos del Tribunal de más alta jerarquía de Australia, trata casos de competencia original como apelativa y posee la facultad de revisión judicial sobre las leyes aprobadas en el Parlamento de Australia y en los parlamentos de los estados australianos.",
+        "point": "pt33"
+      }
+    ]
+  },
+  {
+    "tag": {
+      "title": "Historial de búsqueda",
+      "description": "Se encuentran todas las búsquedas realizadas desde el primer ingreso a la plataforma como usuario registrado."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_HistorialBusqueda.jpg",
+    "description": [
+      {
+        "title": "Tabla de búsquedas realizadas",
+        "description": "Se visualizan las palabras o frases que se han buscado, tanto por fecha y hora si se le da clic a cualquier elemento de la tabla.",
+        "point": "pt34"
+      },
+      {
+        "title": "Búsqueda por fecha",
+        "description": "Se puede realizar un filtrado por fecha de las palabras o frases que se han buscado.",
+        "point": "pt35"
+      }
+    ]
+  },
+  {
+    "tag": {
+      "title": "Análisis de texto",
+      "description": "Permite descubrir documentos similares a partir de cualquier documento que sea ingresado."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_AnalisisTexto.jpg",
+    "description": []
+  },
+  {
+    "tag": {
+      "title": "Búsqueda Avanzada",
+      "description": "Dirige a la página de búsqueda específica, la cual permite encontrar documentos más adecuados a lo que se quiera buscar."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_BusquedaAvanzada.jpg",
+    "description": []
+  },
+  {
+    "tag": {
+      "title": "Resultados de búsqueda",
+      "description": "Vista general de resultados, en la cual puede realizar la búsqueda de cualquier fuente de datos de la Suprema Corte de Justicia, así como de las fuentes externas."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_ResultadosBusqueda.png",
+    "description": []
+  },
+  {
+    "tag": {
+      "title": "Sentencias",
+      "description": "Las resoluciones que pronuncia la Suprema Corte de Justicia de la Nación para resolver el fondo del litigio, conflicto o controversia."
+    },
+    "img": "./assets/img-int/vistas_bj/BJ_SentenciasSCJN.png",
+    "description": []
+  }
+]

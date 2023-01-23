@@ -1,0 +1,222 @@
+<div id="cont-principal" class="content-doc">
+
+  <!-- PESTAÑAS -->
+  <ng-container [ngSwitch]="paramsDoc.selectedTab">
+
+    <!-- DOCUMENTO -->
+    <ng-container *ngSwitchCase="DocKeyTab.Documento">
+
+      <ng-container [ngSwitch]="paramsDoc.entidadInformacion">
+
+        <!-- CCJ -->
+
+        <v-ccj-cursos *ngSwitchCase="Entities.Ccj" [documento]="document"></v-ccj-cursos>
+        <!-- TESIS -->
+        <v-tesis *ngSwitchCase="Entities.Thesis" [documento]="document"></v-tesis>
+        <!-- OHCR -->
+        <v-ohchr *ngSwitchCase="Entities.Ohchr" [documento]="document"></v-ohchr>
+        <!-- TCCOLOMBIA -->
+        <v-cccolombia *ngSwitchCase="Entities.TColombia" [documento]="document"></v-cccolombia>
+        <!-- PROTOCOLO ACTUACION -->
+        <v-protocolos-actuacion *ngSwitchCase="Entities.Protocols" [documento]="document"></v-protocolos-actuacion>
+        <!-- BIBLIOTECA -->
+        <v-biblioteca *ngSwitchCase="Entities.Library" [documento]="document"></v-biblioteca>
+        <!-- EJECUTORIA -->
+        <v-ejecutoria *ngSwitchCase="Entities.Ejecutoria" [documento]="document"></v-ejecutoria>
+        <!-- VOTOS -->
+        <v-votos *ngSwitchCase="Entities.Votes" [documento]="document"></v-votos>
+        <!-- ACUERDOS -->
+        <v-acuerdos *ngSwitchCase="Entities.Agreements" [documento]="document"></v-acuerdos>
+        <!-- LEGISLACION -->
+        <v-legislacion *ngSwitchCase="Entities.Legislation" [documento]="document"></v-legislacion>
+        <!-- COIDH -->
+        <v-coidh *ngSwitchCase="Entities.Coidh" [documento]="document"></v-coidh>
+        <!-- ENGROSES -->
+        <v-engroses (settings)="getOptions($event)" *ngSwitchCase="Entities.Sentences" [documento]="document">
+        </v-engroses>
+        <!-- ENGROSES PUB -->
+        <v-engroses (settings)="getOptions($event)" *ngSwitchCase="Entities.Sentences_pub" [documento]="document">
+        </v-engroses>
+        <!-- CASELAWHP -->
+        <v-caselawhp *ngSwitchCase="Entities.CaseLawHp" [documento]="document"></v-caselawhp>
+        <!-- COURTLISTENER -->
+        <v-courtlistener *ngSwitchCase="Entities.CourtListener" [documento]="document"></v-courtlistener>
+        <!-- TRIBUNAL ESPAÑOL -->
+        <v-tribunalespanol *ngSwitchCase="Entities.TSpanish" [documento]="document"></v-tribunalespanol>
+        <!-- PJCR -->
+        <v-pjcr *ngSwitchCase="Entities.Pjcr" [documento]="document"></v-pjcr>
+        <!-- HUDOC -->
+        <v-hudoc *ngSwitchCase="Entities.Hudoc" [documento]="document"></v-hudoc>
+        <!-- SCOTUS -->
+        <v-scotus *ngSwitchCase="Entities.CourtUS" [documento]="document"></v-scotus>
+        <!-- TELECTORAL -->
+        <v-telectoral *ngSwitchCase="Entities.Telectoral" [documento]="document"></v-telectoral>
+        <!-- CADH -->
+        <v-africa *ngSwitchCase="Entities.Cadh" [documento]="document"></v-africa>
+        <!-- CIJ -->
+        <v-cij *ngSwitchCase="Entities.CIJ" [documento]="document"></v-cij>
+        <!-- CORTEUK -->
+        <v-corteuk *ngSwitchCase="Entities.CourtRS" [documento]="document"></v-corteuk>
+        <!-- HC AUSTRALIA -->
+        <v-hcaustralia *ngSwitchCase="Entities.CourtAustralia" [documento]="document"></v-hcaustralia>
+        <!-- TC ALEMAN -->
+        <v-tcaleman *ngSwitchCase="Entities.TCgermany" [documento]="document"></v-tcaleman>
+        <!-- CSJN ARGENTINA -->
+        <v-argentina *ngSwitchCase="Entities.CSJNArgentina" [documento]="document"></v-argentina>
+        <!-- TC CHILE -->
+        <v-tcchile *ngSwitchCase="Entities.TChile" [documento]="document"></v-tcchile>
+        <!-- CPI -->
+        <v-cpi *ngSwitchCase="Entities.Cpi" [documento]="document"></v-cpi>
+        <!-- TAQUIGRAFICAS -->
+        <v-taquigraficas *ngSwitchCase="Entities.Versions" [documento]="document"></v-taquigraficas>
+
+      </ng-container>
+
+    </ng-container>
+
+    <!-- CONCEPTOS JURÍDICOS -->
+    <ng-container *ngSwitchCase="DocKeyTab.ConceptosJuridicos">
+
+      <v-conceptosjuridicos [conceptos]="document"></v-conceptosjuridicos>
+
+    </ng-container>
+
+    <!-- FICHA TÉCNICA -->
+    <ng-container *ngSwitchCase="DocKeyTab.FichaTecnicaTc">
+      <v-fichatecnica [sa]="document['sintesisAnalitica']" [sd]="document['sintesisDescriptiva']"
+        [competencia]="document['competencia']" [magistrados]="document['magistrados']"
+        [asunto]="document['asuntos']">
+      </v-fichatecnica>
+    </ng-container>
+
+    <!-- ÍNDICES -->
+    <ng-container *ngSwitchCase="DocKeyTab.Indices">
+
+      <v-tarticulos [articulos]="document"></v-tarticulos>
+
+    </ng-container>
+
+    <!-- DOCUMENTOS SUGERIDOS TESIS -->
+    <ng-container *ngSwitchCase="DocKeyTab.DocumentosSugeridos">
+
+      <v-rsimilares [q]="paramsDoc.q" [documento]="document"></v-rsimilares>
+
+    </ng-container>
+
+    <!-- CITAS SUGERIDAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.CitasSugeridas">
+
+      <v-citassugeridas [ordenamiento]="document" [busqueda]="paramsDoc.q"></v-citassugeridas>
+
+    </ng-container>
+
+    <!-- TESIS RELACIONADAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.TesisRelacionadas">
+
+      <v-tprecedentes [sentencia]="document"></v-tprecedentes>
+
+    </ng-container>
+
+    <!-- CITAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.Citas">
+
+      <v-citas [citas]="document"></v-citas>
+
+    </ng-container>
+
+    <!-- DOCUMENTOS SUGERIDOS COIDH -->
+    <ng-container *ngSwitchCase="DocKeyTab.DocsSugeridosCoiDH">
+
+      <v-docscoidh [votos]="document" [articulos]="document" [nombreCaso]="document"></v-docscoidh>
+
+    </ng-container>
+
+    <!-- DOCUMENTOS RELACIONADOS -->
+    <ng-container *ngSwitchCase="DocKeyTab.DocrelHudoc">
+
+      <v-hudocrel [appno]="document"></v-hudocrel>
+
+    </ng-container>
+
+    <!-- FICHA TÈCNINCA SENTENCIAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.FichaTecnicaS">
+
+      <v-ficha-tecnica-s [asuntoID]="document" [documento]="document"></v-ficha-tecnica-s>
+
+    </ng-container>
+
+    <!-- FICHA TÈCNINCA SENTENCIAS_PUB -->
+    <ng-container *ngSwitchCase="DocKeyTab.FichaTecnicaS_pub">
+
+      <v-ficha-tecnica-pub [documento]="document"></v-ficha-tecnica-pub>
+
+    </ng-container>
+
+    <!-- FICHA TÈCNINCA TAQUIGRÀFICAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.FichaTecnicaT">
+
+      <v-ficha-tecnica-t [ficha]="fichaTaquigrafica"></v-ficha-tecnica-t>
+
+    </ng-container>
+
+    <!-- PROTOCOLO DE ACTUACIÒN -->
+    <ng-container *ngSwitchCase="DocKeyTab.Proactuacion">
+
+      <v-documento-pactuacion [protocolos]="document"></v-documento-pactuacion>
+
+    </ng-container>
+
+    <!-- DOCUMENTOS SUGERIDOS SENTENCIAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.DocumentoSugeridos">
+
+      <v-edocssugeridos [id]="document" [tesisGeneradas]="document"></v-edocssugeridos>
+
+    </ng-container>
+
+    <!-- ASUNTOS ABORDADOS TAQUIGRÀFICAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.AsuntosAbordados">
+
+      <v-sugeridos [ficha]="fichaTaquigrafica"></v-sugeridos>
+
+    </ng-container>
+
+    <!-- RED DE CONOCIMIENTO -->
+    <ng-container *ngSwitchCase="DocKeyTab.RedConocimiento">
+
+      <!-- <v-nodengroses [documento]="document" (display)="$event"></v-nodengroses> -->
+      <v-red-conocimiento [doc]="document"></v-red-conocimiento>
+
+    </ng-container>
+
+    <!-- TESIS | SENTENCIAS | DESCRIPTORES -->
+    <ng-container *ngSwitchCase="DocKeyTab.Catesis">
+
+      <v-cjtesis [docatesis]="document"></v-cjtesis>
+
+    </ng-container>
+
+    <!-- VOTOS(S) -->
+    <ng-container *ngSwitchCase="DocKeyTab.Cavoto">
+
+      <v-cjvoto [docavoto]="document"></v-cjvoto>
+
+    </ng-container>
+
+    <!-- LINEAS JURISPRUDECIALES TESIS -->
+    <ng-container *ngSwitchCase="DocKeyTab.LinJurisPrudenciales">
+
+      <v-lineas-jurisprudenciales [sentencia]="document"></v-lineas-jurisprudenciales>
+
+    </ng-container>
+
+    <!-- LINEAS JURISPRUDECIALES SENTENCIAS -->
+    <ng-container *ngSwitchCase="DocKeyTab.LinJurisPrudencialesSent">
+
+      <v-lineas-jurisprudenciales [sentencia]="document"></v-lineas-jurisprudenciales>
+
+
+    </ng-container>
+
+  </ng-container>
+
+</div>

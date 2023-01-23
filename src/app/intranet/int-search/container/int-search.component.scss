@@ -1,0 +1,30 @@
+.int-search {
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+
+  &__filters {
+    width: 400px;
+    padding: 1.5rem;
+  }
+
+  &__results {
+    width: calc(100% - 400px);
+    padding: 1.5rem;
+  }
+
+}
+
+
+@media (max-width:990px) {
+  .int-search {
+    flex-direction: column;
+    -ms-flex-direction: column;
+
+    &__filters,
+    &__results {
+      width: 100%;
+    }
+
+  }
+}

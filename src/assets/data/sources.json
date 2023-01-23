@@ -1,0 +1,384 @@
+{
+   "tesis": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "registroDigital",
+         "text": "Registro Dígital"
+      },
+      {
+         "value": "titulo",
+         "text": "Titulo"
+      },
+      {
+         "value": "subtitulo",
+         "text": "Subtitulo"
+      },
+      {
+         "value": "rubro",
+         "text": "Rubro"
+      },
+      {
+         "value": "texto.contenido",
+         "text": "Texto"
+      },
+      {
+         "value": "texto.hechos",
+         "text": "Hechos"
+      },
+      {
+         "value": "texto.criteriosJuridicos",
+         "text": "Criterio jurídico"
+      },
+      {
+         "value": "texto.justificacion",
+         "text": "Justificación"
+      },
+      {
+         "value": "notaPrecedente.texto",
+         "text": "Precedentes"
+      }
+   ],
+   "tcespanol": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "antecedentes.texto",
+         "text": "Antecedentes"
+      },
+      {
+         "value": "cabecera.texto",
+         "text": "Cabecera"
+      },
+      {
+         "value": "dictamen.texto",
+         "text": "Dictamen"
+      },
+      {
+         "value": "fundamentos.texto",
+         "text": "Fundamentos"
+      },
+      {
+         "value": "pie.texto",
+         "text": "Pie"
+      },
+      {
+         "value": "resumen.texto",
+         "text": "Resumen"
+      },
+      {
+         "value": "sintesisAnalitica",
+         "text": "Síntesis Analítica"
+      },
+      {
+         "value": "sintesisDescriptiva",
+         "text": "Síntesis Descriptiva"
+      }
+   ],
+   "biblioteca": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "titulo",
+         "text": "Título"
+      },
+      {
+         "value": "contenido.texto",
+         "text": "Texto"
+      },
+      {
+         "value": "tema",
+         "text": "Tema"
+      },
+      {
+         "value": "autor",
+         "text": "Autor"
+      },
+      {
+         "value": "colaborador",
+         "text": "Colaborador"
+      },
+      {
+         "value": "isbn",
+         "text": "ISBN"
+      }
+   ],
+   "legislacion": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "ordenamiento",
+         "text": "Nombre ordenamiento"
+      },
+      {
+         "value": "articulos.contenido",
+         "text": "Artículo"
+      },
+      {
+         "value": "reformaExtracto",
+         "text": "Extracto Reforma"
+      }
+   ],
+   "sentencias": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "numExpediente",
+         "text": "Número Expediente"
+      },
+      {
+         "value": "lineaJurisprudencial.nombre",
+         "text": "Línea jurisprudencial"
+      },
+      {
+         "value": "rubroTematicos",
+         "text": "Rubros temáticos"
+      },
+      {
+         "value": "tipoAsunto",
+         "text": "Tipo de Asunto"
+      },
+      {
+         "value": "preambulo.parrafo",
+         "text": "Proemio"
+      },
+      {
+         "value": "vistos.parrafo",
+         "text": "Vistos"
+      },
+      {
+         "value": "resultando.parrafo",
+         "text": "Resultando"
+      },
+      {
+         "value": "considerando.parrafo",
+         "text": "Considerando"
+      },
+      {
+         "value": "resuelve.parrafo",
+         "text": "Resuelve"
+      },
+      {
+         "value": "firman.parrafo",
+         "text": "Firman"
+      },
+      {
+         "value": "reviso.parrafo",
+         "text": "Revisó"
+      },
+      {
+         "value": "notaspie.parrafo",
+         "text": "Notas Pie"
+      },
+      {
+         "value": "votos.parrafo",
+         "text": "Votos"
+      },
+      {
+         "value": "tema",
+         "text": "Tema"
+      }
+   ],
+   "sentencias_pub": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "numExpediente",
+         "text": "Número Expediente"
+      },
+      {
+         "value": "tipoAsunto",
+         "text": "Tipo de Asunto"
+      },
+      {
+         "value": "rubroTematicos",
+         "text": "Rubros temáticos"
+      },
+      {
+         "value": "lineaJurisprudencial.nombre",
+         "text": "Línea jurisprudencial"
+      },
+      {
+         "value": "preambulo.parrafo",
+         "text": "Proemio"
+      },
+      {
+         "value": "vistos.parrafo",
+         "text": "Vistos"
+      },
+      {
+         "value": "resultando.parrafo",
+         "text": "Resultando"
+      },
+      {
+         "value": "considerando.parrafo",
+         "text": "Considerando"
+      },
+      {
+         "value": "resuelve.parrafo",
+         "text": "Resuelve"
+      },
+      {
+         "value": "firman.parrafo",
+         "text": "Firman"
+      },
+      {
+         "value": "reviso.parrafo",
+         "text": "Revisó"
+      },
+      {
+         "value": "votos.parrafo",
+         "text": "Votos"
+      },
+      {
+         "value": "notaspie.parrafo",
+         "text": "Notas Pie"
+      },
+      {
+         "value": "tema",
+         "text": "Tema"
+      }
+   ],
+   "coidh": [
+      {
+         "value": "citas.nombreCaso",
+         "text": "Citas"
+      },
+      {
+         "value": "nombreCaso",
+         "text": "Caso"
+      },
+      {
+         "value": "citas.nombreCaso",
+         "text": "Citas"
+      }
+   ],
+   "supremecourtusa": [
+      {
+         "value": "name",
+         "text": "Name Case"
+      }
+   ],
+   "acuerdos": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "rubro",
+         "text": "Rubro"
+      },
+      {
+         "value": "registroDigital",
+         "text": "Registro Digital"
+      },
+      {
+         "value": "texto",
+         "text": "Texto"
+      },
+      {
+         "value": "organoJurisdiccional",
+         "text": "Órgano jurisdiccional"
+      },
+      {
+         "value": "fuente",
+         "text": "Fuente"
+      },
+      {
+         "value": "instancia",
+         "text": "Instancia"
+      },
+      {
+         "value": "epoca",
+         "text": "Época"
+      }
+   ],
+   "votos": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "fuente",
+         "text": "Fuente"
+      },
+      {
+         "value": "rubro",
+         "text": "Rubro"
+      },
+      {
+         "value": "tipoAsunto",
+         "text": "Tipo de asunto"
+      },
+      {
+         "value": "registroDigital",
+         "text": "Registro digital"
+      },
+      {
+         "value": "numeroExpediente",
+         "text": "Número de expediente"
+      },
+      {
+         "value": "texto",
+         "text": "Texto"
+      }
+   ],
+   "protocolos_actuacion_dh": [
+      {
+         "value": "indice.seccion",
+         "text": "Índice"
+      }
+   ],
+   "cidh": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "titulo",
+         "text": "Titulo"
+      }
+   ],
+   "cidh2": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "titulo",
+         "text": "Titulo"
+      }
+   ],
+   "hudoc": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "docname",
+         "text": "Caso"
+      }
+   ],
+   "cij": [
+      {
+         "value": "todos",
+         "text": "Todos"
+      },
+      {
+         "value": "name",
+         "text": "Caso"
+      }
+   ]
+}

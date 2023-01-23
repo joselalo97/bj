@@ -1,0 +1,179 @@
+<header class="header-links">
+  <nav class="header-links__nav">
+    <ul class="header-links__nav-list">
+      <li class="link">
+        <a class="components-color" aria-label="Facebook SCJN" role="link" href="https://www.facebook.com/SCJNMexico/"
+          target="_blank">
+          <i class="fab fa-facebook-f"></i>
+          <span hidden>Facebook SCJN</span>
+        </a>
+      </li>
+      <li class="link">
+        <a class="components-color" aria-label="Twitter SCJN" role="link" href="https://twitter.com/scjn"
+          target="_blank">
+          <i class="fab fa-twitter"></i>
+          <span hidden>Twitter SCJN</span>
+        </a>
+      </li>
+      <li class="link">
+        <a class="components-color" aria-label="Linkind SCJN" role="link"
+          href="https://mx.linkedin.com/company/suprema-corte-de-justicia-de-la-nación" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+          <span hidden>Link SCJN</span>
+        </a>
+      </li>
+      <li class="link">
+        <a class="components-color" aria-label="Youtube SCJN" role="link"
+          href="https://www.youtube.com/channel/UCD60d8Qcb3Wa_maOYleWFZQ" target="_blank">
+          <i class="fab fa-youtube"></i>
+          <span hidden>Youtube SCJN</span>
+        </a>
+      </li>
+      <li class="link">
+        <a class="components-color" aria-label="Buscador Semántico JulIA" role="link" href="https://julia.scjn.gob.mx/"
+          ngbTooltip="Buscador Semántico Julia" placement="bottom" target="_blank">
+          <img class="figure" width="40px" height="40px" src="./assets/Img_BuscadorJuridico/JulIA_Icono.svg"
+            alt="Buscador Semántico Julia">
+          <span hidden>Buscador Semántico JulIA</span>
+        </a>
+      </li>
+      <li class="link">
+        <a aria-label="Tesauro" class="components-color" role="link" href="https://tesauro.scjn.gob.mx" target="_blank"
+          ngbTooltip="Tesauro: vocabulario controlado de la Suprema Corte" placement="bottom">
+          <img class="figure" width="40px" height="40px"
+            src="./assets/pub/img/svg_icons_pub_home/scjn-icono-tesauro.svg" alt="Tesauro">
+          <span hidden>Tesauro</span>
+        </a>
+      </li>
+      <li class="link"><a aria-label="Datos abiertos" class="components-color" role="link"
+          href="http://bj.scjn.gob.mx/datos-abiertos/" target="_blank" ngbTooltip="Plataforma de datos abiertos"
+          placement="bottom">
+          <img class="figure" width="40px" height="40px"
+            src="./assets/pub/img/svg_icons_pub_home/scjn-icono-datosabiertos.svg" alt="Datos abiertos">
+          <span hidden>Datos abiertos</span>
+        </a>
+      </li>
+      <li class="link">
+        <a class="components-color" aria-label="Guía de usuario" role="link" routerLink="guia-de-usuario"
+          ngbTooltip="Guía de usuario" placement="bottom">
+          <i aria-label="Guía de usuario" class="material-icons">menu_book</i>
+          <span hidden>Guía de usuario</span>
+        </a>
+      </li>
+      <li class="link" id="entitys-tab" data-tab>
+        <i class="material-icons" data-entity-tabs>apps</i>
+        <div class="link__tabs shadow components-bg">
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Sentences_pub}"
+            class="link__tabs--entity components-color" matRipple style="--l:0;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-sentencias-color.svg" alt="Sentencias">
+            <span class="graphic__link-txt"> Sentencias</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Votes}"
+            class="link__tabs--entity components-color" matRipple style="--l:1;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-votos-color.svg" alt="Votos">
+            <span class="graphic__link-txt"> Votos</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Thesis}"
+            class="link__tabs--entity components-color" matRipple style="--l:2;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-tesis-color.svg" alt="Tesis">
+            <span class="graphic__link-txt"> Tesis</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Agreements}"
+            class="link__tabs--entity components-color" matRipple style="--l:3;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-acuerdos-color.svg" alt="Acuerdos generales">
+            <span class="graphic__link-txt"> Acuerdos</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Orderings}"
+            class="link__tabs--entity components-color" matRipple style="--l:4;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-ordenamientos-color.svg" alt="Ordenaminetos">
+            <span class="graphic__link-txt">
+              Ordenamientos</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Library}"
+            class="link__tabs--entity components-color" matRipple style="--l:5;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-acervo-color.svg" alt="Acervo bibliotecario">
+            <span class="graphic__link-txt"> Acervo</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Versions}"
+            class="link__tabs--entity components-color" matRipple style="--l:6;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/icono-versiones-tac-color.svg" alt="Versiones taquigráficas">
+            <span class="graphic__link-txt">
+              Taquigráficas</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.Ccj}"
+            class="link__tabs--entity components-color" matRipple style="--l:7;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/ccj_scjn.svg" alt="Casas de cultura jurídica">
+            <span class="graphic__link-txt"> CCJ</span>
+          </a>
+          <a role="link" href="https://sistemadenu.scjn.gob.mx/buscadornu/" target="_blank"
+            class="link__tabs--entity components-color" matRipple style="--l:8;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/onu-logo.png" alt="Sistema de naciones unidas">
+            <span class="graphic__link-txt"> ONU</span>
+          </a>
+          <a role="link" href="https://corteidh.scjn.gob.mx/buscador/" target="_blank"
+            class="link__tabs--entity components-color" matRipple style="--l:9;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/logo-court-international.png"
+              alt="Corte Internacional de Derechos humanos">
+            <span class="graphic__link-txt"> CoIDH</span>
+          </a>
+          <a role="link" routerLink="busqueda" [queryParams]="{ q: '*', indice: entitys.CIDH}"
+            class="link__tabs--entity components-color" matRipple style="--l:10;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-cidh.png" alt="Comisión Internacional de Derechos Humanos">
+            <span class="graphic__link-txt"> CIDH</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.Hudoc}" style="--l:11;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-hudoc.png" alt="Corte Europea de Derechos Humanos">
+            <span class="graphic__link-txt"> Hudoc</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.CIJ}" style="--l:12;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-corte-internacional.png"
+              alt="Corte Internacional de Justicia">
+            <span class="graphic__link-txt"> CIJ</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.TSpanish}" style="--l:13;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/logo_tce.png" alt="Tribunal Constitucional de España">
+            <span class="graphic__link-txt"> TC Español</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.TColombia}" style="--l:14;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-colombia.png"
+              alt="Corte Constitucional de la República de Colombia">
+            <span class="graphic__link-txt"> Colombia</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.TChile}" style="--l:15;">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-chile.png" alt="Tribunal Constitucional de Chile">
+            <span class="graphic__link-txt"> TC Chile</span>
+          </a>
+          <a class="link__tabs--entity components-color" matRipple role="link" routerLink="busqueda"
+            [queryParams]="{ q: '*', indice: entitys.CSJNArgentina}" style="--l:16">
+            <img class="link__tabs--entity-img" width="40px" height="40px"
+              src="./assets/pub/img/svg_icons_pub_home/scjn-argentina.png"
+              alt="Corte Suprema de Justicia de la Nación de Argentina">
+            <span class="graphic__link-txt"> CSJN</span>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </nav>
+</header>

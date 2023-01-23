@@ -1,0 +1,8 @@
+<div class="int-search">
+  <div class="int-search__filters" [@searchAnimation]>
+    <int-filter [subFilters]="filters" [entities]="dataSearch.entidades"></int-filter>
+  </div>
+  <div class="int-search__results" [@searchAnimation]>
+    <int-results [doc]="dataSearch"></int-results>
+  </div>
+</div>

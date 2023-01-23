@@ -1,0 +1,31 @@
+.toolbar-doc {
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1180px;
+   margin: 0 auto;
+
+   @media (max-width: 780px) {
+      flex-direction: column;
+      padding: .5rem;
+
+      &__search{
+         min-width: 100% !important;
+      }
+   }
+
+
+   &__icons {
+      display: flex;
+      flex-wrap: wrap;
+
+      & .padding-rewrite {
+         padding: 0.5rem 0.6rem;
+      }
+   }
+
+   &__search {
+      min-width: 25rem;
+   }
+}

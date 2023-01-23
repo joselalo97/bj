@@ -1,0 +1,51 @@
+$toolbar-height: 3.5rem;
+
+.pub-doc {
+  display: flex;
+  justify-content: center;
+
+  &__toolbar {
+    padding: 0.5rem;
+    height: $toolbar-height;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    border-top: 1px solid rgba(0, 0, 0, .125);
+    position: fixed;
+    top: inherit;
+    left: 0;
+    transition: 400ms;
+    z-index: 2;
+    height: fit-content;
+  }
+
+  &__documents {
+    margin-top: $toolbar-height;
+    max-width: 1180px;
+
+    @media (max-width: 780px) {
+      margin-top: 6.5rem;
+   }
+
+
+    &-content {
+      padding: 1rem;
+      position: relative;
+    }
+
+    &-print {
+      display: none;
+
+      & .icon-scjn-logo {
+        font-size: 4rem;
+      }
+    }
+
+    &-copy {
+      position: absolute;
+      width: auto;
+      padding: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+  }
+}

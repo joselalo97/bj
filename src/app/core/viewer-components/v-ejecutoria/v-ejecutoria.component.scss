@@ -1,0 +1,30 @@
+.int-doc-vejecutoria {
+  padding: 10px;
+
+  &__metadata {
+    border: 1px solid;
+  }
+
+  &__bord {
+    border-top: 1px solid;
+  }
+
+  &__content {
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+
+    &-text {
+      white-space: pre-wrap;
+    }
+  }
+
+  &__notas {
+    margin: 10px 0;
+
+    &--tj,
+    &--ta {
+      color: #c50032;
+    }
+  }
+
+}

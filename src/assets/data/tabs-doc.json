@@ -1,0 +1,184 @@
+[
+   {
+      "id": 1,
+      "entityKey": "all",
+      "navKey": "documento",
+      "label": "",
+      "show": true
+   },
+   {
+      "id": 2,
+      "entityKey": "tesis",
+      "navKey": "conceptosjuridicos",
+      "label": "Conceptos jurídicos relacionados",
+      "show": true
+   },
+   {
+      "id": 3,
+      "entityKey": "tcespanol",
+      "navKey": "fichatecnica-tc",
+      "label": "Ficha técnica",
+      "show": true
+   },
+   {
+      "id": 4,
+      "entityKey": "tcespanol",
+      "navKey": "indices",
+      "label": "Índices",
+      "show": false
+   },
+   {
+      "id": 5,
+      "entityKey": "tcespanol",
+      "navKey": "fichatecnica-tc",
+      "label": "Descriptores",
+      "show": false
+   },
+   {
+      "id": 6,
+      "entityKey": "tesis",
+      "navKey": "documentossugeridos",
+      "label": "Documentos sugeridos",
+      "show": true
+   },
+   {
+      "id": 7,
+      "entityKey": "legislacion",
+      "navKey": "citassugeridas",
+      "label": "Citas sugeridas",
+      "show": true
+   },
+   {
+      "id": 8,
+      "entityKey": "ejecutoria2",
+      "navKey": "tesisrelacionadas",
+      "label": "Tesis relacionadas",
+      "show": true
+   },
+   {
+      "id": 9,
+      "entityKey": "coidh",
+      "navKey": "citas",
+      "label": "Citas",
+      "show": true
+   },
+   {
+      "id": 10,
+      "entityKey": "coidh",
+      "navKey": "docssugeridoscoidh",
+      "label": "Documentos sugeridos",
+      "show": true
+   },
+   {
+      "id": 11,
+      "entityKey": "hudoc",
+      "navKey": "docrelhudoc",
+      "label": "Documentos relacionados",
+      "show": false
+   },
+   {
+      "id": 12,
+      "entityKey": "sentencias",
+      "navKey": "fichatecnica-s",
+      "label": "Ficha técnica",
+      "show": true
+   },
+   {
+      "id": 13,
+      "entityKey": "vtaquigraficas",
+      "navKey": "fichatecnica-t",
+      "label": "Ficha técnica",
+      "show": true
+   },
+   {
+      "id": 14,
+      "entityKey": "sentencias",
+      "navKey": "linjurisprudenciales",
+      "label": "Líneas Jurisprudenciales",
+      "show": true
+   },
+   {
+      "id": 15,
+      "entityKey": "tesis",
+      "navKey": "linjurisprudenciales",
+      "label": "Líneas Jurisprudenciales",
+      "show": true
+   },
+   {
+      "id": 16,
+      "entityKey": "sentencias",
+      "navKey": "protactuacion",
+      "label": "Protocolos de actuación",
+      "show": true
+   },
+   {
+      "id": 17,
+      "entityKey": "sentencias",
+      "navKey": "documentosugeridos",
+      "label": "Documentos sugeridos",
+      "show": true
+   },
+   {
+      "id": 18,
+      "entityKey": "vtaquigraficas",
+      "navKey": "asuntosabordados",
+      "label": "Asuntos abordados",
+      "show": false
+   },
+   {
+      "id": 19,
+      "entityKey": "sentencias",
+      "navKey": "redconocimiento",
+      "label": "Red de conocimiento",
+      "show": true
+   },
+   {
+      "id": 20,
+      "entityKey": "cjcardmx",
+      "navKey": "catesis",
+      "label": "",
+      "show": true
+   },
+   {
+      "id": 21,
+      "entityKey": "cjcardmx",
+      "navKey": "cavoto",
+      "label": "Voto(s)",
+      "show": true
+   },
+   {
+      "id": 22,
+      "entityKey": "tcespanol",
+      "navKey": "descriptores",
+      "label": "Descriptores",
+      "show": false
+   },
+   {
+      "id": 23,
+      "entityKey": "sentencias_pub",
+      "navKey": "fichatecnica-pub",
+      "label": "Ficha técnica",
+      "show": true
+   },
+   {
+      "id": 24,
+      "entityKey": "sentencias_pub",
+      "navKey": "documentosugeridos",
+      "label": "Documentos sugeridos",
+      "show": true
+   },
+   {
+      "id": 26,
+      "entityKey": "sentencias_pub",
+      "navKey": "redconocimiento",
+      "label": "Red de conocimiento",
+      "show": false
+   },
+   {
+      "id": 27,
+      "entityKey": "sentencias_pub",
+      "navKey": "linjurisprudencialesSent",
+      "label": "Líneas Jurisprudenciales",
+      "show": true
+   }
+]

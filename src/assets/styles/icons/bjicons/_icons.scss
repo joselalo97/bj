@@ -1,0 +1,332 @@
+@import 'iconvars';
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?i98kfa');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?i98kfa#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?i98kfa') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?i98kfa') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?i98kfa##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ib {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ib-acervo-b-color {
+  &:before {
+    content: $ib-acervo-b-color;     
+    color: #0f8ca1;
+  }
+}
+.ib-acervo-n {
+  &:before {
+    content: $ib-acervo-n; 
+  }
+}
+.ib-acuerdos-b {
+  &:before {
+    content: $ib-acuerdos-b; 
+  }
+}
+.ib-acuerdos-color {
+  &:before {
+    content: $ib-acuerdos-color;     
+    color: #81264c;
+  }
+}
+.ib-adjuntar-archivo {
+  &:before {
+    content: $ib-adjuntar-archivo;     
+    color: #24135f;
+  }
+}
+.ib-borrador {
+  &:before {
+    content: $ib-borrador;     
+    color: #24135f;
+  }
+}
+.ib-externas-b {
+  &:before {
+    content: $ib-externas-b; 
+  }
+}
+.ib-ordenamientos-b {
+  &:before {
+    content: $ib-ordenamientos-b; 
+  }
+}
+.ib-ordenamientos-color {
+  &:before {
+    content: $ib-ordenamientos-color;     
+    color: #992f87;
+  }
+}
+.ib-plataformadatosabiertos-color .path1 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path1;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-plataformadatosabiertos-color .path2 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path2;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-plataformadatosabiertos-color .path3 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path3;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-plataformadatosabiertos-color .path4 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path4;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-plataformadatosabiertos-color .path5 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path5;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-plataformadatosabiertos-color .path6 {
+  &:before {
+    content: $ib-plataformadatosabiertos-color-path6;  
+    margin-left: -1em;  
+    color: rgb(250, 180, 30);
+  }
+}
+.ib-sentencias-b {
+  &:before {
+    content: $ib-sentencias-b; 
+  }
+}
+.ib-sentencias-color .path1 {
+  &:before {
+    content: $ib-sentencias-color-path1;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path2 {
+  &:before {
+    content: $ib-sentencias-color-path2;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path3 {
+  &:before {
+    content: $ib-sentencias-color-path3;  
+    margin-left: -0.9892578125em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path4 {
+  &:before {
+    content: $ib-sentencias-color-path4;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path5 {
+  &:before {
+    content: $ib-sentencias-color-path5;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path6 {
+  &:before {
+    content: $ib-sentencias-color-path6;  
+    margin-left: -0.9892578125em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path7 {
+  &:before {
+    content: $ib-sentencias-color-path7;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path8 {
+  &:before {
+    content: $ib-sentencias-color-path8;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path9 {
+  &:before {
+    content: $ib-sentencias-color-path9;  
+    margin-left: -0.9892578125em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path10 {
+  &:before {
+    content: $ib-sentencias-color-path10;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path11 {
+  &:before {
+    content: $ib-sentencias-color-path11;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path12 {
+  &:before {
+    content: $ib-sentencias-color-path12;  
+    margin-left: -0.9892578125em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path13 {
+  &:before {
+    content: $ib-sentencias-color-path13;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path14 {
+  &:before {
+    content: $ib-sentencias-color-path14;  
+    margin-left: -0.9892578125em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.ib-sentencias-color .path15 {
+  &:before {
+    content: $ib-sentencias-color-path15;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path16 {
+  &:before {
+    content: $ib-sentencias-color-path16;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-sentencias-color .path17 {
+  &:before {
+    content: $ib-sentencias-color-path17;  
+    margin-left: -0.9892578125em;  
+    color: rgb(29, 29, 27);
+  }
+}
+.ib-tesauro-color .path1 {
+  &:before {
+    content: $ib-tesauro-color-path1;  
+    color: rgb(252, 182, 29);
+  }
+}
+.ib-tesauro-color .path2 {
+  &:before {
+    content: $ib-tesauro-color-path2;  
+    margin-left: -1em;  
+    color: rgb(252, 182, 29);
+  }
+}
+.ib-tesauro-color .path3 {
+  &:before {
+    content: $ib-tesauro-color-path3;  
+    margin-left: -1em;  
+    color: rgb(1, 1, 1);
+  }
+}
+.ib-tesauro-color .path4 {
+  &:before {
+    content: $ib-tesauro-color-path4;  
+    margin-left: -1em;  
+    color: rgb(1, 1, 1);
+  }
+}
+.ib-tesauro-color .path5 {
+  &:before {
+    content: $ib-tesauro-color-path5;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-tesauro-color .path6 {
+  &:before {
+    content: $ib-tesauro-color-path6;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-tesauro-color .path7 {
+  &:before {
+    content: $ib-tesauro-color-path7;  
+    margin-left: -1em;  
+    color: rgb(36, 19, 95);
+  }
+}
+.ib-tesauro-color .path8 {
+  &:before {
+    content: $ib-tesauro-color-path8;  
+    margin-left: -1em;  
+    color: rgb(1, 1, 1);
+  }
+}
+.ib-tesis-b {
+  &:before {
+    content: $ib-tesis-b; 
+  }
+}
+.ib-tesis-color {
+  &:before {
+    content: $ib-tesis-color;     
+    color: #504286;
+  }
+}
+.ib-versiones-tac-b {
+  &:before {
+    content: $ib-versiones-tac-b; 
+  }
+}
+.ib-versiones-tac-color {
+  &:before {
+    content: $ib-versiones-tac-color;     
+    color: #808080;
+  }
+}
+.ib-votos-b {
+  &:before {
+    content: $ib-votos-b; 
+  }
+}
+.ib-votos-color {
+  &:before {
+    content: $ib-votos-color;     
+    color: #394264;
+  }
+}
+

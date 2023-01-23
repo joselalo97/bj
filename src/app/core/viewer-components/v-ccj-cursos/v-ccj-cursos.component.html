@@ -1,0 +1,186 @@
+<div class="d-block" *ngIf="isLoad">
+  <div class="mt-5 mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+</div>
+
+<div class="ccj-cursos border-top-skin-color" *ngIf="!isLoad">
+  <div class="ccj-cursos__diplomado">
+    <p class="ccj-cursos__diplomado--s"><strong>{{ doc.temaSesion }}</strong></p>
+    <p class="ccj-cursos__diplomado--c"><strong>{{ doc.nbCurso }}</strong></p>
+  </div>
+  <div class="ccj-cursos__panel row mx-0 pb-4">
+    <div class="ccj-cursos__panel--controls col-12 col-md-4 col-xl-4 col-lg-4 p-0" *ngIf="doc.temas">
+      <div class="controls__list">
+        <div class="controls__list--min">
+          <div class="min components-bg--a1" *ngFor="let tema of doc.temas; let i = index;"
+            (click)="playMinVideo(tema,i)" [ngClass]="{'play':init == i}">
+            <div class="min__ic">
+              <i class="fas fa-play skin-color-text"></i>
+            </div>
+            <div class="min__text">
+              <span>{{tema.nbTema}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="controls__list--logo d-flex justify-content-end">
+          <img class="controls__list--logo-ccj" src="./assets/pub/img/svg_icons_pub_home/ccj_scjn.svg"
+            alt="Casas de la Cultura Jurídica">
+        </div>
+      </div>
+    </div>
+    <div class="ccj-cursos__panel--video col-12 col-md-8 col-xl-8 col-lg-8"
+      [ngClass]="{'col-xl-12 col-sm-12 col-md-12 col-lg-12':!doc.temas}">
+      <iframe *ngIf="url != ''" [src]="(url + second) | safeURL" class="ccj-cursos__panel--video-frame w-100 "
+        title="SCJN" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="video--tab">
+        <div class="row m-0">
+          <div class="col-12 col-md-9 col-lg-9 col-xl-9 order-2 order-sm-1">
+            <h1><strong>{{nbTema}}</strong></h1>
+            <p><strong>{{ doc?.nbCurso }}</strong></p>
+            <p>{{doc?.disertante[0]?.nombre}}</p>
+            <p>{{doc?.disertante[0]?.cargo}}</p>
+          </div>
+          <div class="col-12 col-md-3 col-lg-3 col.xl-3 order-1 order-sm-2">
+            <div class="buttons-controls">
+              <button mat-button class="skin-color-bg text-in-dark mr-1" [disabled]="init == 0" (click)="beforeTime()">
+                <mat-icon>
+                  chevron_left
+                </mat-icon>
+              </button>
+              <button mat-button class="skin-color-bg text-in-dark ml-1" [disabled]="init == doc.temas.length-1" (click)="nextTime()" >
+                <mat-icon>
+                  chevron_right
+                </mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="col-12 order-3 pt-2">
+            <mat-tab-group animationDuration="0ms">
+              <mat-tab *ngIf="documento?.descripcion?.objetivo || documento?.descripcion?.resumen" label="Descripción">
+                <p class="pl-0 mt-3" *ngIf="documento?.descripcion?.objetivo">
+                  <strong>Objetivo</strong>
+                </p>
+                <p>
+                  {{documento?.descripcion?.objetivo}}
+                </p>
+                <p class="pl-0 mt-3" *ngIf="documento?.descripcion?.resumen">
+                  <strong>Resumen</strong>
+                </p>
+                <p>
+                  {{documento?.descripcion?.resumen}}
+                </p>
+              </mat-tab>
+              <mat-tab
+                *ngIf="documento?.materialesApoyo?.casos.length > 0 || documento?.materialesApoyo?.obras.length > 0 || documento?.materialesApoyo?.referencias.length > 0"
+                label="Materiales de apoyo">
+                <div class="mt-3">
+                  <p class="firt-letter-uper" *ngIf="documento?.materialesApoyo?.casos.length > 0">
+                    <strong>Casos</strong></p>
+                  <ul class="my-2 list">
+                    <li *ngFor="let mat of documento?.materialesApoyo?.casos">
+                      <a role="link" class="skin-color-text" *ngIf="mat.url" [href]="mat.url" target="_blank"
+                        tabindex="0"><span class="mb-0">{{ mat.nbMaterial }}</span></a>
+                      <span *ngIf="!mat.url" class="mb-0">{{ mat.nbMaterial }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="firt-letter-uper" *ngIf="documento?.materialesApoyo?.obras.length > 0">
+                    <strong>Obras</strong></p>
+                  <ul class="my-2 list">
+                    <li *ngFor="let mat of documento?.materialesApoyo?.obras">
+                      <a role="link" class="skin-color-text" *ngIf="mat.url" [href]="mat.url" target="_blank"
+                        tabindex="0"><span class="mb-0">{{ mat.nbMaterial }}</span></a>
+                      <span *ngIf="!mat.url" class="mb-0">{{ mat.nbMaterial }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="firt-letter-uper" *ngIf="documento?.materialesApoyo?.referencias.length > 0">
+                    <strong>Referencias</strong></p>
+                  <ul class="my-2 list">
+                    <li *ngFor="let mat of documento?.materialesApoyo?.referencias">
+                      <a role="link" class="skin-color-text" *ngIf="mat.url" [href]="mat.url" target="_blank"
+                        tabindex="0"><span class="mb-0">{{ mat.nbMaterial }}</span></a>
+                      <span *ngIf="!mat.url" class="mb-0">{{ mat.nbMaterial }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </mat-tab>
+              <mat-tab *ngIf="documento?.nbCurso" label="Ficha técnica">
+                <p class="mb-2 mt-3" *ngIf="doc.temaSesion">
+                  <strong>Tema: </strong>
+                  {{doc.temaSesion}}
+                </p>
+                <p class="mb-2" *ngIf="doc.fhsesion">
+                  <strong>Fecha transmisión: </strong>
+                  {{doc.fhsesion}}
+                </p>
+                <p class="mb-2" *ngIf="doc.disertante.length > 0">
+                  <strong>Disertante: </strong>
+                  <span class="mr-2" *ngFor="let dis of doc.disertante">{{ dis?.nombre+ ' - '+
+                                          dis.cargo}}</span>
+                </p>
+                <p class="mb-2" *ngIf="doc.moderador.length > 0">
+                  <strong>Moderador: </strong>
+                  <span class="mr-2" *ngFor="let mod of doc.moderador">{{ mod?.nombre+ ' - '+
+                                          mod.cargo}}</span>
+                </p>
+                <p class="mb-2" *ngIf="doc.materias.length > 0">
+                  <strong>Materias: </strong>
+                  <span>{{ doc.materias.join(', ')}}</span>
+                </p>
+                <p class="mb-2">
+                  <strong>Interpretación en lengua de señas: </strong>
+                  {{doc.interpretacionEnLenguaDeSenias ? 'Sí' : 'No' }}
+                </p>
+                <p class="mb-2">
+                  <strong>Subtítulo: </strong>
+                  {{doc.subtitulo? 'Sí': 'No'}}
+                </p>
+                <p class="mb-2" *ngIf="doc.nbCurso">
+                  <strong>Curso: </strong>
+                  {{doc.nbCurso}}
+                </p>
+                <p class="mb-2" *ngIf="doc.participante">
+                  <strong>Participante: </strong>
+                  {{doc.participante}}
+                </p>
+                <p class="mb-2" *ngIf="doc.formaImparticion">
+                  <strong>Forma de impartición: </strong>
+                  {{doc.formaImparticion}}
+                </p>
+                <p class="mb-2" *ngIf="doc.medio">
+                  <strong>Medio: </strong>
+                  {{doc.medio}}
+                </p>
+                <p class="mb-2" *ngIf="doc.unidadFacilitador">
+                  <strong>Unidad facilitador: </strong>
+                  {{doc.unidadFacilitador}}
+                </p>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

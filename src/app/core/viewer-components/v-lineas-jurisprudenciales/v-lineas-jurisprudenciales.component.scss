@@ -1,0 +1,40 @@
+.v-lineas-jurisprudencial {
+  padding: .4rem;
+}
+
+.border-skin-color {
+  border: 1px solid;
+}
+
+.border-bottom-skin-color {
+  border-bottom: 1px solid;
+}
+
+.link-libro {
+  transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+
+  &>div>i.fa-file-pdf {
+    color: #c50032;
+  }
+}
+
+.link-libro:hover {
+  transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.stick{
+  position: sticky;
+  top: 200px;
+}

@@ -1,0 +1,32 @@
+.int-results {
+  & .int-results__more {
+    display: flex;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+  }
+
+  & .int-result__function {
+    & i:hover {
+      cursor: pointer;
+    }
+  }
+
+  & .int-result__download {
+    display: flex;
+    justify-content: flex-end;
+
+    & a i {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.label-acervo {
+  border: 1px solid;
+  padding: .125rem;
+  font-size: .6rem;
+  margin-bottom: .3rem;
+  margin-right: .3rem;
+}

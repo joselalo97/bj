@@ -1,0 +1,92 @@
+<div class="v-edocssugeridos">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-6">
+        <div *ngIf="isLoad">
+          <div class="mt-5 mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+          <div class="mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+          <div class="mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3   rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+        </div>
+        <div class="card" *ngIf="!isLoad">
+          <div class="card-header">
+            <strong>Sentencias sugeridas utilizando analítica de texto</strong>
+          </div>
+          <section class="p-1">
+            <a [routerLink]="['/doc',sen.index, sen.id,'-']" *ngFor="let sen of sentencias "
+              class="d-block card-body card-sugerencia components-color">
+              <p class="skin-color-text">
+                <strong> {{sen?.tipoAsunto}} {{sen?.numExpediente}} - {{sen?.organoRadicacion}}</strong>
+              </p>
+              <p>Ministra/o ponente: {{sen?.ponente}}</p>
+              <p>Fecha de resolución: {{sen?.fechaResolucion | date: 'dd-MM-yyyy'}}</p>
+              <p>{{sen?.tema}}</p>
+              <div class="border-top-skin-color "></div>
+            </a>
+          </section>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-6">
+        <div *ngIf="isLoad">
+          <div class="mt-5 mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+          <div class="mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+          <div class="mb-5">
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 3   rem;"></div>
+            <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+          </div>
+        </div>
+        <div class="card" *ngIf="!isLoad">
+          <div class="card-header">
+            <strong> Tesis sugeridas utilizando analítica de texto</strong>
+          </div>
+          <section class="p-1">
+            <a [routerLink]="['/doc',t.index, t.id,'-']" *ngFor="let t of tesis"
+              class="d-block card-body card-sugerencia components-color">
+              <p class="skin-color-text"><strong>Registro digital: {{t?.registroDigital}} </strong></p>
+              <p class="">{{t?.instancia}};
+                <span *ngIf="t?.organoJurisdiccional">Organo jurisdiccional: {{t?.organoJurisdiccional}};</span>
+                <span *ngIf="t?.tipo=='Tesis de Jurisprudencia'"> [J];</span>
+                <span *ngIf="t?.tipo=='Tesis Aislada'"> [TA]</span>; {{t?.epoca.numero}}a. Época;
+                {{t?.organoJurisdiccional}}; {{t?.fuente}}; {{t?.localizacion?.libro}},
+                {{t?.localizacion?.mes }} de {{t?.localizacion?.anio}}
+                <span *ngIf="t?.localizacion.tomo">,
+                  {{t?.localizacion.tomo}};</span>
+                <ng-template *ngIf="t?.localizacion.pagina >0">
+                  Pág. {{t?.localizacion?.pagina}}.
+                </ng-template>
+              </p>
+              <p>
+                <strong> <span class="link-card">{{t?.rubro}} </span></strong>
+              </p>
+              <div class="border-top-skin-color "></div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+
+      <div class="card-body card-content container">
+          <div class="row">
+              <div class="col-md-12 col-lg-12 col-sm-12 text-center" id="contenido">
+                  <h1>{{documento?.court?.name}}</h1>
+                  <br>
+                  
+                  <h5>{{documento?.name_abbreviation}}</h5>
+                  <h6 [innerHTML]="documento?.casebody?.data?.head_matter" ></h6>
+              </div>
+              <div class="container" *ngFor="let d of  documento?.casebody?.data?.attornerys">
+                  <p [innerHTML]="d"></p>
+
+              </div>
+              
+            
+              <div class="col-md-12 col-lg-12 col-sm-12" id="contenido" *ngIf="documento?.casebody?.data?.opinions">
+                  <div *ngFor="let o of documento?.casebody?.data?.opinions">
+                      <p [innerHTML]="o?.text"> </p>
+                      
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+</div>

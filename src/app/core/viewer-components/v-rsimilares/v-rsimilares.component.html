@@ -1,0 +1,160 @@
+<div class="rsimilares">
+  <div class="rsimilares__expansion-panels">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-7 col-xl-7"
+        [ngClass]="{ 'col-12 col-md-12 col-lg-12 col-xl-12': ejecutorias.length == 0 && votos.length ==0 && tematicas.length ==0}">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true" ngClass="mb-4">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="skin-color-text"><strong>Empleando análisis de texto</strong></p>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="isLoadT">
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 panel-h" *ngFor="let tesis of tRelacion.content">
+              <a class="skin-color-text" [routerLink]="['/doc/',entity.Thesis,tesis.id]">
+                Registro Digital: {{tesis.registroDigital}}
+              </a>
+              <p class="text-truncate">{{tesis.rubro}}</p>
+              <p class="components-color">Localización:
+                <span *ngIf="tesis.tipo=='Tesis de Jurisprudencia'"> [J]</span>
+                <span *ngIf="tesis.tipo=='Tesis Aislada'"> [TA]</span>; {{tesis.epoca.numero}}a. Época;
+                {{tesis.organoJurisdiccional}}; {{tesis.fuente}}; {{tesis.localizacion?.libro}},
+                {{tesis.localizacion?.mes}} de {{tesis.localizacion?.anio}}
+                <span *ngIf="tesis.localizacion.tomo">,
+                </span>{{tesis.localizacion.tomo}};
+                <ng-template *ngIf="documento?.localizacion.pagina >0">
+                  Pág. {{tesis.localizacion?.pagina}}.
+                </ng-template>
+                {{tesis.clave}}
+              </p>
+
+              <div class="bord"></div>
+
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="col-12 col-md-5 col-lg-5 col-xl-5">
+        <mat-accordion *ngIf="ejecutorias.length > 0">
+          <mat-expansion-panel [expanded]="true" ngClass="mb-4">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="skin-color-text"><strong>Ejecutorias</strong></p>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="isLoadE">
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 panel-h" *ngFor="let e of ejecutorias">
+              <a class="skin-color-text" [routerLink]="['/doc/',entity.Ejecutoria,e?.id,'/*/documento']">{{e?.tipoAsunto}}
+                {{e?.numeroExpediente}}</a>
+              <p class="resultado-localizacion" *ngIf="e.organoRadicacion">{{e.organoRadicacion}}</p>
+              <p class="resultado-localizacion" *ngIf="e.ponente">{{e.ponente}}</p>
+              <p class="resultado-localizacion" *ngIf="e.fechaResolucion">Fecha de resolución: {{e.fechaResolucion }}
+              </p>
+              <div class="bord"></div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion *ngIf="votos.length > 0">
+          <mat-expansion-panel [expanded]="true" ngClass="mb-4">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="skin-color-text"><strong>Votos </strong></p>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="isLoadV">
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+            </div>
+            <div class="col-12 mb-3 panel-h" *ngFor="let v of votos">
+              <a [routerLink]="['/doc/',entity.Votes,v.id,'/*/documento']" class="skin-color-text">{{v?.tipoAsunto}}
+                {{v?.numeroExpediente }}</a>
+              <p>{{v?.promovente}}</p>
+              <p>{{v?.rubro}}</p>
+              <p>{{v?.epoca.nombre}}. <span *ngIf="v.organoJurisdiccional">{{v?.organoJurisdiccional}}. </span><span
+                  *ngIf="!v.organoJurisdiccional">{{v?.instancia}}. </span>{{v?.fuente}}.
+                {{v?.localizacion?.libro}}<span *ngIf="v?.localizacion.anio>0">,
+                  {{v?.localizacion?.mes }} de {{v?.localizacion?.anio}}</span><span *ngIf="v?.localizacion.tomo">,
+                  {{v?.localizacion?.tomo}}</span>. <span *ngIf="v?.localizacion?.pagina > 0"> Pág {{v?.localizacion?.pagina}}</span>
+                <div class="bord"></div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion *ngIf="tematicas.length > 0">
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="skin-color-text"><strong>Relaciones temáticas </strong></p>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="isLoadR">
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+              <div class="mt-2 mb-2">
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+                <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+              </div>
+            </div>
+            <mat-tree [dataSource]="dataSourceTematica" [treeControl]="treeControl" class="example-tree">
+              <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                <a [routerLink]="['/doc',entity.Thesis,node.id,q]" class="mat-tree-node" placement="bottom" ngbTooltip="Ir a la Tesis">
+                  <button mat-icon-button disabled></button>
+                  <span style="font-size: 12px; cursor: pointer;"> {{node.name}}</span>
+                </a>
+              </mat-tree-node>
+              <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+                <li>
+                  <div class="mat-tree-node">
+                    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
+                      <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                      </mat-icon>
+                    </button> {{node.name}}
+                  </div>
+                  <ul [class.collapse]="!treeControl.isExpanded(node)">
+                    <ng-container matTreeNodeOutlet></ng-container>
+                  </ul>
+                </li>
+              </mat-nested-tree-node>
+            </mat-tree>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="toolbar-doc">
+
+  <!-- ÍCONOS -->
+  <div class="toolbar-doc__icons">
+
+    <!-- ÍNOCO DE HOME -->
+    <a routerLink="/" role="link" aria-label="Buscador Jurídico"><button aria-label="Buscador Jurídico" class="icon-button" ngbTooltip="Inicio" data-toggle="tooltip" data-placement="bottom">
+      <span hidden>Buscador Jurídico</span>
+        <i class="fa fa-home"></i>
+      </button>
+    </a>
+
+    <div class="border-right mx-2" *ngIf="isInter"></div>
+
+    <!-- ÍCONO GUARDADO BIBLIOTECA -->
+    <button role="button" aria-label="Biblioteca" class="icon-button padding-rewrite" ngbTooltip="Agregar a Mi biblioteca" data-toggle="tooltip"
+      data-placement="bottom" *ngIf="isInter">
+      <i class="fa fa-bookmark" [matMenuTriggerFor]="menu"></i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let fold of folders.content">
+        <mat-icon>folder</mat-icon>
+        <span>{{fold.nombre}}</span>
+      </button>
+    </mat-menu>
+
+
+    <div class="border-right mx-2"></div>
+
+
+    <!-- ÍCONO DE REGRESAR -->
+    <button role="button" aria-label="Regresar búsqueda" class="icon-button padding-rewrite" ngbTooltip="Regresar a búsqueda" data-toggle="tooltip"
+      data-placement="bottom" (click)="backSearch()">
+      <i class="fa fa-arrow-left"></i>
+    </button>
+
+    <div class="border-right mx-2"></div>
+
+    <!-- ÍCONO DE DOCUMENTO ANTERIOR -->
+    <button *ngIf="!hideNavegation" role="button" aria-label="Documento anterior" class="icon-button mr-2" ngbTooltip="Documento anterior" data-toggle="tooltip"
+      data-placement="bottom" (click)="beforeDocId()">
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
+
+    <!-- ÍCONO DE DOCUMENTO SIGUIENTE -->
+    <button *ngIf="!hideNavegation" role="button" aria-label="Documento siguiente" [disabled]="indexCurrent == documentIDs.length" class="icon-button"
+      ngbTooltip="Documento siguiente" data-toggle="tooltip" data-placement="bottom" (click)="nextDocId()">
+      <i class="fas fa-arrow-circle-right"></i>
+    </button>
+
+    <div class="border-right mx-2" *ngIf="!hideNavegation"></div>
+
+    <!-- ÍCONO DE COPIAR TEXTO -->
+    <button class="icon-button padding-rewrite mr-2" aria-label="Copiar texto" role="button" ngbTooltip="Copiar texto" data-toggle="tooltip"
+      data-placement="bottom" (click)="copyAllDocument()">
+      <i class="far fa-copy"></i>
+    </button>
+
+
+    <!-- ÍCONO DE IMPRIMIR -->
+    <button class="icon-button padding-rewrite mr-2" role="button" aria-label="Impresión" ngbTooltip="Imprimir" data-toggle="tooltip" data-placement="bottom"
+      (click)="printDoc()">
+      <i class="fas fa-print"></i>
+    </button>
+
+    <!-- ÍCONO DE DESCARGAR DOCUMENTO
+    <button class="icon-button padding-rewrite" ngbTooltip="Descargar documento" data-toggle="tooltip"
+      data-placement="bottom">
+      <i class="fas fa-file-download"></i>
+    </button> -->
+
+    <!--ÍCONO DE LECTOR VOZ-->
+    <button (click)="activeLector()" role="button" aria-label="Lector voz" *ngIf="lectorService.lector" class="icon-button padding-rewrite"
+      [ngbTooltip]="isActiveVocie ?'Cancelar voz':'Lector de voz'" data-toggle="tooltip" data-placement="bottom">
+      <i class="fas" [ngClass]="{'fa-volume-mute':isActiveVocie,'fa-volume-up': !isActiveVocie}"></i>
+    </button>
+  </div>
+
+  <!-- BÚSQUEDA DE COINCIDENCIAS -->
+  <div class="toolbar-doc__search">
+
+    <div class="input-group">
+
+      <!-- CAMPO DE BÚSQUEDA -->
+      <input type="text" class="form-control" placeholder="Buscar en documento" [(ngModel)]="findMatches"
+        id="searchInDoc" />
+
+      <!-- BOTONES DE ANTERIOR Y SIGUIENTE COINCIDENCIA -->
+      <div class="input-group-append" *ngIf="isMatches">
+
+        <button class="input-btn" role="button" ngbTooltip="Anterior coincidencia en documento" data-toggle="tooltip" data-placement="left"
+          (click)="beforeCoincidencia()" aria-label="Anterior coincidencia en documento">
+          <i class="fa fa-angle-up fa-lg"></i>
+        </button>
+
+        <button class="input-btn" role="button" aria-label="Siguiente coincidencia en documento" ngbTooltip="Siguiente coincidencia en documento" data-toggle="tooltip" data-placement="left"
+          (click)="nextCoincidencia()">
+          <i class="fa fa-angle-down fa-lg"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

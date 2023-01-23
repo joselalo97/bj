@@ -1,0 +1,9 @@
+<div class="pub-search">
+    <div class="pub-search__filters border-sm" [@searchAnimation]>
+      <pub-filter [subFilters]="filters" [entities]="dataSearch.entidades"></pub-filter>
+    </div>
+    <div class="pub-search__results" [@searchAnimation]>
+      <pub-results [doc]="dataSearch"></pub-results>
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="int-search-external">
+  <div class="int-search-external__query">
+    <div class="int-search-external__query--home">
+      <a [routerLink]="['/']" type="link" class="skin-color-text" ngbTooltip="Regresar a la página de inicio" placement="right">
+        <mat-icon>home</mat-icon>
+      </a>
+    </div>
+    <div class="int-search-external__query--consult">
+      <p>Consulta para: <strong>{{query}}</strong> en la fuente <strong>{{fuente}}</strong></p>
+    </div>
+    <div class="int-search-external__query--input">
+      <form (ngSubmit)="searchText()" class="d-flex flex-nowrap w-100">
+        <input type="text" class="form-control components-bg" name="query" id="query" autocomplete="off" [(ngModel)]="query"
+          placeholder="Buscar en bibliotecas externas">
+        <button mat-button class="skin-color-bg text-in-dark">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="int-search-external__content row mt-4">
+    <div class="col-3">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <p>Bibliotecas internacionales</p>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a [routerLink]="['/busquedaexterna',query,'-',lib.path,'0']" (click)="fuente = lib.path"
+            class="d-flex justify-content-start align-items-center mb-2 skin-color-text" *ngFor="let lib of sourceLibrary">
+            <em aria-hidden="true" class="icons-vdos icon-biblioteca-digital mr-2">
+            </em>
+            <p>{{ lib.name}}</p>
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

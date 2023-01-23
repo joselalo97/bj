@@ -1,0 +1,34 @@
+<div class="int-seeker skin-color-bg" id="seeker">
+
+  <div class="int-seeker__logo">
+
+    <img class="int-seeker__logo-img" src="./assets/LogoBJ_intern.svg"
+      alt="Logo del Buscador Jurídico de la Suprema Corte de Justicia de la Nación" />
+
+    <p class="int-seeker__logo-text text-in-dark">
+      Plataforma de consulta y localización de información jurídica.
+    </p>
+
+  </div>
+
+  <div class="int-seeker__search">
+
+    <a class="int-seeker__search-history text-in-dark"
+      [routerLink]="['/busqueda-historial']">
+
+      <span ngbTooltip="Historial de búsqueda"
+        placement="right" class="material-icons">
+        history
+      </span>
+
+    </a>
+
+    <div class="int-seeker__search-seeker">
+
+      <seeker></seeker>
+
+    </div>
+
+  </div>
+
+</div>

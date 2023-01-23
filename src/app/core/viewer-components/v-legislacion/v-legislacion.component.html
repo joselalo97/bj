@@ -1,0 +1,220 @@
+<div class="" *ngIf="isLoad">
+  <div class="mt-1 mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 5rem;"></div>
+  </div>
+  <div class="mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+  </div>
+  <div class="mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-1">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+</div>
+<div class="v-legislacion" *ngIf="!isLoad">
+  <div class="v-legislacion__card">
+    <div class="v-legislacion__card--subtitle">
+      <p *ngIf="documento.resumen">{{documento.resumen}}</p>
+    </div>
+    <div class="v-legislacion__card--metadata">
+      <div class="row mt-3">
+        <div [ngClass]=" { 'col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12' : documento?.poder != null ,
+                     'col-12 col-xl-4 col-lg-4 col-md-12 col-sm-12' : documento?.poder == null} ">
+          <span class="item-documento">Ámbito:
+            <p class="info-ambito">{{documento?.ambito}}</p>
+          </span>
+        </div>
+        <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12" *ngIf="documento?.poder != null">
+          <span class="item-documento">Poder:
+            <p class="info-poder">{{documento?.poder}} <span *ngIf="documento?.estado">- {{documento?.estado}} </span></p>
+          </span>
+        </div>
+        <div [ngClass]=" { 'col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12' : documento?.poder != null ,
+                    'col-12 col-xl-4 col-lg-4 col-md-12 col-sm-12' : documento?.poder == null} ">
+          <span class="item-documento">Categoría:
+            <p class="info-ambito"> {{documento?.categoriaOrdenamiento | replaceWord}}</p>
+          </span>
+        </div>
+        <div [ngClass]=" { 'col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12' : documento?.poder != null ,
+                    'col-12 col-xl-4 col-lg-4 col-md-12 col-sm-12' : documento?.poder == null} ">
+          <span class="item-documento">Vigencia:
+            <p class="info-poder">{{documento?.vigencia}}</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="v-legislacion__reforma">
+    <div class="v-legislacion__reforma--pagination">
+      <div class="v-legislacion__reforma--pagination-view">
+        <span>Mostrando <strong>{{inicio}}-{{fin}}</strong>
+          de <strong>{{total}}</strong> resultados</span>
+      </div>
+      <div class="v-legislacion__reforma--pagination-pag">
+        <ngb-pagination class="pagination" [(page)]="pagina" [maxSize]="size" (pageChange)="onSelectPage($event)" [pageSize]="size"
+          [collectionSize]="total">
+        </ngb-pagination>
+      </div>
+
+    </div>
+    <div class="v-legislacion__reforma--docs">
+      <div class="v-legislacion__reforma--docs-card" aria-controls="extractos" *ngFor="let reforma of reformas">
+        <div class="row">
+          <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12">
+            <p><span class="item-document">Categoria: <span class="info-document">{{reforma.categoriaReforma}}</span></span></p>
+          </div>
+          <div class="col-12 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+            <p><span class="item-document">Sección de publicación: <span class="info-document"> {{reforma.seccionPublicacion}}</span></span>
+            </p>
+          </div>
+          <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12">
+            <p><span class="item-document">Fecha de publicación: <span
+                  class="info-document">{{reforma.fechaPublicacion | slice:0:10}}</span></span></p>
+          </div>
+          <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12">
+            <p><span class="item-document">Fecha de expedición: <span
+                  class="info-document">{{reforma.fechaExpedicion | slice:0:10}}</span></span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="d-flex flex-wrap mt-4">
+              <button mat-button class="border-skin-color" *ngIf="reforma.reforma != null"
+                (click)="seleccionaOpcion(reforma,'extracto',link)" aria-haspopup="true" aria-expanded="false" placement="bottom"
+                ngbTooltip="Ver extracto de reforma">
+                <span class="title-ordenamiento">Extracto</span>
+              </button>
+              <button mat-button class="border-skin-color" (click)="seleccionaOpcion(reforma,'articulos',link)" aria-haspopup="true"
+                aria-expanded="false" placement="bottom" ngbTooltip="Ver artículos"
+                *ngIf="reforma?.tieneArticulos != null && reforma?.tieneArticulos">
+                <span class="title-ordenamiento">Artículos</span>
+              </button>
+              <button mat-button class="border-skin-color" (click)="seleccionaOpcion(reforma,'procesos', link)" aria-haspopup="true"
+                aria-expanded="false" placement="bottom" ngbTooltip="Ver procesos legislativos"
+                *ngIf="reforma?.tieneProcesos != null && reforma?.tieneProcesos">
+                <span class="title-ordenamiento">Procesos legislativos</span>
+              </button>
+              <button mat-button class="border-skin-color" (click)="openUrlRef(reforma?.id,reforma?.reformaId, reforma?.pdf)"
+                aria-haspopup="true" aria-expanded="false" placement="bottom" ngbTooltip="Descargar reforma en PDF"
+                *ngIf="reforma?.pdf != null && reforma?.pdf != ''">
+                <i class="fas fa-file-pdf skin-color-text mr-2" aria-hidden="true"></i>
+                <span class="title-ordenamiento">Reforma<i class="fa fa-file-word-o" aria-hidden="true"></i></span>
+              </button>
+              <button mat-button class="border-skin-color" (click)="openUrlArt(reforma?.id,reforma?.reformaId, reforma?.pdf)"
+                aria-haspopup="true" aria-expanded="false" placement="bottom" ngbTooltip="Descargar documento en Word"
+                *ngIf="reforma?.tieneArticulos != null && reforma?.tieneArticulos">
+                <i class="fas fa-file-word skin-color-text mr-2" aria-hidden="true"></i>
+                <span class="title-ordenamiento">Texto completo <i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="v-legislacion__reforma--pagination">
+      <div class="v-legislacion__reforma--pagination-view">
+        <span>Mostrando <strong>{{inicio}}-{{fin}}</strong>
+          de <strong>{{total}}</strong> resultados</span>
+      </div>
+      <div class="v-legislacion__reforma--pagination-pag">
+        <ngb-pagination class="pagination" [(page)]="pagina" [maxSize]="size" (pageChange)="onSelectPage($event)" [pageSize]="size"
+          [collectionSize]="total">
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+  <div class="v-legislacion__nota mt-3">
+    <p class="v-legislacion__nota--legend">
+      Estimado usuario: <br><br>
+      La edición de los ordenamientos jurídicos del ámbito federal o de la Ciudad de México en medios
+      electrónicos no representa una versión oficial, ya que de acuerdo al artículo 3o. del Código Civil
+      Federal y artículos 1o., 2o., 3o., 4o. y 8o. de la Ley del Diario Oficial de la Federación y Gacetas
+      Gubernamentales, la única publicación que da validez jurídica a una norma es el propio Diario Oficial
+      de la Federación, la Gaceta Oficial de la Ciudad de México o los periódicos oficiales estatales. <br><br>
+
+      Cuando en algún párrafo aparezca la leyenda “N. DE E.” significa Nota de Editor y consiste en la nota,
+      aclaración o acotación de la persona que compiló la reforma, al advertir la falta de precisión en el
+      decreto de promulgación o modificación. <br><br>
+
+      En caso de que algunas fechas de publicación o modificaciones a este ordenamiento aún no incluyan la
+      imagen digitalizada de su periódico oficial o texto sistematizado en Word, se hace de su conocimiento
+      que éstas se encuentran en proceso de ingreso u obtención. <br><br>
+
+      Para confirmar los datos o conocer su seguimiento o actualización, favor de comunicarse al teléfono
+      <strong>(55) 4113-1000</strong> extensiones <strong>1623 o 2113</strong>. <br><br>
+
+      Todo comentario o sugerencia adicionales en relación con la información que aquí se muestra,
+      le agradeceremos nos los haga llegar a las cuentas de correo electrónico <strong>cdaacl@mail.scjn.gob.mx</strong> y
+      <strong>contactobj@scjn.gob.mx</strong> <br><br>
+    </p>
+
+  </div>
+</div>
+
+<ng-template #link let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">{{reformaSeleccionada?.categoria}}</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngIf="opcionSeleccionada == 'articulos'">
+      <div class="row">
+        <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12" id="lateral-viewer" style="padding: 0;">
+          <div id="div-articulado">
+            <div class="scrollbar" id="style">
+              <ul class="timeline">
+                <li *ngFor="let art of doc.articulos">
+                  <span class="title-article" id="art-s-{{art?.id}}" (click)="irArticulo(art?.id)">{{art?.referencia}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-10 col-lg-10 col-md-12 col-sm-12" id="lateral-viewer">
+          <div class="card">
+            <div class="card-article" id="art-{{articulo?.id}}" *ngFor="let articulo of doc.articulos">
+              <h5 class="article-ref skin-color-text mb-2">{{articulo?.referencia}}</h5>
+              <span class="article-content">{{articulo?.contenido}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="articulosReforma?.articulos == null || articulosReforma?.articulos.length < 1">
+        <span class="content">No hay articulado para esta reforma</span>
+      </div>
+    </div>
+    <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngIf="opcionSeleccionada == 'extracto'">
+      <div class="row">
+        <span class="content">{{reformaSeleccionada.reforma}}</span>
+      </div>
+    </div>
+    <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngIf="opcionSeleccionada == 'procesos'">
+      <div class="row" *ngFor="let proceso of procesosReforma?.procesoslegislativos">
+        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <p class="skin-color-text"><strong>{{proceso.tipoProceso}}</strong><span *ngIf="proceso.pdf != null"><a class="skin-color-text"
+                [href]="openUrlProc(reformaSeleccionada?.id,reformaSeleccionada?.reformaId, proceso?.procesoId, proceso?.pdf)"
+                target="_blank"> <i class="fas fa-file-pdf ml-2" ngbTooltip="Ir a documento PDF" aria-hidden="true"></i></a></span></p>
+        </div>
+        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <span class="pl-content">{{proceso.proceso | slice:0:1000}}</span><span class="pl-content"
+            *ngIf="proceso.proceso.length >1000">...</span>
+        </div>
+
+        <div class="bord"></div>
+
+      </div>
+      <div class="row" *ngIf="procesosReforma?.procesoslegislativos == null || procesosReforma?.procesoslegislativos.length < 1">
+        <span class="content">No hay procesos legislativos para esta reforma</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

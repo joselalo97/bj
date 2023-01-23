@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "label": "Sentencias",
+    "description": "Consulta las sentencias de la Suprema Corte de Justicia de la Nación",
+    "imgOrIcon": "ib-sentencias-b",
+    "aria": "Sentencias",
+    "indice": "sentencias",
+    "alt": "Ícono de sentencias de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#252525"
+  },
+  {
+    "id": 2,
+    "label": "Votos",
+    "description": "Consulta los votos emitidos",
+    "imgOrIcon": "ib-votos-b",
+    "aria": "Votos emitidos",
+    "indice": "votos",
+    "alt": "Ícono de votos de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#394264"
+  },
+  {
+    "id": 3,
+    "label": "Tesis",
+    "description": "Consulta las tesis de Jurisprudencia y Aisladas",
+    "imgOrIcon": "ib-tesis-b",
+    "aria": "Tesis Aisladas y de Jurisprudencia",
+    "indice": "tesis",
+    "alt": "Ícono de tesis de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#504286"
+  },
+  {
+    "id": 4,
+    "label": "Acuerdos generales",
+    "description": "Consulta los acuerdos generales publicados",
+    "imgOrIcon": "ib-acuerdos-b",
+    "aria": "Acuerdos generales publicados",
+    "indice": "acuerdos",
+    "alt": "Ícono de acuerdos de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#81264c"
+  },
+  {
+    "id": 5,
+    "label": "Ordenamientos",
+    "description": "Consulta los ordenamientos federales, locales y tratados internacionales",
+    "imgOrIcon": "ib-ordenamientos-b",
+    "aria": "Ordenamientos federales y locales",
+    "indice": "legislacion",
+    "alt": "Ícono de ordenamientos de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#992F87"
+  },
+  {
+    "id": 6,
+    "label": "Acervo bibliotecario",
+    "description": "Consulta el acervo bibliotecario de la Suprema Corte de Justicia de la Nación",
+    "imgOrIcon": "ib-acervo-n",
+    "aria": "Acervo bibliotecario",
+    "indice": "biblioteca",
+    "alt": "Ícono de acervo bibliotecario de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#00859b"
+  },
+  {
+    "id": 7,
+    "label": "Versiones Taquigráficas",
+    "description": "Consulta las Versiones Taquigráficas",
+    "imgOrIcon": "ib-versiones-tac-b",
+    "aria": "Versiones Taquigráficas",
+    "indice": "vtaquigraficas",
+    "alt": "Ícono de versiones taquigráficas de la SCJN",
+    "path": "/home/busqueda",
+    "color": "#5a6061"
+  },
+  {
+    "id": 8,
+    "label": "Bibliotecas internacionales",
+    "description": "Acceso a bibliotecas internacionales especializadas",
+    "imgOrIcon": "ib-externas-b",
+    "aria": "Bibliotecas internacionales",
+    "indice": "",
+    "alt": "Ícono de bibliotecas internacionales especializadas",
+    "path": "/home/busquedaexterna/*/-/lcongress/0",
+    "color": "#7FA9AE"
+  }
+]

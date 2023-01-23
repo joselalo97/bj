@@ -1,0 +1,26 @@
+.v-ficha-tecnica-s {
+    padding: .4rem;
+  
+    &__expedientes {
+      display: flex;
+      justify-content: flex-end;
+      max-height: 30px;
+  
+      & a img {
+        height: 38px;
+        width: 160px;
+      }
+    }
+  
+    &__ficha {
+      padding: .5rem;
+  
+      & ::ng-deep .gridHeaderStyle {
+        background-color: #24135F;
+        color: white;
+      }
+    }
+  
+  
+  }
+  

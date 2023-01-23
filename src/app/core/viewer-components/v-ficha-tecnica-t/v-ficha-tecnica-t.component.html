@@ -1,0 +1,65 @@
+<div class="v-ficha-tecnica-t">
+    <div class="v-ficha-tecnica-t__content" *ngIf="urlVisible">
+        <div class="mt-4">
+            <h1>Datos principales</h1>
+        </div>
+        <table class="table table-bordered mt-3">
+            <tbody>
+                <tr>
+                    <th scope="row">Fecha de la sesión</th>
+                    <td>{{document?.fcSesion}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Duración de la sesión</th>
+                    <td>
+                        <span *ngIf="document?.duracionSesion">
+                            {{ document?.duracionSesion }} horas
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Asuntos abordados</th>
+                    <td>
+                        <p *ngFor="let asunto of document?.asuntosAbordados">
+                            <label *ngIf="asunto.isAcumulada">
+                                {{ asunto.tipoAsunto }} Y SUS ACUMULADOS {{ asunto.numExpediente}}, {{
+                                asunto.acumulados?.join(',')}}
+                            </label>
+                            <label *ngIf="asunto.isCa">
+                                {{ asunto.tipoAsunto }} {{ asunto.numExpediente}}-CA
+                            </label>
+                            <label *ngIf="!asunto.isAcumulada && !asunto.isCa">
+                                {{ asunto.tipoAsunto }} {{ asunto.numExpediente}}
+                            </label>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Número de participaciones de Ministros y Ministras</th>
+                    <td>{{ document?.noParticipacioMinistros}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ministros y Ministras presentes en la sesión</th>
+                    <td>
+                        <p class="mb-0" *ngFor="let presente of document?.ministrosPresentesSesion">
+                            {{ presente}}
+                        </p>
+                    </td>
+                </tr>
+                <tr *ngIf="document?.minitrosAusentesEnSesion.length > 0">
+                    <th scope="row">Ministras y Ministros ausentes en la sesión</th>
+                    <td>
+                        <p class="mb-0" *ngFor="let ausente of document?.minitrosAusentesEnSesion">
+                            {{ ausente}}
+                        </p>
+                    </td>
+                </tr>
+                <tr *ngIf="document?.presidenteDecano">
+                    <th scope="row">Presidente Decano</th>
+                    <td>{{ document?.presidenteDecano}}</td>
+                </tr>
+            </tbody>
+            <tbody></tbody>
+        </table>
+    </div>
+  </div>

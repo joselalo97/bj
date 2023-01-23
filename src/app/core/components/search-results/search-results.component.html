@@ -1,0 +1,50 @@
+<div class="search-results">
+  <div class="search-results__home">
+    <a role="link" class="skin-color-text" aria-label="Buscador Jurídico" ngbTooltip="Regresar a la página de inicio" placement="right" routerLink="/">
+      <span hidden>Buscador Jurídico</span>
+      <i class="fas fa-home"></i>
+    </a>
+    <a role="link" aria-label="Tesauro" class="search-results__home--t" placement="left" *ngIf="isTesauro"
+      ngbTooltip="Tesauro: vocabulario controlado de la Suprema Corte"
+      href="https://tesauro.scjn.gob.mx/vocab/index.php?_expresion_de_busqueda={{word}}&taskSearch=1" target="_blank">
+      <span hidden>Tesauro</span>
+      <img src="./assets/Img_BuscadorJuridico/UGACJ_icono_tesauro_color.svg" alt="Tesauro" width="40px" height="40px">
+    </a>
+  </div>
+
+  <div *ngIf="isLoad">
+    <div class="mb-3 view-skeleton" style="width: 100%; height: 3rem;"></div>
+  </div>
+
+  <div class="search-results__options" *ngIf="optionsSearch.length > 0">
+    <mat-form-field class="w-100">
+      <mat-select [(ngModel)]="selectedField">
+        <mat-option *ngFor="let option of optionsSearch" [value]="option.value">
+          {{ option.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="search-results__search" *ngIf="!isLoad">
+    <form (ngSubmit)="searchExact()" autocomplete="off">
+      <input type="text" [(ngModel)]="text" class="form-control" name="busqueda" id="busqueda"
+        placeholder="Buscar en resultados">
+    </form>
+  </div>
+
+  <div class="search-results__labels mt-2" *ngIf="labels.length > 0 && !isLoad">
+    <div class="search-results__labels--items primary-bg text-in-dark" *ngFor=" let label of labels; let i = index;">
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="mr-2 text-nowrap">
+          {{ label}}
+        </span>
+        <div class="d-flex justify-content-between align-items-center ml-2">
+          <i class="fa fa-edit mr-2 point" ngbTooltip="Editar búsqueda" (click)="editLabel(label)"></i>
+          <i class="fa fa-times point" ngbTooltip="Borrar búsqueda" (click)="clearLabel(i)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

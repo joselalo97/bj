@@ -1,0 +1,18 @@
+<div class="paginated">
+  <div class="d-flex mt-2 mb-2" *ngIf="isLoad">
+    <div class="mb-2 view-skeleton" style="width: 20%; height: 2rem;"></div>
+    <div class="mb-2 ml-auto view-skeleton" style="width: 60%; height: 2rem;"></div>
+  </div>
+  <div class="paginated__found d-flex justify-content-between align-items-center flex-wrap" *ngIf="!isLoad">
+    <div class="paginated__found--count" *ngIf="document.total > 0">
+      <span class="skin-color-text">{{document.from | convertUnit}}</span> a <span
+        class="skin-color-text">{{document.fromTo | convertUnit}}</span> de <span
+        class="skin-color-text">{{document.total | convertUnit}}</span> resultado(s)
+    </div>
+    <div #paginated class="paginated__found--pages" *ngIf="document.total > 0">
+      <ngb-pagination [maxSize]="3" [rotate]="true" [ellipses]="true" [collectionSize]="document.total"
+        [pageSize]="document.size" (pageChange)="onChangePage($event)" [page]="document.pagina" [boundaryLinks]="false">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>

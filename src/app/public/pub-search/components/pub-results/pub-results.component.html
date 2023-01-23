@@ -1,0 +1,148 @@
+<div class="pub-results">
+  <!--Paginado-->
+  <paginated [paginated]="_documents"></paginated>
+
+  <!--More Result-->
+  <div class="pub-results__more mt-4">
+    <mat-form-field style="width: 80px" ngbTooltip="Cantidad de resultados por página">
+      <mat-label>Mostrar:</mat-label>
+      <mat-select name="size" id="size" [(ngModel)]="size" (valueChange)="showMoreSize($event)">
+        <mat-option [value]="10">10</mat-option>
+        <mat-option [value]="20">20</mat-option>
+        <mat-option [value]="25">25</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="ml-5" style="width: 80px" ngbTooltip="Cantidad de texto a mostrar">
+      <mat-label>Extractos:</mat-label>
+      <mat-select [(ngModel)]="extract" (valueChange)="showMoreExtract($event)">
+        <mat-option [value]="20">20</mat-option>
+        <mat-option [value]="50">50</mat-option>
+        <mat-option [value]="100">100</mat-option>
+        <mat-option [value]="200">200</mat-option>
+        <mat-option [value]="500">500</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="pub-results__list">
+
+    <!--Skeleton-->
+    <div class="d-blok" *ngIf="isLoad">
+      <div class="mt-5 mb-5">
+        <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+      <div class="mb-5">
+        <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+      <div class="mb-5">
+        <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+    </div>
+
+    <!--Metadatos Documentos-->
+    <div class="card my-3" *ngFor="let result of resultsEntity; let i = index" [ngClass]="{'find': !isView}">
+
+      <div class="card-header">
+        <a class="skin-color-text" *ngIf="result.link" [routerLink]="[result.link]" tabindex="0">
+          <strong>{{result.linkTitle}}</strong>
+          <em [class]="result.imgFilter?.ic + ' ml-3'" *ngIf="result.imgFilter.ic"></em>
+          <img class="ic-img" [src]="result.imgFilter?.img" *ngIf="result.imgFilter.img" alt="Lineas jurisprudenciales">
+        </a>
+        <a class="skin-color-text" *ngIf="result.href" [href]="[result.href]" target="_blank" tabindex="0">
+          <strong>{{result.linkTitle}}</strong>
+        </a>
+      </div>
+
+      <div class="card-body">
+        <p class="components-color card-parrafo" *ngFor="let parrafo of result.parrafos"
+          [innerHTML]="parrafo | safeHTML"></p>
+          <div class="d-flex flex-wrap">
+            <p class="bj-color-bg text-in-dark mr-1 p-1 mt-1" *ngFor="let mat of result.label" style="font-size: 12px">
+            <strong>{{mat}}</strong>
+          </p>
+          </div>
+        <div class="row" *ngIf="result.acervo.title">
+          <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <img [src]="result.img" alt="Libro SCJN" width="auto" height="auto" class="w-100 library">
+          </div>
+          <div [ngClass]="{
+            'col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10': result.acervo.temas.length == 0,
+            'col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5': result.acervo.temas.length > 0
+          }">
+            <p class="skin-color-text">{{ result.acervo.title | uppercase}}</p>
+            <p>{{ result.acervo.autor}}</p>
+            <p>{{ result.acervo.collection}}</p>
+            <p>{{ result.acervo.pie}}</p>
+            <p>{{ result.acervo.clasificacion}}</p>
+            <div *ngFor="let urlSCJN of result.acervo.url" style="overflow-wrap: break-word;">
+              <a class="skin-color-text" [href]="urlSCJN" role="link" target="_blank" tabindex="0">
+                <strong>{{ urlSCJN}}</strong>
+              </a>
+            </div>
+
+          </div>
+          <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5" *ngIf="result.acervo.temas.length > 0">
+            <p>Tema(s):</p>
+            <div class="d-flex flex-wrap">
+              <div class="label-acervo border-bj" *ngFor="let tema of result.acervo.temas">
+                <a class="skin-color-text" role="link" [routerLink]="['/busqueda']"
+                  [queryParams]="{ q: tema ,indice: 'biblioteca' } ">
+                  <p class="text-truncate" style="max-width: 200px;">{{ tema }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pub-result__download" *ngIf="result.fileSentence || result.filePdf">
+          <a *ngIf="result.fileSentence" role="link" class="skin-color-text" [href]="result.fileSentence"
+            target="_blank" placement="left" ngbTooltip="Consulte el documento de origen" aria-label="Documento origen">
+            <span hidden>Documento origen word</span>
+            <i class="fas fa-file-word"></i></a>
+          <span *ngIf="result.fileWord" role="figure" class="skin-color-text mr-2"
+            (click)="getDoc(result.fileWord,'doc')" placement="left" ngbTooltip="Ver documento"><i
+              class="fas fa-file-word"></i></span>
+          <span *ngIf="result.filePdf" role="figure" class="skin-color-text" (click)="getDoc(result.filePdf,'pdf')"
+            placement="left" ngbTooltip="Ver documento"><i class="fas fa-file-pdf"></i></span>
+        </div>
+      </div>
+
+      <!--Extractos-->
+      <div class="card-footer p-0" *ngIf="(result.extractos | json) != '{}'">
+        <mat-accordion>
+          <mat-expansion-panel class="components-bg--a1" style="border: none; box-shadow: none;">
+            <mat-expansion-panel-header style="background-color: transparent;">
+              <mat-panel-title>
+                <p>Ver extractos del documento</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="d-inline mb-2">
+              <div *ngFor="let extracto of result.extractos | keyvalue: originalOrder">
+                <strong class="skin-color-text">{{extracto.key | htext}}:</strong>
+                <div *ngFor="let texto of extracto.value" class="extracto-contenido">
+                  <p [innerHTML]="texto" class="mb-2"></p>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <div class="card-separator border-sm"></div>
+
+    </div>
+
+    <p [innerHTML]="msjHTML"></p>
+
+
+  </div>
+
+  <!--Paginado-->
+  <paginated [paginated]="_documents"></paginated>
+
+</div>

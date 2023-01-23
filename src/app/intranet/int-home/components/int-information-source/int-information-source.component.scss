@@ -1,0 +1,91 @@
+.int-information-source {
+   display: flex;
+   flex-flow: row wrap;
+   align-content: stretch;
+
+   &__card {
+      border-radius: 0;
+      border: 1px solid rgba(0,0,0,.125);
+      cursor: pointer;
+      flex: 1;
+      height: 10rem;
+      margin: 0; 
+      min-width: 8.5rem;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transform: scale( 1 );
+      transition: all 100ms ease-in;
+
+      &:hover {
+         box-shadow: 0px 0px 13px -7px rgba(0,0,0,0.75);
+         transform: scale(1.15);
+         transition: all 100ms ease-in;
+         z-index: 2;
+      }
+
+      &-image,
+      &-label {
+         height: 50%;
+      }
+
+      &-image {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         & i {
+            font-size: 3rem;
+         }
+      }
+
+      &-label {
+         padding-top: 1rem;
+      }
+
+      & .arrow-down {
+         margin: auto;
+         width: 0;
+         height: 0;
+         border-left: 1rem solid transparent;
+         border-right: 1rem solid transparent;
+         border-top: 1rem solid;
+      }
+
+   }
+}
+
+/* Shine */
+.int-information-source__card::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+
+.int-information-source__card:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}

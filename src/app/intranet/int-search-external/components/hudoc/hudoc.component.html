@@ -1,0 +1,54 @@
+<ng-container *ngIf="!isLoad">
+  <div class="row my-3">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <p>Total de resultados : {{totalResultados}}
+      </p>
+    </div>
+    <div *ngIf="totalResultados >= 1" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end">
+      <ngb-pagination class="pagination" [page]="paginaActual" [maxSize]="5" (pageChange)="onSelectPage($event)" [pageSize]="size_result"
+        [collectionSize]="totalResultados"></ngb-pagination>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lx-12 col-lg-12 col-md-12">
+      <div class="card mb-2" *ngFor="let resultado of resultados ">
+        <div class="card-body card-content">
+          <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 text-center">
+              <a href="http://hudoc.echr.coe.int/eng?i={{resultado?.columns?.itemid}}" target="_blank">
+                <img src="./assets/img-int/external/icon_journal.png" style="width:75px; height: 85px;" alt="Portada" /></a>
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10">
+              <ng-container>
+                <a class="skin-color-text" href="http://hudoc.echr.coe.int/eng?i={{resultado?.columns?.itemid}}" target="_blank">
+                  <strong>{{resultado?.columns?.docname}}</strong></a>
+              </ng-container>
+              <p>{{resultado?.columns?.conclusion}}</p>
+              <p>{{resultado?.columns?.appno}}</p>
+              <p>{{resultado?.columns?.languageisocode}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row" *ngIf="totalResultados == 0">
+    <div class="col-xl-12 col-md-12 col-lg-12 text-center">
+      <p class="not-result"> No se encontraron resultados, intente con otra palabra</p>
+    </div>
+  </div>
+</ng-container>
+<div class=" mt-2 mb-2" *ngIf="isLoad">
+  <div class="d-flex justify-content-between">
+    <div class="mb-2 view-skeleton" style="width: 20%; height: 2rem;"></div>
+    <div class="mb-2 ml-auto view-skeleton" style="width: 20%; height: 3rem;"></div>
+  </div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+  <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+</div>

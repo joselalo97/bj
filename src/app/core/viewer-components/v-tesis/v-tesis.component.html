@@ -1,0 +1,88 @@
+<div *ngIf="isLoad">
+  <div class="mt-5 mb-5">
+    <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+</div>
+
+<div class="int-doc-tesis" *ngIf="!isLoad" #articles>
+  <div class="int-doc-tesis__metadata row p-2 m-0">
+    <div class="col-12">
+      <span><strong>Registro digital:</strong> {{doc.registroDigital}}</span>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>Instancia:</strong> {{doc.instancia}}</span>
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>{{doc.epoca?.nombre}}</strong></span>
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>Materia(s):</strong> {{doc.materia?.join(', ')}}</span>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>Tesis:</strong> {{doc.clave}}</span>
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>Fuente:</strong> {{doc.fuente}}</span>
+        <span class="col-12 col-sm col-md col-lg col-xl"><strong>Tipo:</strong> {{doc.tipo}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="int-doc-tesis__information">
+    <p class="my-4"><strong>{{doc.rubro}}</strong></p>
+  </div>
+  <div class="int-doc-tesis__bord"></div>
+  <div class="int-doc-tesis__content">
+    <p class="int-doc-tesis__content-text" [innerHTML]="doc.texto?.contenido"></p>
+  </div>
+  <div class="int-doc-tesis__bord-dash"></div>
+  <div class="int-doc-tesis__notas">
+    <div *ngFor="let nota of doc.notaPrecedente;">
+      <ng-container *ngIf="nota?.tipoAsunto">
+        <em *ngIf="nota?.tooltip" class="precedente-tesis skin-color-text" [ngbTooltip]="nota?.tooltip"
+          (click)="changeDoc(nota.tooltip,nota.link)" style="cursor: pointer;">{{nota?.tipoAsunto + ' ' +
+          nota?.numExpediente+'.'}}</em>
+        <em *ngIf="!nota?.tooltip" class="precedente-tesis skin-color-text">{{nota?.tipoAsunto + ' ' +
+          nota?.numExpediente+'.'}}</em>
+        <span class="additional-text" [innerHTML]="nota?.texto"></span>
+
+      </ng-container>
+      <ng-container *ngIf="!nota?.tipoAsunto">
+        <p class="additional-text" [innerHTML]="nota?.texto"></p>
+      </ng-container>
+    </div>
+
+    <div class="int-doc-tesis__notas--ta my-2" *ngIf="doc.tipo == 'Tesis Aislada'">
+      <p>
+        {{doc.fechaPublicacionSemanario | fechaPublicacionTesis:entitys.Thesis}}
+      </p>
+    </div>
+    <div class="int-doc-tesis__notas--tj my-2" *ngIf="doc.tipo == 'Tesis de Jurisprudencia'">
+      <p>
+        {{doc.notas}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="int-panel-article" [ngClass]="{'open': open }" closePanelThesis (hidden)="open = $event">
+  <div class="int-panel-article__content components-bg border-top-skin-color"
+    [ngClass]="{'down': open, 'expand': expand }">
+    <div class="int-panel-article__content--head border-sm">
+      <i class="fas" [ngClass]="{'fa-compress-arrows-alt':expand,'fa-expand-arrows-alt':!expand}"
+        (click)="expand = !expand"></i>
+      <i class="fas fa-times" (click)="open = false; art = ''; expand = false; dom.body.style.overflow = ''"></i>
+    </div>
+    <div class="int-panel-article__content--body">
+      <p class="article-text" [innerHTML]="art"></p>
+    </div>
+  </div>
+</div>

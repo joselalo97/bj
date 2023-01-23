@@ -1,0 +1,170 @@
+<div class="int-library">
+  <div class="int-library__redirect mt-2">
+    <a routerLink="/" class="skin-color-text">
+      <mat-icon ngbTooltip="Regresar a la página de inicio" placement="right">home</mat-icon>
+    </a>
+    <a class="skin-color-text" (click)="location.back()">
+      <mat-icon ngbTooltip="Regresar a la página anterior" placement="right">keyboard_backspace</mat-icon>
+    </a>
+  </div>
+  <div class="int-library__name">
+    <p><strong>Mi biblioteca</strong></p>
+    <p class="skin-color-text int-library__name--user">{{ username }}</p>
+  </div>
+  <div class="int-library__filters">
+    <div class="int-library__filters--seccion">
+      <p><strong>Carpetas</strong></p>
+    </div>
+    <div class="int-library__filters--seccion">
+      <div class="filters__order" ngbTooltip="Odernar por" placement="top">
+        <mat-form-field class="components-bg px-2">
+          <mat-select [(ngModel)]="order" name="order" id="order" (valueChange)="onChangeOrder($event)">
+            <mat-option value="fechaCreacion,desc">
+              Más recientes
+            </mat-option>
+            <mat-option value="fechaCreacion,asc">
+              Más antiguos
+            </mat-option>
+            <mat-option value="fechaModificacion,desc">
+              Modificados recientemente
+            </mat-option>
+            <mat-option value="nombre,asc">
+              Nombre [A-Z]
+            </mat-option>
+            <mat-option value="nombre,desc">
+              Nombre [Z-A]
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="filters__more" ngbTooltip="Mostrar" placement="top">
+        <mat-form-field class="components-bg px-2">
+          <mat-select [(ngModel)]="size" name="size" id="size" (valueChange)="onChangeSize($event)">
+            <mat-option [value]="10">
+              10
+            </mat-option>
+            <mat-option [value]="15">
+              15
+            </mat-option>
+            <mat-option [value]="20">
+              20
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="int-library__filters--seccion">
+      <ngb-pagination [maxSize]="3" [rotate]="true" [ellipses]="true" [collectionSize]="library.totalElements"
+        [page]="library.pageable.pageNumber+1" [boundaryLinks]="false" (pageChange)="onChangePage($event)">
+      </ngb-pagination>
+    </div>
+  </div>
+  <div class="int-library__views">
+    <div class="int-library__views--properties">
+
+      <div *ngIf="isLoad">
+        <div class="d-flex flex-wrap mt-3">
+          <div class="mb-3 view-skeleton" style="width: 10%; height: 2rem;"></div>
+          <div class="mb-3 ml-auto view-skeleton" style="width: 85%; height: 2rem;"></div>
+        </div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+      </div>
+
+      <div class="properties__card border-skin-color my-3" *ngFor="let folder of library.content; let i = index">
+        <div class="properties__card--items-icon">
+          <i class="fas border-skin-color" [ngClass]="{'fa-lock': !folder.publico,'fa-globe-americas': folder.publico}"></i>
+        </div>
+        <div class="properties__card--items-folder">
+          <a class="skin-color-text" [routerLink]="['/viewcarpeta',folder.id]"><strong>{{folder.nombre}}</strong></a>
+          <span [title]="folder.descripcion">{{folder.descripcion}}</span>
+        </div>
+        <div class="properties__card--items-data">
+          <p>Creación: <strong>{{folder.fechaCreacion}}</strong></p>
+          <p>Actualización: <strong>{{folder.fechaModificacion}}</strong></p>
+          <p>Documentos: <strong>{{ folder.documentos.length}}</strong></p>
+        </div>
+        <div class="properties__card--items-options">
+          <i class="fa fa-edit options__circle components-bg" (click)="modalEdit(folder,content,i)"></i>
+          <i class="fa fa-trash options__circle components-bg" (click)="openDeleteFolder(folder,contentDel,i)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="int-library__views--follows">
+      <div *ngIf="isLoad">
+        <div class="mb-3 view-skeleton" style="width: 30%; height: 2rem;"></div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+        <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+      </div>
+
+      <div class="follows-card" *ngIf="!isLoad">
+        <p>
+          <strong> Carpetas que sigo</strong>
+        </p>
+        <div class="properties__card mb-2" *ngFor="let subs of subscription">
+          <p><a class="skin-color-text" [routerLink]="['/viewcarpeta',subs.id]">{{subs.nombre}}</a></p>
+          <p>Creada por: <strong><a class="skin-color-text"
+                [routerLink]="['/viewportafolio',subs.username]">{{subs.username}}</a></strong></p>
+          <p>Actualización: <strong>{{ subs.fechaModificacion}}</strong></p>
+        </div>
+        <div class="properties__card" *ngIf="subscription.length == 0">
+          <p>No se ha suscrito a ninguna carpeta <i class="fa fa-folder"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modalEdit>
+  <div class="modal-header">
+    <h4 class="modal-title skin-color-text">Editar carpeta</h4>
+    <mat-icon (click)="modalEdit.dismiss('Cross click')">close</mat-icon>
+  </div>
+  <div class="modal-body">
+    <form method="dialog" novalidate [formGroup]="formFolder" autocomplete="off">
+      <div class="mb-3">
+        <div class="input-group">
+          <mat-form-field class="example-form-field w-100">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name" name="name" id="name">
+            <button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <mat-form-field class="example-form-field w-100">
+            <mat-label>Descripción</mat-label>
+            <input matInput type="text" formControlName="description" name="description" id="description">
+            <button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <mat-checkbox required name="privacidad" aria-label="Privado" formControlName="public">
+            Público
+          </mat-checkbox>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button mat-button class="components-bg--a3" (click)="updateFolder(content)">Guardar</button>
+  </div>
+</ng-template>
+
+<ng-template #contentDel let-modalDel>
+  <div class="modal-body">
+    <p>
+      <i class="fa fa-folder skin-color-text"></i>
+      <span class="ml-2">La carpeta "{{folderName}}" se eliminará de forma permanente. ¿Desea continuar?</span>
+    </p>
+  </div>
+  <div class="modal-footer d-flex justify-content-between">
+    <button mat-button class="components-bg--a3" (click)="deleteFolder()">Aceptar</button>
+    <button mat-button class="components-bg--a3" (click)="modalDel.close()">Cancelar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,73 @@
+<div class="row m-0 p-4">
+    <div class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <section>
+                <div class="card-body card-sugerencia" *ngFor="let asunto of ficha?.asuntosAbordados; let i = index">
+                    <div class="row m-0">
+                        <div class="col-11">
+                            <p>
+                                <strong *ngIf="asunto.asunto">
+                                {{ asunto.asunto }}
+                                </strong>
+                            </p>
+                            <p class="mb-0" *ngIf="asunto.ponente">
+                                <strong >
+                                    Ponente: {{ asunto.ponente }} 
+                                </strong>
+                            </p>
+                        </div>
+                        <div  *ngIf="asunto.temasProcesales.length != 0" class="col-1">
+                            <i (click)="viewTemas(i)" [id]="'tab-'+i" pTooltip="De clic para ver temas"
+                                tooltipPosition="bottom" class="material-icons arrow active">
+                                expand_more
+                            </i>
+                        </div>
+                        <div *ngIf="asunto.temasProcesales.length != 0" class="col-12">
+                            <div [ngClass]="{ 'expand': asunto.activePanel, 'collapse': !asunto.activePanel}">
+                                <div *ngIf="asunto.temasProcesales.length != 0" class="row m-0">
+                                    <div *ngIf="asunto.temasProcesales.length != 0" class="col-12 p-0">
+                                        <h1>Temas procesales</h1>
+                                        <div *ngFor="let temaprocesal of asunto.temasProcesales">
+                                            <div>
+                                                <p>{{temaprocesal}}</p>
+                                            </div>
+                                            <!--<div>
+                                                <p *ngFor="let tema of temaprocesal.temas">
+                                                    {{ tema}}
+                                                </p>
+                                            </div>-->
+                                        </div>
+                                        <div>
+                                            <span *ngIf="asunto.temasProcesales.length == 0">
+                                                No se han registrado temas procesales
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <hr class="col-12 p-0">
+                                    <div *ngIf="asunto.temasProcesales.length != 0" class="col-12 p-0">
+                                        <h1>Temas de fondo</h1>
+                                        <div *ngFor="let temafondo of asunto.temasFondo">
+                                            <div>
+                                                <p>{{temafondo}}</p>
+                                            </div>
+                                            <!--<div>
+                                                <p *ngFor="let tema of temafondo.temas">
+                                                    {{ tema}}
+                                                </p>
+                                            </div>-->
+                                        </div>
+                                        <div>
+                                            <span *ngIf="asunto.temasFondo.length == 0">
+                                                No se han registrado temas de fondo
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

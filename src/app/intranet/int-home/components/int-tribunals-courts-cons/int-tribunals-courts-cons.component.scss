@@ -1,0 +1,75 @@
+.tribunals__description {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2rem;
+
+  & p {
+    color: #24135f;
+    font-weight: 600;
+  }
+}
+
+.tribunals__container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  & .tribunals__courts--card {
+    min-width: 225px;
+    height: 100px;
+    border: 1px solid rgba($color: #000000, $alpha: .125);
+    flex: 1;
+    -ms-flex: 1;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    word-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    & .tribunals__courts--img {
+      margin: auto;
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: all .3s ease-in-out;
+      object-fit: contain;
+      -o-object-fit: contain;
+    }
+
+    & .courts__card--name {
+      position: absolute;
+      padding: 1rem 1rem;
+      left: 0;
+      top: 100%;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #24135f;
+      color: white;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      text-decoration: none;
+    }
+
+    &:hover .courts__card--name {
+      top: 0;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    &:hover .tribunals__courts--img {
+      top: -100%;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+
+  }
+}

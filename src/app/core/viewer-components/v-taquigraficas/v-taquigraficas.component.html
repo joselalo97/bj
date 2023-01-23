@@ -1,0 +1,46 @@
+<div class="int-doc-taquigraficas">
+  <div class="int-doc-taquigraficas__metadata row p-2 m-0">
+    <div class="col-12">
+      <div class="row">
+        <span class="col"><strong>Instancia:</strong> {{document.organoJurisdiccional}}</span>
+        <div class="col">
+          <div class="row">
+            <span><strong>Fecha sesión:</strong> {{document?.fechaSesion}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="urlVideo" class="int-doc-taquigraficas__video text-center">
+    <iframe frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" allowfullscreen
+      [src]="video">
+    </iframe>
+  </div>
+  <div class="int-doc-taquigraficas__bord"></div>
+  <div>
+    <div class="" *ngIf="isLoad">
+      <div class="mt-5 mb-5">
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+      <div class="mb-5">
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+      <div class="mb-5">
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="int-doc-taquigraficas__content" *ngIf="!isLoad">
+    <p class="int-doc-taquigraficas__content-text" [innerHTML]="archivo | safeHTML"></p>
+  </div>
+
+</div>

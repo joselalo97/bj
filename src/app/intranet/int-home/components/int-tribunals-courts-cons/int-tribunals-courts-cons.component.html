@@ -1,0 +1,14 @@
+<div class="int-tribunals-courts-cons my-4" ngbTooltip="Referencias Internacionales" placement="top">
+  <div class="tribunals__description">
+    <p>Tribunales o Cortes</p>
+    <span>Constitucionales</span>
+  </div>
+  <div class="tribunals__container">
+    <div class="tribunals__courts--card components-bg" *ngFor="let court of courts">
+      <img class="tribunals__courts--img w-100" [src]="court.img" [alt]="court.name">
+      <a [routerLink]="['./busqueda']" [queryParams]="{ q: '*', indice: court.indice }" class="courts__card--name">
+        {{ court.name}}
+      </a>
+    </div>
+  </div>
+</div>

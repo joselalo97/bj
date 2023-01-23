@@ -1,0 +1,907 @@
+/**
+ * @author César Gómez
+ * Sobreescritura de clases de material design
+ * para acoplarlo a los estilos de la aplicación
+ *
+ */
+
+
+ .menu-select__root-placeholder{
+  opacity: 1 !important;
+ }
+
+// MAT CARD
+.mat-card {
+  font-family: $text_font;
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: $shadow_lg_color !important;
+  }
+
+  color: $components_color;
+  background-color: $components_bg;
+
+  & .mat-card-header {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $border_sm_color;
+    font-family: $title_font;
+
+    & .mat-card-header-text {
+      text-align: center;
+      width: 100%;
+      margin: 0 !important;
+      font-weight: bold;
+      color: $components_color;
+    }
+  }
+
+  & .mat-form-field {
+    & .mat-form-field-label {
+      color: $components_color !important;
+    }
+  }
+
+  & .mat-card-actions {
+    padding-top: 1rem;
+    border-top: 1px solid $border_sm_color;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary,
+.mat-mini-fab.mat-primary {
+  @if $style_name=='default' {
+    color: lighten($skin_color_text, 80%);
+  }
+
+  @else {
+    color: $skin_color_text;
+  }
+
+  border-color: $skin_color_text;
+}
+
+.input-group-append {
+
+  & .mat-button,
+  & .mat-raised-button,
+  & .mat-flat-button,
+  & .mat-stroked-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+
+  & .mat-stroked-button {
+    border-color: $border_lg_color;
+
+    &[disabled][disabled] {
+      border-color: $border_lg_color;
+    }
+  }
+}
+
+// MAT-FORM
+.mat-form-field {
+  margin-bottom: 0;
+  font-family: $subtitle_font;
+
+  &.mat-form-field-appearance-outline {
+    &.mat-form-field-invalid {
+      &.mat-form-field-invalid {
+        & .mat-form-field-outline-thick {
+          color: $danger_color;
+        }
+      }
+    }
+  }
+
+  &.mat-form-field-appearance-legacy {
+    & .mat-form-field-wrapper {
+      // padding-bottom: 1.25em;
+      padding-bottom: 0.9rem;
+    }
+  }
+
+  &.mat-form-field-invalid {
+    & .mat-form-field-wrapper {
+      padding-bottom: 1.34375em;
+    }
+  }
+
+  // Input
+  & .mat-form-field-wrapper {
+    padding: 0;
+
+    & .mat-form-field-underline {
+      // background-color: $components_color;
+      background-color: transparent;
+    }
+
+    & .mat-hint {
+      color: $components_color !important;
+    }
+
+    & .mat-form-field-flex {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      & .mat-form-field-infix {
+        & .mat-input-element:disabled {
+          @if $theme_style=='light' {
+            color: lighten($components_color, 30%);
+          }
+
+          @else {
+            color: darken($components_color, 40%);
+          }
+        }
+      }
+    }
+  }
+
+  & .mat-form-field-label {
+    color: $components_color;
+  }
+}
+
+// Inputs
+.mat-focused {
+  & .mat-form-field-prefix {
+    color: $skin_color_text;
+  }
+}
+
+.mat-form-field-prefix {
+  margin-right: 0.8rem;
+  color: $components_color;
+}
+
+.error-field {
+  color: $danger_color;
+}
+
+// Mat-hint
+.mat-hint {
+  color: $components_color;
+}
+
+// SELECT
+.mat-select {
+  font-family: $title_font !important;
+
+  & .mat-select-trigger {
+    & .mat-select-arrow-wrapper {
+      & .mat-select-arrow {
+        color: $components_color;
+      }
+    }
+  }
+
+  & .mat-select-value,
+  & .mat-select-arrow-wrapper .mat-select-arrow {
+    color: $components_color;
+  }
+
+  & .mat-select-value {
+    & .mat-select-placeholder {
+      color: $components_color;
+    }
+  }
+}
+
+.mat-select-panel {
+  background-color: $components_bg;
+
+  & .mat-option {
+    &.mat-selected {
+      &:not(.mat-option-multiple) {
+        @if($theme_style=='accent') {
+          color: $components_color;
+        }
+
+        @else {
+          color: $skin_color_text;
+        }
+
+        background-color: darken($components_bg, 2%);
+      }
+    }
+
+    &:hover:not(.mat-option-multiple) {
+      background-color: darken($components_bg, 4%);
+    }
+
+    color: $components_color;
+  }
+}
+
+// TABLAS
+.card-tables {
+  box-shadow: $shadow_lg_color;
+  border-radius: 4px;
+
+  & .mat-table {
+    & thead {
+      background-color: $components_bg;
+
+      & th {
+        color: $components_color !important;
+        box-shadow: 0 -3px darken($components_bg, 5%) inset;
+
+        & .mat-sort-header-arrow {
+          color: rgba($components_color, 0.7) !important;
+        }
+      }
+    }
+
+    & thead,
+    & tr {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+
+      & th:first-child {
+        border-top-left-radius: 4px;
+      }
+
+      & th:last-child {
+        border-top-right-radius: 4px;
+      }
+    }
+
+    & tbody {
+      & tr {
+        &:hover {
+          background-color: lighten($components_bg, 35%);
+
+          & td {
+            color: $components_bg;
+          }
+        }
+      }
+    }
+  }
+
+  & .mat-paginator {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.mat-table {
+  background-color: $components_bg;
+  color: $components_color;
+
+  & .mat-header-row {
+    height: $table_item_height;
+
+    & .mat-header-cell {
+      height: 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: $components_color;
+      font-family: $subtitle_font;
+      font-size: $fontsize_sm;
+      text-transform: uppercase;
+
+      & .mat-sort-header-container {
+        justify-content: center;
+
+        & .mat-sort-header-arrow {
+          color: rgba($components_color, 0.7);
+        }
+      }
+    }
+  }
+
+  & .mat-row {
+    height: $table_item_height;
+    font-family: $text_font;
+    border-style: none !important;
+
+    &.row-hoverable {
+      transition: box-shadow 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: darken($components_bg, 4%);
+        box-shadow: $shadow_lg_color !important;
+        transform: scale(1);
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $components_bg;
+    }
+
+    &:nth-child(odd) {
+      background-color: darken($components_bg, 3%);
+    }
+
+    & .mat-cell {
+      color: $components_color;
+      font-size: $default_fontsize;
+      border: none !important;
+      height: 1rem;
+    }
+  }
+
+  & .mat-table-sticky {
+    border-top: 1px solid $border_lg_color;
+  }
+}
+
+// Maximo alto de tablas para sticky
+.maxwidth-mattable-sticky {
+  max-height: 20rem;
+  overflow: auto;
+}
+
+// PAGINADOR
+.mat-paginator {
+  background-color: $components_bg;
+  color: $components_color;
+
+  & .mat-paginator-outer-container {
+    & .mat-paginator-container {
+      & .mat-paginator-range-actions {
+        & .mat-icon-button {
+          color: $components_color;
+
+          &[disabled][disabled] {
+            color: lighten($components_color, 40);
+          }
+        }
+      }
+
+      & .mat-paginator-page-size {
+        & .mat-form-field-wrapper {
+          padding-bottom: 1.34375em;
+
+          & .mat-form-field-flex {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  & .mat-paginator-range-label {
+    margin-top: 0.5rem !important;
+  }
+}
+
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+// MAT MENU
+.mat-menu-item {
+  color: $components_color;
+  font-family: $title_font;
+
+  &.sidebar-menu-item {
+    height: 3.8rem;
+  }
+
+  &:hover {
+    &:not([disabled]) {
+      background-color: darken($components_bg, 10%);
+      color: $components_color !important;
+      font-family: $title_font;
+    }
+  }
+}
+
+.mat-menu-panel {
+  font-family: $title_font;
+  max-width: initial !important;
+  border-radius: 0.5rem !important;
+
+  position: relative;
+  overflow: initial;
+  background: none !important;
+
+  .mat-menu-content {
+    height: 100%;
+    background-color: $components_bg;
+    border-radius: 0.5rem !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 250px;
+
+    &:not(:empty) {
+      padding: 0 !important;
+    }
+
+    & .title-menu {
+      background-color: $components_bg;
+      color: $components_color;
+      border-bottom: 1px solid $border_sm_color;
+    }
+
+    & .menu-item-for {
+      height: 100%;
+      overflow: auto;
+
+      & .first-element {
+        padding-top: 2.2rem !important;
+      }
+    }
+  }
+}
+
+.mat-menu-panel.mini {
+  min-width: auto;
+  background-color: $components_bg !important;
+
+  & .mat-menu-item {
+    &.active {
+      background-color: $hover_color !important;
+    }
+  }
+
+  &.scroll {
+    min-width: 6rem !important;
+    max-height: 12rem;
+    overflow: auto;
+  }
+
+}
+
+// MODAL
+.cdk-overlay-container {
+
+  & .cdk-global-overlay-wrapper {
+
+    & .cdk-overlay-pane {
+
+      & .mat-dialog-container {
+        background-color: $components_bg;
+        color: $components_color !important;
+
+        & .mat-dialog-content {
+          border-top: 1px solid $border_sm_color;
+          border-bottom: 1px solid $border_sm_color;
+          padding-top: 1rem;
+        }
+
+        & .mat-dialog-actions {
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+// CDK OVERLAY MAT MENU
+.cdk-overlay-pane {
+  max-width: none !important;
+
+  & .mat-menu-panel {
+    max-width: none !important;
+  }
+}
+
+// MAT TAB
+.mat-tab-group {
+
+  font-family: inherit !important;
+
+  & .mat-tab-header {
+
+    & .mat-tab-label,
+    & .mat-tab-link {
+      font-family: $text_font !important;
+      text-transform: uppercase;
+      font-size: $fontsize_sm;
+    }
+
+    & .mat-tab-label {
+      color: $components_color !important;
+    }
+  }
+
+  & .mat-tab-body-wrapper {
+    font-family: $text_font;
+  }
+
+  & .mat-tab-body,
+  & .mat-tab-body-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+// Mat checkbox
+.mat-checkbox {
+  width: 100% !important;
+
+  & .mat-checkbox-layout {
+    & .mat-checkbox-inner-container {
+
+      height: 25px;
+      width: 25px;
+      background-color: $components_bg;
+
+      & .mat-checkbox-frame {
+        border-color: $components_color;
+      }
+    }
+  }
+}
+
+.mat-checkbox-checkmark-path {
+  stroke: $text-in-dark !important;
+}
+
+/* ---- ---- ---- MAT CHIP ---- ---- ---- */
+.mat-chip {
+  &.mat-standard-chip {
+    background-color: darken($components_bg, 8%);
+    color: $components_color;
+  }
+}
+
+/* ---- ---- ---- MAT ACCORDION ---- ---- ---- */
+
+.mat-accordion {
+  & .mat-expansion-panel {
+    background-color: $components_bg;
+    color: $components_color;
+    box-shadow: none;
+  }
+}
+
+.mat-accordion.santan {
+  width: 100%;
+
+  & .mat-expansion-panel {
+    background-color: $components_bg;
+    color: $components_color;
+    box-shadow: none;
+
+    &:not(.mat-expanded) {
+      & .mat-expansion-panel-header {
+        &:hover:not([aria-disabled=true]) {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    & .mat-expansion-panel-header {
+      height: auto !important;
+      padding-left: 0;
+      padding-right: 0;
+
+      & .mat-expansion-panel-header-title {
+        display: flex;
+        align-items: center;
+        color: $components_color;
+      }
+
+      & .mat-expansion-indicator {
+        &::after {
+          color: $skin_color_text;
+        }
+      }
+    }
+
+    & .mat-expansion-panel-content {
+      & .mat-expansion-panel-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.mat-expansion-panel-header, .mat-expansion-panel-content, strong{
+  font-family: inherit !important;
+}
+
+.mat-checkbox{
+  font-family: inherit !important;
+}
+
+
+.mat-tree-node {
+  background-color: $components_bg;
+}
+
+
+/* ---- ---- ---- MAT CALENDAR ---- ---- ---- */
+/* ---- ---- ---- CALENDAR SANTAN ---- ---- ---- */
+
+.mat-calendar {
+  &.calendar-santan {
+
+    & .mat-calendar-header {
+      padding: 0;
+
+      & .mat-calendar-controls {
+        margin-bottom: 0.5rem;
+
+        & .mat-calendar-period-button {
+          padding: 0 0.5rem;
+
+          & .mat-button-wrapper {
+            font-family: $title_font;
+            color: $skin_color_text;
+            font-size: 1.1rem;
+
+            & .mat-calendar-arrow {
+              border-top-color: $skin_color_text;
+            }
+          }
+        }
+      }
+    }
+
+    & .mat-calendar-content {
+      padding: 0 0.5rem 0.5rem 0.5rem;
+      background-color: $components_bg;
+      box-shadow: $shadow_lg_color;
+      border-radius: 4px;
+
+      &[ng-reflect-ng-switch="month"] {
+        padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+      }
+
+      & .mat-calendar-table {
+        & .mat-calendar-table-header {
+          & tr {
+            & th {
+              font-family: $title_font;
+              color: $components_color;
+            }
+          }
+
+          & .mat-calendar-table-header-divider {
+            &::after {
+              background-color: $border_sm_color;
+            }
+          }
+        }
+
+        & .mat-calendar-body {
+
+          & .mat-calendar-body-cell {
+
+            &.mat-calendar-body-disabled {
+              opacity: 0.5 !important;
+            }
+
+            &.mat-calendar-body-in-comparison-range {
+              &.mat-calendar-body-in-range {
+                &::after {
+                  background: transparent !important;
+                  background-color: lighten($skin_color_bg, 47%) !important;
+                }
+              }
+            }
+
+            &.mat-calendar-body-in-range {
+              &::before {
+                background-color: $hover_color !important;
+              }
+            }
+
+          }
+
+          & .mat-calendar-body-selected {
+            background-color: $skin_color_bg;
+            color: lighten($skin_color_text, 30%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.mat-calendar.calendar-santan {
+  & .mat-calendar-header {
+    padding: 0;
+
+    & .mat-calendar-controls {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      margin-right: 0;
+
+      & .mat-calendar-period-button {
+        padding: 0 0.5rem;
+
+        & .mat-button-wrapper {
+          font-family: $title_font;
+          color: $skin_color_text;
+          font-size: 1rem;
+
+          & .mat-calendar-arrow {
+            border-top-color: $skin_color_text;
+            border-top-color: $skin_color_text;
+          }
+        }
+      }
+
+      & .mat-calendar-next-button,
+      & .mat-calendar-previous-button {
+        border: none !important;
+        border-radius: 0.3rem !important;
+        width: 2.5rem !important;
+        height: 1.6rem !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: $skin_color_text !important;
+        background-color: $components_bg !important;
+        box-shadow: $shadow_sm_color !important;
+        transition: all 0.1s ease-in-out;
+
+        &:after {
+          display: none;
+        }
+
+        &:hover .mat-button-wrapper {
+          &:after {
+            font-size: 1.1rem;
+          }
+        }
+
+        &:active {
+          box-shadow: none !important;
+        }
+
+        & .mat-button-focus-overlay {
+          display: none;
+        }
+
+        & .mat-button-wrapper {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          transition: all 0.1s ease-in-out;
+
+          &:after {
+            font-family: $text_font !important;
+            font-size: 1rem;
+            font-weight: bold;
+          }
+
+        }
+      }
+
+      & .mat-calendar-previous-button {
+        margin-right: 0.5rem;
+
+        &:active .mat-button-wrapper {
+          margin-right: 0.3rem;
+        }
+
+      }
+
+      & .mat-calendar-next-button {
+        margin-left: 0.5rem;
+
+        &:active .mat-button-wrapper {
+          margin-left: 0.3rem;
+        }
+
+      }
+
+    }
+  }
+
+  & .mat-calendar-content {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    background-color: $components_bg;
+    box-shadow: $shadow_lg_color;
+    border-radius: 4px;
+
+    &[ng-reflect-ng-switch="month"] {
+      padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    & .mat-calendar-table {
+      & .mat-calendar-table-header {
+        color: $components_color;
+        font-family: $title_font;
+
+        & tr {
+          & th {
+            font-family: $title_font;
+            color: $components_color;
+          }
+        }
+
+        & .mat-calendar-table-header-divider {
+          &::after {
+            background-color: $border_sm_color;
+          }
+        }
+      }
+
+      & .mat-calendar-body {
+        font-family: $title_font;
+
+        & .mat-calendar-body-label {
+          &[colspan="7"] {
+            display: none;
+          }
+
+          &[colspan="1"],
+          &[colspan="2"],
+          &[colspan="3"],
+          &[colspan="4"],
+          &[colspan="5"],
+          &[colspan="6"] {
+            visibility: hidden;
+          }
+        }
+
+        & .mat-calendar-body-cell-content {
+          color: $components_color;
+          transition: all 0.2s ease-in-out;
+        }
+
+        & .mat-calendar-body-today {
+          &:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+            border-color: $border_lg_color;
+          }
+        }
+
+        & .mat-calendar-body-selected {
+          background-color: $skin_color_bg;
+          font-family: $title_font;
+          color: lighten($skin_color_text, 45%);
+        }
+      }
+    }
+
+    & mat-month-view {
+      & .mat-calendar-table {
+        & .mat-calendar-body {
+          & .mat-calendar-body-cell-content {
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mat-progress-spinner {
+  &.spinner-santan-white {
+    & circle {
+      stroke: $components_bg !important;
+    }
+  }
+}
+
+// SLIDER
+.mat-slider-track-fill,
+.mat-slider-thumb,
+.mat-slider-thumb-label {
+  @if $style_name=='whiteblack'
+
+  or $style_name=='yellowblack' {
+    background-color: $skin_color_text !important;
+  }
+
+  @else {
+    background-color: $skin_color_bg !important;
+  }
+}

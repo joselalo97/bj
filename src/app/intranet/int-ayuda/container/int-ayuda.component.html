@@ -1,0 +1,80 @@
+<div class="int-ayuda">
+  <div class="int-ayuda__head">
+    <h5>Fuentes de datos (entidades de información)</h5>
+    <div class="int-ayuda__head--box mt-2">
+      <mat-form-field>
+        <mat-label>Seleccione la fuente:</mat-label>
+        <mat-select name="food" [(ngModel)]="entity" name="entity" (selectionChange)="switchInfoEntity(entity)">
+          <mat-option *ngFor="let ent of entitys" [value]="ent">
+            {{ent}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="int-ayuda__information">
+    <div class="row" *ngIf="descripcionEntidad">
+      <div class="form-group col-md-12">
+        <p class="text-justify">
+          <strong>{{descripcionEntidad}}</strong>
+        </p>
+      </div>
+    </div>
+    <div clas="row" *ngIf="entity !='Sentencias'">
+      <div class="form-group col-md-12">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th class="w-25">Campo</th>
+                <th class="w-50">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dtEntidad">
+                <th>{{item.campo}}</th>
+                <td>
+                  <p class="text-justify" [innerHTML]="item.descripcion"></p>
+                </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="entity ==='Sentencias'">
+      <div class="form-group col-md-12">
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let td of dtSentencias" [expanded]="td.active" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <label for="" style="font-weight: bold; margin: 10px;">{{td.name}} </label>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th class="w-25">Campo</th>
+                    <th class="w-50">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of td.table">
+                    <th>{{item?.campo}}</th>
+                    <td>
+                      <p class="text-justify" [innerHTML]="item?.descripcion"></p>
+                    </td>
+                </tbody>
+              </table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

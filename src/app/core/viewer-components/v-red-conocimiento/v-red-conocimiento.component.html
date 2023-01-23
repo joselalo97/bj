@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row vred-conocimiento">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 vred-conocimiento__figure">
+      <div class="d-blok" *ngIf="isLoad">
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 25rem;"></div>
+      </div>
+      <figure class="highcharts-figure">
+        <div id="container"></div>
+      </figure>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3  vred-conocimiento__cards">
+      <div class="vred-conocimiento__cards--tags">
+        <div class="d-blok" *ngIf="isLoad">
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 8rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 8rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 8rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 8rem;"></div>
+        </div>
+
+        <div class="card border-lg mb-3" *ngFor="let linea of relacionRedExport">
+          <div class="d-block">
+            <p class="text-center" [ngClass]="{'title-engrose': (linea?.entidad | convertNode) == 'Sentencia',
+          'title-jurisprudencia': (linea?.entidad | convertNode) == 'Tesis de Jurisprudencia',
+          'title-aislada': (linea?.entidad | convertNode) == 'Tesis Aislada',
+          'title-expediente': (linea?.entidad | convertNode) == 'Expediente',
+          'title-ordenamiento': (linea?.entidad | convertNode) == 'Ordenamiento',
+          'title-tratado': (linea?.entidad | convertNode) == 'Tratado Internacional',
+          'title-coidh': (linea?.entidad | convertNode) == 'Caso Coidh',
+          'title-acuerdo': (linea?.entidad | convertNode) == 'Acuerdo'}">{{linea?.entidad |
+              convertNode }}</p>
+          </div>
+          <div class="d-flex flex-column p-3">
+            <p class="font-s" [innerHTML]="linea?.text"></p>
+          </div>
+          <button type="button" class="btn bj-color-bg text-white" *ngIf="(linea?.entidad | convertNode) == 'Ordenamiento'
+        || (linea?.entidad | convertNode) == 'Tesis de Jurisprudencia'
+        || (linea?.entidad | convertNode) == 'Expediente'
+        || (linea?.entidad | convertNode) == 'Tesis Aislada'
+        || ((linea?.entidad | convertNode) == 'Caso Coidh')
+        " (click)="redictDoc(linea?.entidad,linea)">Ir al documento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

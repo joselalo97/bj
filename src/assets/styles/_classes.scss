@@ -1,0 +1,225 @@
+// Backgrounds
+.main_bg {
+   background-color: $main_bg !important;
+}
+
+.skin-color-bg {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      background-color: $skin_color_bg !important;
+   } @else {
+      background-color: $skin_color_bg;
+   }
+}
+
+.bj-color-bg {
+   background-color: $bj_color !important;
+}
+
+.components-bg {
+   background-color: $components_bg !important;
+
+   &.hover:hover {
+      background-color: darken( $components_bg, 5% ) !important;
+   }
+}
+
+.components-bg--a1
+.components-bg--a2
+.components-bg--a3 {
+   transition: background-color 0.2s ease-in-out;
+}
+
+.components-bg--a1 {
+   background-color: darken( $components_bg, 3% ) !important;
+
+   &.hover:hover {
+      background-color: darken( $components_bg, 5% ) !important;
+   }
+}
+
+.components-bg--a2 {
+   background-color: darken( $components_bg, 5% ) !important;
+
+   &.hover:hover {
+      background-color: darken( $components_bg, 10% ) !important;
+   }
+}
+
+.components-bg--a3 {
+   background-color: darken( $components_bg, 10% ) !important;
+
+   &.hover:hover {
+      background-color: darken( $components_bg, 15% ) !important;
+   }
+}
+
+.primary-bg { background-color: $primary_color !important; }
+.dark-primary-bg { background-color: $dark_primary_color !important; }
+
+.success-bg { background-color: $success_color !important; }
+.dark-success-bg { background-color: $dark_success_color !important; }
+
+.info-bg { background-color: $info_color !important; }
+.dark-info-bg { background-color: $dark_info_color !important; }
+
+.warning-bg { background-color: $warning_color !important; }
+.dark-warning-bg { background-color: $dark_warning_color !important; }
+
+.danger-bg { background-color: $danger_color !important; }
+.dark-danger-bg { background-color: $dark_danger_color !important; }
+
+// Colors
+.skin-color-text { color: $skin_color_text !important; }
+
+.bj-color { color: $bj-color !important; }
+
+.text-in-dark { color: $text-in-dark !important; }
+
+.components-color { color: $components_color !important; }
+
+.primary-text { color: $primary_color !important; }
+
+.success-text { color: $success_color !important; }
+
+.info-text { color: $info_color !important; }
+
+.warning-text { color: $warning_color !important; }
+
+.danger-text { color: $danger_color !important; }
+
+// Colores de bordes
+.border-skin-color {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      border-color: $skin_color_text !important;
+   } @else {
+      border-color: $skin_color_text;
+   }
+}
+.border-left-skin-color {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      border-left-color: $skin_color_text !important;
+   } @else {
+      border-left-color: $skin_color_text;
+   }
+}
+.border-top-skin-color {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      border-top-color: $skin_color_text !important;
+   } @else {
+      border-top-color: $skin_color_text;
+   }
+}
+.border-right-skin-color {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      border-right-color: $skin_color_text !important;
+   } @else {
+      border-right-color: $skin_color_text;
+   }
+}
+.border-bottom-skin-color {
+   @if $style_name == 'yellowblack'
+   or $style_name == 'whiteblack' {
+      border-bottom-color: $skin_color_text !important;
+   } @else {
+      border-bottom-color: $skin_color_text;
+   }
+}
+
+.border-bj { border-color: $bj_color !important; }
+
+.primary-border { border-color: $primary_color !important; }
+.dar-primary-border { border-color: $primary_color !important; }
+
+.success-border { border-color: $success_color !important; }
+.dar-success-border { border-color: $success_color !important; }
+
+.info-border { border-color: $info_color !important; }
+.dar-info-border { border-color: $info_color !important; }
+
+.warning-border { border-color: $warning_color !important; }
+.dar-warning-border { border-color: $warning_color !important; }
+
+.danger-border { border-color: $danger_color !important; }
+.dar-danger-border { border-color: $danger_color !important; }
+
+.border-sm { border-color: $border_sm_color !important; }
+.border-lg { border-color: $border_lg_color !important; }
+
+// Tipografías
+.title-font { font-family: $title_font !important; }
+.subtitle-font { font-family: $subtitle_font !important; }
+.text-font { font-family: $text_font !important; }
+
+// Sombras
+.shadow-sm { box-shadow: $shadow_sm_color !important; }
+
+.shadow-lg { box-shadow: $shadow_lg_color !important; }
+
+.shadow-bottom-bj {
+   box-shadow: inset 0 -0.25rem 0 0 $skin_color_text;
+}
+
+// Buttons
+.icon-button,
+.input-btn {
+   outline: none;
+   font-size: 1.2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: $components_color;
+   background-color: $components_bg;
+   transition: all 0.1s ease-in-out;
+
+   &:hover {
+      background-color: lighten( $skin_color_text, 70% );
+      color: $skin_color_text;
+   }
+
+   &:active {
+      background-color: lighten( $skin_color_text, 75% );
+   }
+
+}
+
+.found{
+   background-color: lighten( $skin_color_text, 75% );
+   transition: all 1s ease-in-out;
+}
+
+.icon-button {
+   border: none;
+   border-radius: 50%;
+   padding: 0.5rem;
+}
+
+.input-btn {
+   padding: 0 1rem;
+   border: 1px solid $border_sm_color;
+
+   &:last-child {
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+
+      &:hover {
+         border-top-right-radius: 0.3rem;
+         border-bottom-right-radius: 0.3rem;
+      }
+   }
+}
+
+
+mark[data-markjs]{
+   background-color: $mark-skin !important;
+
+   &.view{
+      color: red;
+   }
+}
+
+@import './common/forms';

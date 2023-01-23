@@ -1,0 +1,161 @@
+<div class="accessibility">
+
+  <div class="accessibility__icon" cdkDrag cdkDragBoundary=".accessibility__icon">
+
+    <button class="bj-color-bg accessibility__icon-btn" mat-mini-fab color="primary" [matMenuTriggerFor]="menu"
+      aria-label="Ícono de accesibilidad" role="button">
+      <mat-icon>accessibility_new</mat-icon>
+    </button>
+
+    <div class="accessibility__icon-text bj-color-bg text-white">
+      <span>Accesibilidad</span>
+    </div>
+
+  </div>
+
+  <mat-menu #menu="matMenu">
+
+    <form class="row accessibility__form ml-4 mr-2" [formGroup]="accessibilityForm" (click)="$event.stopPropagation()">
+
+      <ng-container *ngIf="false">
+        <!-- ASISTENTE -->
+        <div class="row w-100 pt-4" *ngIf="userAgent.verify()">
+          <div class="col-6">
+            <span>Asistente virtual</span>
+          </div>
+          <div class="col-6 text-center">
+            <mat-slide-toggle (change)="viewAgent( $event )" formControlName="agent" [checked]="false">
+            </mat-slide-toggle>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="accessibility__separator border-sm mt-2" *ngIf="userAgent.verify()"></div>
+
+      <!-- LECTOR DE PANTALLA -->
+      <div class="row w-100 pt-4" *ngIf="userAgent.verify()">
+        <div class="col-6">
+          <span>Lector de pantalla</span>
+        </div>
+        <div class="col-6 text-center">
+          <mat-slide-toggle (change)="changeScreenReader( $event )" formControlName="screenReader" [checked]="false">
+          </mat-slide-toggle>
+        </div>
+      </div>
+
+      <div class="accessibility__separator border-sm mt-2"></div>
+
+      <!-- TAMAÑO DE LETRA -->
+      <div class="row w-100 d-flex align-items-center">
+        <div class="col-6">
+          <span>Tamaño de letra</span>
+        </div>
+        <div class="col-6 text-center">
+          <mat-slider class="w-100" formControlName="letterSize" min="12" max="22" step="1"
+            [value]="preferences.pixelsBase" (input)="changeLetterSize( $event )">
+          </mat-slider>
+        </div>
+      </div>
+
+      <div class="accessibility__separator border-sm mt-2"></div>
+
+      <!-- FUENTE -->
+      <div class="row w-100 d-flex align-items-center">
+        <div class="col-6">
+          <span>Fuente</span>
+        </div>
+        <div class="col-6 text-center">
+          <mat-form-field>
+            <mat-select formControlName="font" (valueChange)="changeFont( $event )">
+              <mat-option *ngFor="let font of fontList" [value]="font.value">
+                {{ font.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="accessibility__separator border-sm"></div>
+
+      <!-- COLOR Y CONTRASTE -->
+      <div class="row w-100 pb-2 d-flex align-items-center">
+        <div class="col-6">
+          <span>Color y contraste</span>
+        </div>
+        <div class="col-6 text-center">
+          <mat-form-field>
+            <mat-select formControlName="colorAndContrast" (valueChange)="changeSkin( $event )">
+              <mat-option *ngFor="let skin of skinList" [value]="skin.value">
+                {{ skin.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+  </mat-menu>
+
+</div>
+
+
+<div class="attendee components-bg--a3" id="agent" [ngClass]="{'active': isActive}" [cdkDragFreeDragPosition]="position"
+  cdkDragBoundary=".wrapper-cont" cdkDrag (cdkDragMoved)="getPixels($event)">
+  <div class="attendee__agent skin-color-white" (mouseover)="isPanel = true">
+    <img [src]="imgAgent" alt="Asistente" class="attendee__agent--animation" width="auto" height="auto">
+    <i class="fas fa-retweet attendee__agent--restore components-bg m-1" ngbTooltip="Restaurar posición"
+      placement="left" (click)="position = {x:0,y:0}; isMoved = false" *ngIf="isMoved"></i>
+    <i class="fas fa-times attendee__agent--close components-bg m-1" (click)="closeAgent()" ngbTooltip="Cerrar"
+      placement="left"></i>
+  </div>
+  <form class="attendee__search mt-2">
+    <textarea name="search" cols="30" rows="6" id="vioce_agent" type="text" class="attendee__search--inpt components-bg"
+      #attendee placeholder="Pídeme algo"
+      (keydown)="$event.key === 'Enter'?searchHelp(attendee.value) :null"></textarea>
+    <div class="attendee__search--btn skin-color-bg">
+      <button aria-label="voz" role="button" mat-button class="skin-color-bg text-in-dark" type="submit"
+        (click)="isReadVoice = !isReadVoice; accessibilityForm.controls['screenReader'].setValue(isReadVoice)">
+        <i class="fa" [ngClass]="{'fa-volume-up': isReadVoice, 'fa-volume-mute': !isReadVoice}"></i>
+      </button>
+      <button mat-button aria-label="micrófono" role="button" class="skin-color-bg text-in-dark voice-m" type="submit"
+        (click)="activeMicrophono()">
+        <i class="fa fa-microphone"></i>
+      </button>
+      <button aria-label="búsqueda" role="button" mat-button class="skin-color-bg text-in-dark" type="submit"
+        id="btn-search" (click)="searchHelp(attendee.value)">
+        <i class="fa" [ngClass]="{'fa-circle-notch': isLoad,'fa-search': !isLoad}"></i>
+      </button>
+      <div id="onsound" class="attendee__search--btn-circle-voice shadow bg-components">
+        <i class="fa fa-microphone"></i>
+      </div>
+    </div>
+  </form>
+  <div class="attendee__panel components-bg--a3 border-sm" [ngClass]="{'active': isPanel}" id="panel-msj">
+    <span class="attendee__panel--msj" [ngClass]="{'in-show': msjPanel != ''}">{{msjPanel}}</span>
+    <i class="fa fa-times attendee__panel--close components-bg" (click)="isPanel = false"></i>
+    <div class="attendee__panel--alerts" [ngClass]="{'act': isNewPage.act}">
+      <button mat-button role="button" aria-label="Sí" class="warning-bg text-in-dark"
+        (click)="isNewPage.act = false; isPanel = false">
+        No
+      </button>
+      <button mat-button role="button" aria-label="No" class="warning-bg text-in-dark" (click)="acceptRedirect()">
+        Sí
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="controls-voice bg-components shadow" id="controls">
+  <p class="controls-vioce__title">Lectura párrafo<i></i></p>
+  <div class="controls-voice__buttons">
+    <div class="controls-voice__buttons--cancel">
+      <i class="ic-circle fas fa-volume-mute skin-color-text" (click)="onClose()"></i>
+    </div>
+    <div class="controls-voice__buttons--separator border-skin-color"></div>
+    <div class="controls-voice__buttons--pause">
+      <i class="ic-circle fas" [ngClass]="{'fa-pause-circle':!isResume, 'fa-play': isResume }"
+        (click)="isResume ? onResume() : onPause()"></i>
+    </div>
+  </div>
+</div>

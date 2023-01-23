@@ -1,0 +1,30 @@
+[
+   {
+      "id": 0,
+      "label": "Fuentes de datos",
+      "value": "0",
+      "disabled": true,
+      "selected": true
+   },
+   {
+      "id": 1,
+      "label": "Sentencias",
+      "value": "1",
+      "disabled": false,
+      "selected": false
+   },
+   {
+      "id": 2,
+      "label": "Votos",
+      "value": "2",
+      "disabled": false,
+      "selected": false
+   },
+   {
+      "id": 3,
+      "label": "Ordenamientos",
+      "value": "3",
+      "disabled": false,
+      "selected": false
+   }
+]

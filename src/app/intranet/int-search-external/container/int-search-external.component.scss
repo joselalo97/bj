@@ -1,0 +1,15 @@
+.int-search-external {
+  margin-top: 1.2rem;
+
+  &__query {
+    display: flex;
+    justify-content: space-between;
+
+    &--input {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-basis: 500px;
+    }
+  }
+
+}

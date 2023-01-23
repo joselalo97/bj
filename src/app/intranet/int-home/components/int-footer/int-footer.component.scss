@@ -1,0 +1,97 @@
+@import '../../../../../assets/styles/variables';
+
+.end-footer {
+  border-top: 1px solid;
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    &--link {
+      font-size: calc(2.5rem + .66vw);
+    }
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: column;
+
+    &--text {
+      font-size: $fontsize_xs;
+      margin-bottom: .8rem !important;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    &--phone,
+    &--email {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      & div {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: .4rem;
+
+        & mat-icon {
+          font-size: calc(.5rem + .66vw) !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+  }
+
+  &__social {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--circle {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .3rem;
+      border-radius: 50%;
+      margin: .2rem;
+      transition: transform .3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      &:nth-child(1) {
+        background: #3b5998;
+      }
+
+      &:nth-child(2) {
+        background: #55acee;
+      }
+
+      &:nth-child(3) {
+        background: #007bb5;
+      }
+
+      &:nth-child(4) {
+        background: #b00;
+      }
+
+    }
+  }
+
+}

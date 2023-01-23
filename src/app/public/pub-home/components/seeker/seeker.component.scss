@@ -1,0 +1,115 @@
+.seeker-pub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -ms-flex-direction: column;
+
+  &__logo {
+    &--bj {
+      @media (max-width:460px) {
+        width: calc(10rem + 0.66vw);
+        height: calc(6rem + 0.66vh);
+      }
+
+    }
+  }
+
+  &__title {
+    margin-top: -1.3rem;
+
+    &--h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+      font-size: calc(.6rem + .66vw);
+      padding: 0 2rem;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    width: 60%;
+
+    &--search {
+      display: flex;
+      border-style: solid;
+      border-radius: .3rem;
+
+      @media (max-width: 380px) {
+          justify-content: flex-end;
+      }
+
+      & .search__select {
+        @media (max-width: 520px) {
+          width: 100%;
+        }
+      }
+
+      & .search__inpt {
+        flex-grow: 1;
+        position: relative;
+
+        & input {
+          border: none;
+        }
+
+        & .search__sug {
+          position: absolute;
+          left: 0;
+          width: 200px;
+          height: 0px;
+          z-index: 99;
+          overflow-y: auto;
+          overflow-x: hidden;
+          transition: all .3s ease-in-out;
+          -o-transition: all .3s ease-in-out;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          opacity: 0;
+
+          &.active {
+            height: 200px;
+            opacity: 1;
+          }
+
+          &--item {
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, .3);
+            }
+          }
+
+
+        }
+
+      }
+
+      & .search__buttons {
+        & button {
+          min-width: calc(0.1rem + .66vw);
+          padding: 0 0.6rem;
+          height: 100%;
+        }
+      }
+
+      @media (max-width: 520px) {
+        flex-wrap: wrap;
+      }
+
+
+    }
+
+    @media (max-width: 700px) {
+      width: 90%;
+    }
+
+    @media (max-width: 890px) {
+      width: 80%;
+    }
+
+
+  }
+
+}

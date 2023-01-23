@@ -1,0 +1,16 @@
+.tribunal-esp {
+  &__title {
+    margin: 1.4rem 0;
+    font-size: calc(.6rem + .66vw);
+  }
+
+  &__content {
+    &--head {
+        padding-top: .4rem;
+    }
+
+    &--cab {
+      font-size: calc(.6rem + .66vw);
+    }
+  }
+}

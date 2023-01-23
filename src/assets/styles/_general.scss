@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: font-size 0.2s ease-in-out;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none !important;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p,
+span,
+strong,
+i {
+  margin-bottom: 0 !important;
+}
+
+h1 {
+  font-size: calc(.5rem + .66vh)
+}
+
+h3 {
+  font-size: calc(.8rem + .66vh)
+}
+
+.opc-5 {
+  opacity: 0.5 !important;
+}
+
+.card-parrafo div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ic-circle {
+  margin: 0px 5px;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  &:hover {
+    background: rgba(0, 0, 0, .1);
+    cursor: pointer;
+  }
+
+}
+
+
+.markcont, .markvoice {
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+}

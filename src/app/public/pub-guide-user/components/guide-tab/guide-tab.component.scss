@@ -1,0 +1,35 @@
+.tab-guide {
+  &__description {
+    &--title {
+      margin-top: 3rem;
+      font-size: calc(.8rem + .66vw);
+    }
+
+    &--separator {
+      height: .2rem;
+      width: 100%;
+    }
+
+    &--parag {
+      font-size: calc(.5rem + .66vw);
+    }
+  }
+}
+
+.frame-tab {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0px;
+  height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}

@@ -1,0 +1,126 @@
+<header class="int-header">
+
+  <div class="header__logo">
+    <a routerLink="/">
+      <em aria-label="Suprema Corte de Justica de la Nación" class="icons-vdos icon-scjn-logo"></em>
+    </a>
+  </div>
+
+  <div class="header__navigation">
+
+    <div class="header__seeker w-50">
+
+      <seeker *ngIf="!preferences.isHome"></seeker>
+  
+    </div>
+
+    <div class="navigation__login">
+      <button class="login__round--user skin-color-bg text-in-dark" [matMenuTriggerFor]="menu" aria-label="icono usuario"
+        ngbTooltip="Perfil del usuario" placement="bottom">
+        JG
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>subdirectory_arrow_left</mat-icon>
+          <span>Cerrar sesión</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="navigation__library">
+      <button class="navigation__library--folder" [matMenuTriggerFor]="menuLibrary" aria-label="icono biblioteca"
+        ngbTooltip="Biblioteca de administración del conocimiento" placement="bottom">
+        <i class="fas fa-bookmark"></i>
+        <span class="ml-2" *ngIf="preferences.isHome">
+          Mi Biblioteca
+        </span>
+      </button>
+      <mat-menu #menuLibrary="matMenu">
+        <a routerLink="./viewportafolio/name user her inter" mat-menu-item>
+          <mat-icon>book</mat-icon>
+          <span>
+            Mi biblioteca
+          </span>
+        </a>
+        <button mat-menu-item (click)="modalOpen(content)">
+          <mat-icon>folder</mat-icon>
+          <span>Crear carpeta</span>
+        </button>
+        <a routerLink="./busqueda-portafolio" mat-menu-item>
+          <mat-icon>search</mat-icon>
+          <span>Buscar carpetas</span>
+        </a>
+      </mat-menu>
+    </div>
+    <div class="navigation__opendata">
+      <a href="http://bj.scjn.pjf.gob.mx/datos-abiertos/" target="_blank" ngbTooltip="Datos abiertos" placement="bottom">
+        <span class="ib ib-plataformadatosabiertos-color">
+          <i class="path1"></i>
+          <i class="path2"></i>
+          <i class="path3"></i>
+          <i class="path4"></i>
+          <i class="path5"></i>
+          <i class="path6"></i>
+        </span>
+      </a>
+    </div>
+    <div class="navigation__tesauro">
+      <a href="https://tesauro.scjn.gob.mx" target="_blank" ngbTooltip="Tesauro" placement="bottom">
+        <span class="ib ib-tesauro-color">
+          <i class="path1"></i>
+          <i class="path2"></i>
+          <i class="path3"></i>
+          <i class="path4"></i>
+          <i class="path5"></i>
+          <i class="path6"></i>
+          <i class="path7"></i>
+          <i class="path8"></i>
+        </span>
+      </a>
+    </div>
+    <div class="navigation__guide">
+      <a routerLink="guia-usuario" ngbTooltip="Guía del usuario" placement="bottom">
+        <i class="fas fa-question-circle skin-color-text"></i>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<ng-template #content let-modalEdit>
+  <div class="modal-header">
+    <h4 class="modal-title skin-color-text">Crear carpeta</h4>
+    <mat-icon (click)="modalEdit.dismiss('Cross click')">close</mat-icon>
+  </div>
+  <div class="modal-body">
+    <form method="dialog" novalidate [formGroup]="formFolder" autocomplete="off">
+      <div class="mb-3">
+        <div class="input-group">
+          <mat-form-field class="example-form-field w-100">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name" name="name" id="name">
+            <button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <mat-form-field class="example-form-field w-100">
+            <mat-label>Descripción</mat-label>
+            <input matInput type="text" formControlName="description" name="description" id="description">
+            <button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="input-group">
+          <mat-checkbox required name="privacidad" aria-label="Privado" formControlName="public">
+            Público
+          </mat-checkbox>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button mat-button class="components-bg--a3" (click)="guardarFolder(content)">Guardar</button>
+  </div>
+</ng-template>

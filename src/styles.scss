@@ -1,0 +1,128 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+@import './assets/styles/general';
+@import './assets/styles/fonts';
+@import './assets/styles/icons/bjicons/icons';
+@import './assets/styles/icons/materialicons/maticon';
+@import './assets/styles/icons/scjnicons/iconos-vdos-circulo';
+@import './assets/styles/icons/scjnicons/iconos-vdos-cuadro';
+@import './assets/styles/icons/scjnicons/iconos-vdos-rectangulo';
+@import './assets/styles/icons/scjnicons/iconos-vdos';
+@import './assets/styles/variables';
+@import './assets/styles/core';
+@import './assets/styles/animates';
+
+@include mat-core();
+
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  &.load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    background-color: white;
+  }
+}
+
+.view-skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.view-skeleton::after {
+  //  backgroun version interna   
+  //background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(36, 19, 95, 0.4), rgba(255, 255, 255, 0));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+}
+
+.view-skeleton::after {
+  content: "";
+  animation: p-skeleton-animation 1.2s infinite;
+  -o-animation: p-skeleton-animation 1.2s infinite;
+  -moz-animation: p-skeleton-animation 1.2s infinite;
+  -webkit-animation: p-skeleton-animation 1.2s infinite;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-100%);
+  -o-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  z-index: 1
+}
+
+.view-skeleton.view-skeleton-circle {
+  border-radius: 50%
+}
+
+.view-skeleton-none::after {
+  animation: none
+}
+
+@media print {
+
+  .scjn-intranet {
+    border: none !important;
+  }
+
+  .int-doc__toolbar {
+    display: none;
+  }
+
+  .int-doc__documents-print,.pub-doc__documents-print {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .accessibility,.toggle-scroll {
+    display: none;
+  }
+
+  .int-doc__documents {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .end-footer>div:nth-child(1),
+  .end-footer>div:nth-child(2),
+  .end-footer>div:nth-child(3),
+  .end-footer>div:nth-child(4) {
+    display: none !important;
+  }
+
+  .scjn-intranet__header, .scjn-pub__header {
+    display: none;
+  }
+
+  .pub-doc__toolbar,
+  .tabs-doc,
+  .v-engroses__nota {
+    display: none;
+  }
+
+}
+
+.markvoice.active {
+  background-color: rgb(225, 225, 97);
+}
+
+
+@media (max-width:600px) {
+  .scjn-intranet__routes {
+    padding: 0 .1rem !important;
+  }
+}

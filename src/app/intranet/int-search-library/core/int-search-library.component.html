@@ -1,0 +1,135 @@
+<div class="int-search-library">
+  <div class="int-search-library__redirect mt-2">
+    <a routerLink="/" class="skin-color-text">
+      <mat-icon ngbTooltip="Regresar a la página de inicio" placement="right">home</mat-icon>
+    </a>
+    <a class="skin-color-text" (click)="location.back()">
+      <mat-icon ngbTooltip="Regresar a la página anterior" placement="right">keyboard_backspace</mat-icon>
+    </a>
+  </div>
+  <div class="int-search-library__search">
+    <p class="skin-color-text">Búsqueda</p>
+    <h3 class="skin-color-text">Carpetas Públicas</h3>
+  </div>
+  <div class="int-search-library__filters">
+    <form class="row" (ngSubmit)="searchByFilters()" autocomplete="off" novalidate [formGroup]="filterForm">
+      <div class="form-group col">
+        <mat-form-field class="example-form-field w-100">
+          <mat-label>Nombre de la carpeta</mat-label>
+          <input matInput type="text" name="folder" id="folder" formControlName="nameFolder">
+          <button matSuffix type="button" (click)="filterForm.controls['nameFolder'].setValue('')" mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="form-group col">
+        <mat-form-field class="example-form-field w-100">
+          <mat-label>Descripción</mat-label>
+          <input matInput type="text" name="description" id="description" formControlName="description">
+          <button matSuffix type="button" (click)="filterForm.controls['description'].setValue('')" mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="form-group col">
+        <mat-form-field class="example-form-field w-100">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput type="text" name="username" id="username" formControlName="username">
+          <button matSuffix type="button" (click)="filterForm.controls['username'].setValue('')" mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-end">
+          <button *ngIf="isFilter" type="button" (click)="clearFilters()" mat-button class="bj-color-bg mx-2" color="primary">
+            <mat-icon>
+              close
+            </mat-icon>
+            <span>Limpiar filtros</span>
+          </button>
+          <button type="submit" mat-button class="bj-color-bg mx-2" color="primary">
+            <mat-icon>
+              search
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="int-search-library__options">
+    <div class="library__options--data">
+      <p>Mostrando <strong>{{librarysPublic.content.length}}</strong> resultado(s)</p>
+    </div>
+    <div class="library__options--order" ngbTooltip="Ordenador por" placement="top">
+      <mat-form-field class="components-bg px-2">
+        <mat-select [(ngModel)]="order" name="order" id="order" (valueChange)="onChangeOrder($event)">
+          <mat-option value="fechaCreacion,desc">
+            Más recientes
+          </mat-option>
+          <mat-option value="fechaCreacion,asc">
+            Más antiguos
+          </mat-option>
+          <mat-option value="fechaModificacion,desc">
+            Modificados recientemente
+          </mat-option>
+          <mat-option value="nombre,asc">
+            Nombre [A-Z]
+          </mat-option>
+          <mat-option value="nombre,desc">
+            Nombre [Z-A]
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="library__options--more" ngbTooltip="Mostrar" placement="top">
+      <mat-form-field class="components-bg px-2">
+        <mat-select [(ngModel)]="size" name="size" id="size" (valueChange)="onChangeSize($event)">
+          <mat-option [value]="10">
+            10
+          </mat-option>
+          <mat-option [value]="15">
+            15
+          </mat-option>
+          <mat-option [value]="20">
+            20
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="library__options--paginated">
+      <ngb-pagination [maxSize]="3" [rotate]="true" [ellipses]="true" [collectionSize]="librarysPublic.totalElements"
+        (pageChange)="onChangePage($event)" [page]="librarysPublic.pageable.pageNumber+1" [boundaryLinks]="false">
+      </ngb-pagination>
+    </div>
+  </div>
+  <div class="int-search-library__folders">
+    <div *ngIf="isLoad">
+      <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+      <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+      <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+      <div class="mb-3 view-skeleton" style="width: 100%; height: 6rem;"></div>
+    </div>
+    <div class="library__folders--card border-left-skin-color border-skin-color" *ngFor="let folder of librarysPublic.content">
+      <a [routerLink]="['/viewcarpeta',folder.id]" class="library__folders--card-data components-color"
+        ngbTooltip="Ver detalle de carpeta" placement="top">
+        <p><strong>{{folder.nombre}}</strong></p>
+        <p [title]="folder.descripcion">{{folder.descripcion}}</p>
+      </a>
+      <div class="library__folders--card-document">
+        <p ngbTooltip="Ver biblioteca" placement="bottom">Creada por: <a class="skin-color-text"
+            [routerLink]="['/viewportafolio',folder.username]"><span><strong>{{folder.username}}</strong></span></a></p>
+        <p>Documento(s): <span class="skin-color-text"><strong>{{folder.documentos.length}}</strong></span></p>
+      </div>
+      <div class="library__folders--card-date">
+        <p>Creacion: <strong>{{folder.fechaCreacion}}</strong></p>
+        <p>Actualización: <strong>{{folder.fechaModificacion}}</strong></p>
+      </div>
+    </div>
+
+    <div class="library__folders--card border-left-skin-color border-skin-color" *ngIf="!isLoad && librarysPublic.content.length == 0">
+      <p>No existe ninguna carpeta publica con los criterios definidos</p>
+    </div>
+
+  </div>
+</div>

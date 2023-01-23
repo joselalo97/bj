@@ -1,0 +1,252 @@
+<div class="advanced-search">
+
+   <div class="advanced-search__title">
+
+      <h6 class="skin-color-text">
+         <strong>Búsqueda avanzada</strong>
+      </h6>
+
+      <div class="advanced-search__action">
+
+         <button class="btn btn-primary mr-3"
+            (click)="cleanForm()">
+            Limpiar
+         </button>
+
+         <button class="btn btn-primary"
+            (click)="goToSearch()">
+            Buscar
+         </button>
+      </div>
+
+   </div>
+
+   <form class="advanced-search__form border-lg"
+      [formGroup]="advancedForm">
+
+      <!-- FUENTE DE DATOS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Selecciona una fuente de datos:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <menu-select class="w-100"
+               [list]="dataSourceList"
+               [disabled]="!isDataSource"
+               placeholder="Todos"
+               formControlName="dataSource"
+               (handleItem)="changeDataSource( $event )">
+            </menu-select>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            <small>
+               Esta fuente cuenta con filtros integrados los cuales puede utilizar 
+               de la siguinte forma: escriba el operador <b>"@"</b> seleccione un filtro 
+               de la lista desplegable
+            </small>
+         </div>
+
+      </div>
+
+      <!-- PALABRAS CLAVES -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Escriba las palabras clave:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <input type="text" class="bj-input w-100"
+               formControlName="keywords" />
+            <ul class="advanced-search__form-select components-bg shadow-lg"
+               *ngIf="inputFlag.keywords" [@advancedSearchAnimation]>
+               <li class="components-bg hover"
+                  *ngFor="let source of sourceList"
+                  (click)="changeSource( source, inpuKey.Keywords )">
+                  {{ source.text }}
+               </li>
+            </ul>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Por ejemplo: <b class="ml-2">libre desarrollo personalidad</b>
+         </div>
+
+      </div>
+
+      <!-- FRASES EXACTAS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Escriba las frases exactas:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <input type="text" class="bj-input w-100"
+               formControlName="exactPhrases" />
+            <ul class="advanced-search__form-select components-bg shadow-lg"
+               *ngIf="inputFlag.exactPhrases" [@advancedSearchAnimation]>
+               <li class="components-bg hover"
+                  *ngFor="let source of sourceList"
+                  (click)="changeSource( source, inpuKey.ExactPhrases )">
+                  {{ source.text }}
+               </li>
+            </ul>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Por ejemplo: <b class="ml-2">interés superior de la niñez</b>
+         </div>
+
+      </div>
+
+      <!-- PALABRAS CONTENIDAS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Escriba las palabras que debe contener:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <input type="text" class="bj-input w-100"
+               formControlName="containerWords" />
+            <ul class="advanced-search__form-select components-bg shadow-lg"
+               *ngIf="inputFlag.containerWords" [@advancedSearchAnimation]>
+               <li class="components-bg hover"
+                  *ngFor="let source of sourceList"
+                  (click)="changeSource( source, inpuKey.ContainerWords )">
+                  {{ source.text }}
+               </li>
+            </ul>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Por ejemplo: <b class="ml-2">esfera personal</b>
+         </div>
+
+      </div>
+
+      <!-- PALABRAS PRÓXIMAS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Escriba las palabras próximas:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+
+            <input type="text" class="bj-input w-100"
+               formControlName="nextWords" />
+            <ul class="advanced-search__form-select components-bg shadow-lg"
+               *ngIf="inputFlag.nextWords" [@advancedSearchAnimation]>
+               <li class="components-bg hover"
+                  *ngFor="let source of sourceList"
+                  (click)="changeSource( source, inpuKey.NextWords )">
+                  {{ source.text }}
+               </li>
+            </ul>
+
+            <span class="mx-3">Distancia</span>
+
+            <input type="number" class="bj-input w-100 text-center"
+               formControlName="distance" />
+
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Por ejemplo: <b class="ml-2">interés superior extensiva</b>
+         </div>
+
+      </div>
+
+      <!-- PALABRAS NO CONTENIDAS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Escriba las palabras que no debe contener:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <input type="text" class="bj-input w-100"
+               formControlName="wordsNotContained" />
+            <ul class="advanced-search__form-select components-bg shadow-lg"
+               *ngIf="inputFlag.wordsNotContained" [@advancedSearchAnimation]>
+               <li class="components-bg hover"
+                  *ngFor="let source of sourceList"
+                  (click)="changeSource( source, inpuKey.WordsNotContained )">
+                  {{ source.text }}
+               </li>
+            </ul>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Por ejemplo: <b class="ml-2">guarda custodia</b>
+         </div>
+
+      </div>
+
+      <!-- SINTAXIS -->
+      <div class="row">
+
+         <div class="advanced-search__form-item col-md-3">
+            Sintaxis:
+         </div>
+
+         <div class="advanced-search__form-item col-md-5">
+            <textarea rows="2" class="bj-textarea w-100"
+               formControlName="syntax">
+               <!-- //... -->
+            </textarea>
+         </div>
+
+         <div class="advanced-search__form-item col-md-4">
+            Sintaxis de búsqueda
+         </div>
+
+      </div>
+
+      <div class="advanced-search__title with-border border-lg"
+         *ngIf="entityFilterList.length > 0" [@advancedSearchAnimation]>
+
+         <h6 class="skin-color-text">
+            <strong>Restringe tus resultados por</strong>
+         </h6>
+   
+      </div>
+
+      <!-- RESTRICCIONES -->
+      <div formGroupName="restrictions" [@advancedSearchAnimation]
+         *ngIf="entityFilterList.length > 0">
+
+         <div class="row" *ngFor="let entity of entityFilterList; let idx = index">
+
+            <div class="advanced-search__form-item col-md-3">
+               {{ entity.nombreFiltro }}
+            </div>
+   
+            <div class="advanced-search__form-item col-md-5">
+
+               <ng-multiselect-dropdown class="w-100 ms-custom"
+                  #multiSelect
+                  [data]="entity.bucketsFormat"
+                  [settings]="multiSelecSettings"
+                  [disabled]="false"
+                  placeholder="Todos"
+                  [formControlName]="entity.filtro"
+                  (onSelect)="selectFilterBucket( entity.nombreFiltro, $event.value )"
+                  (onDeSelect)="clearFilterBucket( entity.nombreFiltro, $event.value )">
+               </ng-multiselect-dropdown>
+
+            </div>
+   
+         </div>
+
+      </div>
+
+   </form>
+
+</div>
+

@@ -1,0 +1,18 @@
+.votos-doc {
+  &__metadata {
+    border-style: solid;
+    border-width: .1rem;
+    padding: 1rem;
+    border-radius: .3rem;
+    margin: .8rem 0;
+  }
+}
+
+.text-format {
+  white-space: pre-wrap;
+}
+
+.fechaPub {
+  margin-top: .4rem;
+  color: #c50032
+}

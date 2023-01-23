@@ -1,0 +1,157 @@
+.v-legislacion {
+  padding: .5rem;
+
+  &__card {
+    border: 1px solid;
+    padding: 1rem;
+  }
+
+  &__reforma {
+    margin: 1rem 0;
+
+    &--pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--docs {
+      margin: 1rem 0;
+
+      &-card {
+        border: 1px solid;
+        margin-bottom: 1rem;
+        padding: 1rem;
+
+        & .row .col-12 .d-flex>button {
+          border: 1px solid;
+          margin-right: .4rem;
+          margin-bottom: .4rem;
+        }
+      }
+    }
+
+  }
+
+  &__nota {
+    &--legend {
+      font-style: italic;
+      text-align: justify;
+    }
+  }
+}
+
+.pl-content {
+  white-space: pre-wrap;
+}
+
+.bord {
+  border-top: 2px solid;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+ul.timeline {
+  position: relative;
+  list-style-type: none;
+}
+
+ul.timeline:before {
+  content: ' ';
+  background: #808080;
+  display: inline-block;
+  position: absolute;
+  left: 7px;
+  width: 0.5px;
+  height: 100%;
+  z-index: 1;
+}
+
+ul.timeline>li {
+  margin: 12px 0;
+  padding-left: 1.2rem;
+}
+
+ul.timeline>li:before {
+  content: '';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border: 1px solid #808080;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.title-article {
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.title-article:hover {
+  font-weight: 700;
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 450px;
+}
+
+#style::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+}
+
+#style::-webkit-scrollbar {
+  width: 15px;
+  background-color: #fff;
+}
+
+#style::-webkit-scrollbar-thumb {
+  background-color: #25135f;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+
+
+.card {
+  border: none;
+  margin: 0 10px;
+}
+
+.article-ref {
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.articulo-active {
+  border-left: 10px solid #81264c;
+  padding-left: 25px;
+}
+
+.badge {
+  margin: 6px 0;
+  padding: 6px;
+}
+
+.badge-primary {
+  background-color: #6e56c7;
+}
+
+.article-content {
+  white-space: pre-wrap;
+}
+
+.card-article {
+  text-align: justify;
+}
+
+
+@media (min-width: 900px) {
+  ::ng-deep .modal-dialog {
+    max-width: 80%;
+  }
+}

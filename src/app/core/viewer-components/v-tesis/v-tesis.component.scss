@@ -1,0 +1,145 @@
+.int-doc-tesis {
+  padding: 10px;
+
+  &__metadata {
+    border: 1px solid;
+  }
+
+  &__bord {
+    border-top: 1px solid;
+
+    &-dash {
+      border: 1px dashed;
+    }
+  }
+
+  &__content {
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+
+    &-text {
+      white-space: pre-wrap;
+    }
+  }
+
+  &__notas {
+    margin: 10px 0;
+    white-space: pre-wrap;
+
+    &--tj,
+    &--ta {
+      color: #c50032;
+    }
+  }
+
+}
+
+.article {
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.int-panel-article {
+  z-index: 99;
+  position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &.open {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  &__content {
+    width: calc(40vw + .66vw);
+    height: auto;
+    overflow: hidden;
+    transform: translateY(-30rem);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    border-top-width: .4rem;
+    border-top-style: solid;
+
+    @media (max-width: 800px) {
+      width: 90%;
+    }
+
+
+    &.down {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+
+    &.expand{
+      width: 100%;
+      & .int-panel-article__content--body{
+        max-height: 100%;
+        height: calc(100vh - 50px);
+       }
+    }
+
+    &--head {
+      padding: .4rem;
+      display: flex;
+      justify-content: flex-end;
+      border-bottom-style: solid;
+      border-bottom-width: .2rem;
+      min-height: 50px;
+      align-items: center;
+
+      &>i {
+        margin: 0px 5px;
+        width: 30px;
+        height: 30px;
+        transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        &:hover {
+          background: rgba($color: #000000, $alpha: .1);
+          cursor: pointer;
+        }
+
+      }
+    }
+
+    &--body {
+      padding: 1.2rem;
+      overflow: auto;
+      max-height: calc(60vh + 0.66vh);
+
+      & .article-text {
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+}
+
+.additional-text{
+  white-space: pre-wrap;
+  margin-top: .6rem;
+}
+
+.precedente-tesis{
+  font-weight: 600;
+}

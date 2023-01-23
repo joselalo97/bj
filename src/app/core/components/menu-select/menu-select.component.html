@@ -1,0 +1,45 @@
+<div class="menu-select">
+
+   <button class="menu-select__root select-btn"
+      [ngClass]="rootClass"
+      [class.nohover]="disabled"
+      [disabled]="disabled"
+      [matMenuTriggerFor]="menu">
+
+      <span class="menu-select__root-placeholder"
+         [class.menu-select__root-placeholder]="!selectedItem"
+         [class.menu-select__root-selected]="selectedItem">
+         {{ !selectedItem ? placeholder : selectedItem.label }}
+      </span>
+
+      <div class="menu-select__root-icons">
+         <i class="fa fa-times menu-select__root-close components-bg--a3 hover"
+            *ngIf="selectedItem && !disabled"
+            (click)="cleanSelect( $event )">
+         </i>
+         <i class="fa fa-angle-down menu-select__root-icon"></i>
+      </div>
+
+   </button>
+
+   <mat-menu #menu="matMenu">
+
+      <div class="menu-select__items">
+
+         <ng-container *ngFor="let item of list">
+
+            <label class="menu-select__items-label components-bg hover"
+               [for]="item.value"
+               [class.components-bg--a2]="item.selected"
+               [ngClass]="itemClass"
+               (click)="changeItem( item )">
+               {{ item.label }}
+            </label>
+
+         </ng-container>
+
+      </div>
+
+   </mat-menu>
+
+</div>

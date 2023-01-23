@@ -1,0 +1,50 @@
+.int-doc-taquigraficas {
+    padding: 10px;
+  
+    &__metadata {
+      border: 1px solid;
+    }
+  
+    &__video{
+      position: relative; 
+      padding-bottom: 56.25%; 
+      padding-top: 0px;
+      height: 0;
+      overflow: auto; 
+      -webkit-overflow-scrolling: touch;
+    }
+    &__bord {
+      border-top: 1px solid;
+  
+      &-dash {
+        border: 1px dashed;
+      }
+    }
+  
+    &__content {
+      margin-top: .8rem;
+      margin-bottom: .8rem;
+  
+      &-text {
+        white-space: pre-line;
+        font-size: inherit!important;
+        line-height: 2!important;
+
+        @media (max-width:700px) {
+          font-size: inherit!important;
+        }
+
+      }
+    }
+    
+  }
+
+  h2,h1,h3,h4,h5,h6{
+    font-size: inherit;
+
+    @media (max-width:700px) {
+      font-size: inherit!important;
+    }
+
+  }
+  

@@ -1,0 +1,37 @@
+<div class="int-doc row">
+
+  <div class="int-doc__toolbar col-12 components-bg">
+
+    <toolbar-doc></toolbar-doc>
+
+  </div>
+
+  <div class="int-doc__documents col-12 col-md-11">
+
+    <!-- IMPRESIÓN HEAD-->
+    <div class="int-doc__documents-print">
+      <em aria-label="Suprema Corte de Justica de la Nación" class="icons-vdos icon-scjn-logo skin-color-text"></em>
+      <p>Buscador Juridíco de la SCJN</p>
+    </div>
+
+    <!-- PESTAÑAS -->
+    <tabs-doc [paramsDoc]="paramsDoc" [document]="document" (tabSelection)="getTab($event)">
+    </tabs-doc>
+
+    <!-- CONTENIDO PESTAÑAS -->
+    <div class="int-doc__documents-content components-bg" id="selection-text" [@docAnimation] (mouseup)="selectionText($event)">
+
+      <content-doc (panel)="options = $event" [paramsDoc]="paramsDoc" [document]="document" [fichaTaquigrafica]="fichaTaquigrafica">
+      </content-doc>
+    </div>
+
+    <!--ANALISIS DE TEXTO-->
+    <text-analytics [text]="options.query" [open]="options.open" (close)="options.open = $event"></text-analytics>
+
+    <!--COPY TEXT-->
+    <div (click)="openText()" class="int-doc__documents-copy components-bg shadow" [style.top]="y" [style.left]="x" *ngIf="visible">
+      <span>Analizar texto</span>
+    </div>
+  </div>
+
+</div>

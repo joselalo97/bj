@@ -1,0 +1,25 @@
+<div class="int-information-source">
+
+  <ng-container *ngFor="let information of informationSourceList">
+
+    <a class="int-information-source__card border-lg" tabIndex="0" placement="top" [attr.aria-label]="information.aria"
+      [ngbTooltip]="information.description" [routerLink]="[ information.path ]" [queryParams]="{ q: '*', indice: information.indice }">
+
+      <div class="int-information-source__card-image skin-color-bg" [style.backgroundColor]="information.color">
+        <i class="ib text-white" [ngClass]="information.imgOrIcon"></i>
+      </div>
+
+      <div class="arrow-down border-top-skin-color" [ngStyle]="{ 'border-top-color': information.color }">
+      </div>
+
+      <div class="int-information-source__card-label components-bg components-color">
+        <strong>
+          {{ information.label }}
+        </strong>
+      </div>
+
+    </a>
+
+  </ng-container>
+
+</div>

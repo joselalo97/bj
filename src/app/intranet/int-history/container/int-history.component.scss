@@ -1,0 +1,30 @@
+.int-history {
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  padding: 10px;
+  flex-wrap: wrap;
+
+  &__title {
+    flex-basis: 100%;
+  }
+
+  &__dates {
+    flex-grow: 1;
+  }
+
+  &__search {
+    flex-basis: 400px;
+
+    &--box {
+      border-radius: 4px;
+
+      & .box-head {
+        border-bottom-width: 2px 10px;
+      }
+
+    }
+
+  }
+
+}

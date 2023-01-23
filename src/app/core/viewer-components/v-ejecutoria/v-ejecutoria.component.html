@@ -1,0 +1,40 @@
+<div class="int-doc-vejecutoria">
+  <div class="int-doc-vejecutoria__metadata row p-2 m-0">
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="mb-1"><strong>Registro digital:</strong> {{documento?.registroDigital}} </p>
+      <p class="mb-1"><strong>Asunto: </strong>{{documento?.tipoAsunto}} {{documento?.numeroExpediente}}</p>
+      <p class="mb-1"><strong>Instancia: </strong>
+        <span *ngIf="documento?.instancia == 'Suprema Corte de Justicia de la Nación'">{{documento?.organoJurisdiccional}}</span>
+        <span *ngIf="documento?.instancia != 'Suprema Corte de Justicia de la Nación'">{{documento?.instancia}}</span>
+      </p>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="mb-1"><strong>{{documento?.epoca?.nombre}} </strong></p>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <p class="mb-1">
+        <strong>Fuente: </strong>{{documento?.fuente}}</p>
+      <p class="mb-1">
+        {{documento?.localizacion?.libro}}, {{documento?.localizacion?.mes}} de {{documento?.localizacion?.anio}}
+        <span *ngIf="documento?.localizacion?.tomo">, </span> {{documento?.localizacion?.tomo}}
+        <span *ngIf="documento?.localizacion?.tomo">, </span>
+        <ng-template *ngIf="documento?.localizacion?.pagina >0">
+          pág. {{documento?.localizacion?.pagina}}.
+        </ng-template>
+      </p>
+    </div>
+    <div class="col-12">
+      <span><strong>Registro digital:</strong> {{documento?.registroDigital}}</span>
+    </div>
+  </div>
+  <div class="int-doc-vejecutoria__content">
+    <p class="title"><strong>{{documento?.rubro}}</strong></p>
+    <hr>
+    <p class="int-doc-vejecutoria__content-text">{{documento?.texto}}</p>
+    <p> {{documento?.notaPrecedente}}</p>
+  </div>
+  <div class="int-doc-vejecutoria__notas">
+    <p class="int-doc-vejecutoria__notas--tj">
+      {{documento?.fechaPublicacionSemanario | fechaPublicacionTesis:'ejecutoria'}} </p>
+  </div>
+</div>

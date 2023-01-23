@@ -1,0 +1,231 @@
+<div class="text-analitycs" [ngClass]="{ 'open': isOpen, 'hiden': !isOpen }" closePanelThesis (hidden)="emit()">
+  <div class="text-analitycs__panel components-bg border-bj" [ngClass]="{ 'expand': isExpand }">
+    <div class="text-analitycs__panel--header">
+      <div class="panel__logo">
+        <div class="panel__logo--circle border-bj border-skin-color">
+          <img src="./assets/img/analisis-text/ic-analisis-texto.svg" alt="Análisis de texto">
+        </div>
+        <p><strong>Documentos con contenido similar empleando análisis de texto</strong></p>
+      </div>
+      <div class="panel__tabs">
+        <div ngbTooltip="Resultados de consulta" placement="bottom" (click)="tabActive = 1"
+          [ngClass]="{'disabled': !isSearch}">
+          <i class="material-icons" [ngClass]="{ 't-select': tabActive == 1 }">list</i>
+        </div>
+        <div ngbTooltip="Corrija o actualice el texto analizado" placement="bottom" (click)="tabActive = 2">
+          <i [ngClass]="{ 't-select': tabActive == 2 }" class="material-icons">keyboard</i>
+        </div>
+        <div ngbTooltip="Suba un archivo en formato TXT para ser analizado y mostrar coincidencias" placement="bottom"
+          (click)="tabActive = 3">
+          <i class="material-icons" [ngClass]="{ 't-select': tabActive == 3 }">
+            cloud_upload
+          </i>
+        </div>
+      </div>
+      <div class="panel__settings">
+        <i class="fas" [ngClass]="{'fa-compress-arrows-alt':isExpand, 'fa-expand-arrows-alt':!isExpand }"
+          (click)="isExpand = !isExpand" [ngbTooltip]="isExpand ?'Minimizar' :'Maximizar'" placement="bottom"></i>
+        <i class="fas fa-times" (click)="emit()" ngbTooltip="Cerrar" placement="bottom"></i>
+      </div>
+    </div>
+    <div class="text-analitycs__panel--body border-top-skin-color border-lg">
+      <div class="body__process" [ngClass]="{'view': tabActive == 1}">
+        <div class="body__process--filters components-bg--a1 p-2">
+          <p class="skin-color-text"><strong>Buscar en:</strong></p>
+          <div class="filters-entitys">
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Sentences || entity === entityName.Sentences_pub"
+              (click)="onChageEntity(entityName.SentencesParagraph)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Sentencias</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Votes"
+              (click)="onChageEntity(entityName.Votes)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Votos</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Thesis"
+              (click)="onChageEntity(entityName.Thesis)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Tesis</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Agreements"
+              (click)="onChageEntity(entityName.Agreements)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Acuerdos</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Versions"
+              (click)="onChageEntity(entityName.Versions)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Versiones taquigráficas</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Ccj && !isInter"
+              (click)="onChageEntity(entityName.Ccj)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Casas de la Cultura Jurídica</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Hudoc"
+              (click)="onChageEntity(entityName.Hudoc)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>Corte Europea de DDHH</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.CoIDH"
+              (click)="onChageEntity(entityName.CoIDH)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>CoIDH</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.Onu"
+              (click)="onChageEntity(entityName.Onu)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>ONU</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.TSpanish"
+              (click)="onChageEntity(entityName.TSpanish)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>TC Español</p>
+              </div>
+            </div>
+            <div class="filters-entitys__box" *ngIf="entity == '' || entity === entityName.TColombia"
+              (click)="onChageEntity(entityName.TColombia)">
+              <div class="filters-entitys__box--ic">
+                <i class="fas fa-chevron-right skin-color-text"></i>
+              </div>
+              <div class="filters-entitys__box--text">
+                <p class="text-rubro" data-voice>CC Colombia</p>
+              </div>
+            </div>
+          </div>
+          <div class="filter-buckets">
+            <div *ngFor="let filtro of filtrosEntidad; index as i " class="p-0 col-12 my-1">
+              <ng-container *ngIf="filtro.buckets.length != 0 ">
+                <ng-multiselect-dropdown data-voice class="cont" #multiSelect [data]="filtro?.buckets"
+                  [settings]="settings" [disabled]="false" [placeholder]="filtro?.nombreFiltro"
+                  [(ngModel)]="selectedItems[filtro?.filtro]" (onSelect)="selectSubfiltro($event,  filtro?.filtro)"
+                  (onDeSelect)="quitarFiltro($event, filtro?.filtro)">
+                </ng-multiselect-dropdown>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="body__process--results">
+          <p>
+            <strong>{{ entity ? ('Documentos localizados en '+ (entity | entityName)) : 'Todos los documentos localizados' }}</strong>
+          </p>
+
+          <div class="d-blok" *ngIf="isLoad">
+            <div class="mt-5 mb-5">
+              <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+            </div>
+            <div class="mb-5">
+              <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+            </div>
+            <div class="mb-5">
+              <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+              <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+            </div>
+          </div>
+
+          <div class="card my-3" *ngFor="let result of resultsEntity; let i = index">
+
+            <div class="card-header">
+              <a (click)="emit()" class="skin-color-text" *ngIf="result.link" [routerLink]="[result.link]" tabindex="0">
+                {{result.linkTitle}}
+              </a>
+              <a class="skin-color-text" *ngIf="result.href" [href]="[result.href]" target="_blank" tabindex="0">
+                {{result.linkTitle}}
+              </a>
+            </div>
+
+            <div class="card-body">
+              <p class="components-color text-truncate card-parrafo" *ngFor="let parrafo of result.parrafos"
+                [innerHTML]="sanitizer.bypassSecurityTrustHtml(parrafo)"></p>
+            </div>
+          </div>
+          <p [innerText]="notfound" *ngIf="!isLoad && resultsEntity.length == 0"></p>
+
+        </div>
+      </div>
+      <div class="body__text-analityc" [ngClass]="{'view': tabActive == 2}">
+        <div class="body__text-analityc--filters">
+          <p class="text-center">Texto analizado</p>
+          <div class="text-cont">
+            <textarea [(ngModel)]="query" name="textAnalisis" id="textAnalisis" cols="30" rows="10" class="form-control"
+              placeholder="Escriba o pegue extractos de texto para que nuestro motor inteligente le sugiera documentos relacionados."
+              autocomplete="off">
+          </textarea>
+            <i *ngIf="query.trim()" (click)="query =''" ngbTooltip="Limpiar texto" placement="left"
+              class="fas fa-eraser skin-color-text ic-clear"></i>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mat-button class="bj-color-bg text-in-dark" (click)="analiticText()">
+              <mat-icon>search</mat-icon> Analizar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body__load-file" [ngClass]="{'view': tabActive == 3}">
+        <div class="body__load-file--doc">
+          <p class="text-center">Suba un documento de texto (.txt) para que nuestro motor de inteligencia le sugiera
+            documentos
+            relacionados.</p>
+          <div filetext [files]="file" (mouseOver)="fileGet($event)">
+            <div class="cont-file txt-analizar">
+              <input type="file" class="file-select" id="file-upload" placeholder="seleccione archivo"
+                (change)="upload($event.target.files)">
+              <div class="cont-view text-center">
+                <i class="fas fa-upload skin-color-text"></i>
+                <p class="text-center card-title">
+                  Arrastre y suelte un
+                  documento de texto (.TXT) o haga
+                  clic para seleccionarlo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

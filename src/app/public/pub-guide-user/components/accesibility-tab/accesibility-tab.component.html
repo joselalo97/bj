@@ -1,0 +1,372 @@
+<div class="tab-access row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 components-bg">
+      <div class="tab-access__sections" [(style.margin-top)]="margin">
+        <span>Índice</span>
+        <ul class="tab-access__sections--indice">
+            <li class="indice-nav" (click)="scrollView('introducción-accesibilidad')">
+              <p class="indice-nav__first">Introducción</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('justificacion')">
+              <p class="indice-nav__first">Justificación</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('elementos-de-accesibilidad')">
+              <p class="indice-nav__first">Elementos de
+                accesibilidad</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('perceptible')">
+              <p class="indice-nav__Second" class="ml-3 sub-menu">Perceptible</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('tamaño-letra')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Tamaño letra
+              </p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('fuente')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Fuente</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('alto-contraste')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Alto
+                contraste</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('operable')">
+              <p class="indice-nav__Second" class="ml-3 sub-menu">Operable</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('comportamiento-de-la-web-y-navegación-predecible')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Comportamiento de la web y
+                navegación predecible</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('teclas-de-navegación-y-métodos-abreviados')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Teclas de navegación y métodos
+                abreviados</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('comprensible')">
+              <p class="indice-nav__Second" class="ml-3 sub-menu">Comprensible
+              </p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('etiquetas-de-texto-alternativo')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Etiquetas de texto alternativo</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('lector-de-pantalla')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Lector
+                de pantalla</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('compatible')">
+              <p class="indice-nav__Second" class="ml-3 sub-menu">Compatible</p>
+            </li>
+            <li class="indice-nav" (click)="scrollView('diseño-adaptivo-a-distintos-dispositivos')">
+              <p class="indice-nav__Second" class="ml-4 sub-sangria">Diseño adaptivo a distintos dispositivos
+              </p>
+            </li>
+            <li
+              (click)="scrollView('comportamiento-y-funcionalidad-compatible-con-distintos-navegadores')">
+              <p class="ml-4 sub-sangria">
+                Comportamiento y funcionalidad compatible con distintos navegadores</p>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 tab-manual__content">
+        
+        <div class="tab-access__content--bl" [attr.id]="'introducción-accesibilidad'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Introducción</h2>
+            <p>El diseño de una plataforma web condiciona en gran medida cómo navegan e
+              interactúan los usuarios; por esa razón, resulta fundamental realizar una original
+              atractiva, funcional e intuitiva propuesta técnica y visual.</p>
+
+            <p>ESe entiende por accesibilidad web a la utilidad con la que un mayor número de
+              usuarios hacen de una plataforma, independientemente de sus conocimientos,
+              capacidades físicas y de las características técnicas de sus dispositivos, es decir,
+              toda persona debe lograr percibir, entender, navegar e interactuar dentro de un sitio
+              web sin importar sus capacidades físicas, intelectuales y técnicas.</p>
+
+            <p>El Buscador Jurídico tiene como objetivo ser una web accesible, de tal forma que
+              para transmitir la información jurídica y disminuir las barreras de comunicación e
+              interacción con las cuales muchas personas se enfrentan, ha sido desarrollado y
+              diseñado conforme a las recomendaciones y estándares del W3C; por ello se ha
+              integrado una herramienta de accesibilidad para agregar opciones de configuración
+              de pantalla y lectura de voz, con el objetivo de eliminar aquellas barreras que
+              impiden a las personas acceder al universo de información que se publica en el BJ.</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_87p_Accesibilidad.png"
+                  alt="Ícono de accesibilidad en pantalla de inicio">
+              </div>
+            </div>
+          </div>
+          <div class="tab-access__content--bl" [attr.id]="'justificacion'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Justificación</h2>
+            <p>Una web accesible puede beneficiar tanto a personas con discapacidades, para que logren
+              percibir,
+              comprender, navegar e interactuar con la Web, como a personas sin discapacidades pero que
+              interactúan a través de diferentes dispositivos, o que presentan limitaciones de ubicación,
+              problemas de conexión, discapacidad temporal o habilidades que cambian con la edad.</p>
+          </div>
+          <div class="tab-access__content--bl" [attr.id]="'elementos-de-accesibilidad'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Elementos de accesibilidad</h2>
+            <p>Las principales características que se han desarrollado en el BJ pretenden abarcar
+              los siguientes elementos de accesibilidad:</p>
+          </div>
+          <div class="tab-access__content--bl" [attr.id]="'perceptible'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Perceptible</h2>
+            <p>El contenido y el diseño de todos los elementos del sitio web deben ser percibidos
+              fácilmente a través de los sentidos y considerarse las limitantes físicas, intelectuales
+              y técnicas, así como del entorno, para que el sitio web pueda ser accesible y
+              ejecutable por todos los usuarios en cualquier momento y lugar.</p>
+
+            <div class="tab-access__content--bl" [attr.id]="'tamaño-letra'" class="pt-2">
+              <p><strong>Tamaño de letra</strong></p>
+            </div>
+            <P>Una función implementada ha sido el ajuste del tamaño de letra, la cual permite
+              incrementar el tamaño del texto para mejorar la legibilidad de la información.</P>
+            <P>Se muestra a continuación un ejemplo de cómo se ve la página de inicio aplicando
+              la funcionalidad para cambiar el tamaño de letra; también puede usarse de manera
+              conjunta con la funcionalidad del tipo de fuente, ya que ambas son de gran ayuda
+              para aquellos usuarios con problemas visuales y/o dislexia:</P>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_88p_Accesibilidad_TamanoLetra.png" alt="Tamaño de letra">
+              </div>
+            </div>
+
+            <div class="tab-access__content--bl" [attr.id]="'fuente'" class="pt-2">
+              <p><strong>Fuente</strong></p>
+            </div>
+            <p>Una de las fuentes que forma parte de los estándares accesibles es la Arial, ya que
+              aparte de ser una fuente común, es fácil de interpretar por todas las personas; otras
+              de las fuentes incluidas en la herramienta son Calibri, Century Gothic, Helvetica,
+              Tahoma y Verdana.</p>
+            <p>Dentro de las fuentes utilizadas en la herramienta de accesibilidad ha sido Lucida
+              Brigth y Myriad Pro Regular, las cuales forman parte de los requerimientos de la
+              imagen institucional de la SCJN y además cuentan con las características de
+              legibilidad.
+            </p>
+            <p>Se muestra a continuación el panel de configuración de accesibilidad y el menú de
+              fuentes disponibles, así como el resultado del cambio en el estilo del texto:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_89p_Accesibilidad_Fuente.png" alt="Tipo de fuente">
+              </div>
+            </div>
+
+            <div class="tab-access__content--bl" [attr.id]="'alto-contraste'" class="pt-2">
+              <p><strong>Alto contraste</strong></p>
+            </div>
+            <p>La opción de color y contraste permite realizar cambios a negro sobre blanco y
+              negro sobre amarillo, es decir, se modifican en su totalidad los colores originales de
+              la plataforma. Esta funcionalidad no afecta la estructura del Buscador Jurídico,
+              únicamente modifica los colores.</p>
+            <p>Se muestra a continuación la página de inicio y la aplicación de la función de color
+              y contraste:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_90p_Accesibilidad_ColorYContraste.png" alt="Color y contraste.">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-access__content--bl" [attr.id]="'operable'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Operable</h2>
+            <p>Es de suma importancia que las opciones que permitan el uso del mouse, pad y
+              teclado estén disponibles para activar todas las funciones y acceder a toda la
+              información.</p>
+
+            <div class="tab-access__content--bl" [attr.id]="'comportamiento-de-la-web-y-navegación-predecible'" class="pt-2">
+              <p><strong> Comportamiento de la web y navegación predecible</strong></p>
+            </div>
+            <p>El BJ cuenta con la característica de navegación predecible, la cual permite al
+              usuario conocer en qué módulo de la plataforma se encuentra ubicado y cómo
+              actúan cada una de las funciones.</p>
+            <p>Con el uso constante de la plataforma, el usuario intuitivamente aprende a navegar
+              en todas las páginas a través de enlaces y botones, utilizar los filtros de búsqueda
+              y realizar consultas con la sección de ayuda y sugerencias de la plataforma.</p>
+            <p>Se muestra a continuación un ejemplo de la navegación predecible en la plataforma,
+              en la que el usuario es capaz de detectar en qué sección se encuentra y cómo
+              navegar entre las páginas:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_91p_Accesibilidad_NavegacionPredecible.png"
+                  alt="Comportamiento de la web y navegación predecible">
+              </div>
+            </div>
+
+            <div class="tab-access__content--bl" [attr.id]="'teclas-de-navegación-y-métodos-abreviados'" class="pt-2">
+              <p><strong>Teclas de navegación y métodos abreviados</strong></p>
+            </div>
+            <p>El BJ se ha codificado para ser compatible con el uso de teclas de navegación, las
+              cuales se describen a continuación:</p>
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nombre de la tecla</th>
+                    <th>¿Cómo usarla?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tabulador</td>
+                    <td>Presiona la tecla Tab (↹) para moverse entre distintos elementos
+                      seleccionables de texto o elementos de navegación como enlaces y botones.</td>
+                  </tr>
+                  <tr>
+                    <td>Barra espaciadora</td>
+                    <td>Presiona la barra espaciadora para mover el cursor un espacio hacia delante.</td>
+                  </tr>
+                  <tr>
+                    <td>Entrar</td>
+                    <td>Presionar la tecla Enter (↳) para ejecutar un comando escrito previamente.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>En la tabla siguiente se muestran los métodos abreviados de teclado más útiles que
+              también pueden usarse en el Buscador Jurídico.</p>
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Método abreviado</th>
+                    <th>¿Cómo usarlo?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Flecha izquierda, Flecha derecha, Flecha arriba o Flecha abajo</td>
+                    <td>Mover el cursor un espacio o línea en la dirección de la flecha o desplazar una
+                      página web hacia abajo o arriba.</td>
+                  </tr>
+                  <tr>
+                    <td>Inicio</td>
+                    <td>Mover el cursor hasta el final de una línea o ir al principio de una página web</td>
+                  </tr>
+                  <tr>
+                    <td>Fin</td>
+                    <td>Mover el cursor hasta el final de una línea o ir al final de una página web</td>
+                  </tr>
+                  <tr>
+                    <td>Ctrl + Inicio</td>
+                    <td>Ir al principio de un documento</td>
+                  </tr>
+                  <tr>
+                    <td>Ctrl + Fin</td>
+                    <td>Ir al final de un documento</td>
+                  </tr>
+                  <tr>
+                    <td>RePág</td>
+                    <td>Subir el cursor o la página una pantalla</td>
+                  </tr>
+                  <tr>
+                    <td>AvPág</td>
+                    <td>Bajar el cursor o la página una pantalla</td>
+                  </tr>
+                  <tr>
+                    <td>Ctrl + C</td>
+                    <td>Copiar el elemento seleccionado</td>
+                  </tr>
+                  <tr>
+                    <td>Ctrl + A</td>
+                    <td>Seleccionar todos los elementos en un documento o una ventana</td>
+                  </tr>
+                  <tr>
+                    <td>Alt + Flecha izquierda</td>
+                    <td>Permite volver a la página anterior </td>
+                  </tr>
+                  <tr>
+                    <td>Alt + Flecha derecha</td>
+                    <td>Permite ir a la página siguiente</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Es importante hacer mención de que cada una de estas combinaciones de teclas
+              son compatibles con el sistema operativo Windows; en caso de usar un sistema
+              operativo distinto, verificar si son compatibles.</p>
+          </div>
+
+          <div class="tab-access__content--bl" [attr.id]="'comprensible'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Comprensible</h2>
+            <p>La escritura debe ser entendible por todos los usuarios; en otras palabras, es
+              importante contemplar el uso adecuado de las abreviaturas, modismos y
+              neologismos para su fácil comprensión. Se debe buscar que el diseño, así como
+              toda herramienta y funcionalidad sea predecible e intuitiva para una buena
+              experiencia de navegación.</p>
+
+            <div class="tab-access__content--bl" [attr.id]="'etiquetas-de-texto-alternativo'" class="pt-2">
+              <p><strong>Etiquetas de texto alternativo</strong></p>
+            </div>
+            <p>Se colocaron etiquetas de ayuda con textos alternativos para describir la función de
+              botones, vínculos, íconos y recursos multimedia, con el fin de ayudar al usuario a
+              comprender la función de cada uno de los elementos y herramientas implementadas
+              en el BJ.</p>
+            <p>Se muestra a continuación un ejemplo de etiquetas en la página de inicio de la
+              plataforma:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_92p_Accesibilidad_EtiquetasAyuda.png" alt="Etiqueta de texto alternativo">
+              </div>
+            </div>
+
+            <div class="tab-access__content--bl" [attr.id]="'lector-de-pantalla'" class="pt-2">
+              <p><strong>Lector de pantalla</strong></p>
+            </div>
+            <p>Una de las funcionalidades más interesantes es el lector de pantalla, la cual está
+              desarrollada para personas con problemas visuales o con dificultad de lectura.</p>
+            <p>Se muestra a continuación la activación del lector de pantalla sobre la página de
+              inicio del BJ:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_93p_Accesibilidad_LectorDePantalla.png" alt="Lectura de Pantalla">
+              </div>
+            </div>
+          </div>
+          <div class="tab-access__content--bl" [attr.id]="'compatible'">
+            <h2 class="tab-access__content--bl-title skin-color-text">Compatible</h2>
+            <p>Los sitios web deben ser compatibles con los navegadores y sistemas operativos,
+              también con diferentes dispositivos y sus resoluciones de pantalla. Es fundamental
+              seguir las recomendaciones, especificaciones técnicas, pautas y estándares de la
+              Iniciativa de Accesibilidad Web del W3C (WAI) sobre este tema.</p>
+
+            <div class="tab-access__content--bl" [attr.id]="'diseño-adaptivo-a-distintos-dispositivos'" class="pt-2">
+              <p><strong>Diseño adaptativo a distintos dispositivos</strong></p>
+            </div>
+            <p>Una parte esencial de una plataforma accesible es la responsividad y la correcta
+              visualización del sitio web desde cualquier dispositivo, por lo que el Buscador
+              Jurídico tiene la facultad de ser adaptativo y ajustarse a la resolución de las
+              pantallas de los distintos dispositivos móviles, tabletas y computadoras.
+            </p>
+            <p>Se muestra a continuación un ejemplo de adaptabilidad del Buscador Jurídico desde
+              un teléfono móvil:</p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-50" style="margin-left: 100px;" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_94p_Accesibilidad_Responsive.png"
+                  alt="Ejemplo de adaptabilidad del Buscador Jurídico, visto desde un teléfono móvil">
+              </div>
+            </div>
+
+            <div class="tab-access__content--bl" [attr.id]="'comportamiento-y-funcionalidad-compatible-con-distintos-navegadores'" class="pt-2">
+              <p><strong>Comportamiento y funcionalidad compatibles en distintos navegadores.</strong>
+              </p>
+            </div>
+            <p>El Buscador Jurídico puede ser consultado desde diferentes navegadores sin verse
+              afectado en diseño y/o funcionalidad. Actualmente, se han dedicado esfuerzos para
+              mantener su compatibilidad en los navegadores de Chrome, Firefox, Microsoft Edge
+              y Safari.</p>
+            <p>Se muestra a continuación la página de inicio de la plataforma desde dos
+              navegadores distintos:</p>
+            <p><strong>Buscador Jurídico visto desde el navegador Microsoft Edge</strong></p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_96p_Accesibilidad_CompatibleEdge.png" alt="Navegador Microsoft Edge">
+              </div>
+            </div>
+            <p><strong>Buscador Jurídico visto desde el navegador Safari</strong></p>
+            <div class="d-flex p-2 psm-3 plg-3 pxl-5 pmd-3">
+              <div class="col-12">
+                <img class="w-100" src="./assets/pub/img/img-accesibilidad/UGACJ_Imagen_MBJ_95p_Accesibilidad_CompatibleEdge.png" alt="Navegador Google Chrome">
+              </div>
+            </div>
+          </div>
+        
+    </div>
+  </div>
+  

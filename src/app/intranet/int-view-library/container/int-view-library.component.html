@@ -1,0 +1,160 @@
+<div class="int-view-library">
+  <div class="int-view-library__redirect mt-2">
+    <a routerLink="/" class="skin-color-text">
+      <mat-icon ngbTooltip="Regresar a la página de inicio" placement="right">home</mat-icon>
+    </a>
+    <a class="skin-color-text" (click)="location.back()">
+      <mat-icon ngbTooltip="Regresar a la página anterior" placement="right">keyboard_backspace</mat-icon>
+    </a>
+  </div>
+  <div class="int-view-library__section">
+    <div class="section__card-folder border-top-skin-color">
+      <div class="view-library__data">
+        <p><strong>{{folder.nombre}}</strong></p>
+        <p>{{folder.descripcion}}</p>
+        <p>Creada por:
+          <span class="skin-color-text">
+            <strong>{{folder.username}}</strong>
+          </span>
+        </p>
+        <div class="view-library__data--items-options">
+          <i class="fa fa-edit options__circle components-bg"></i>
+          <i class="fa fa-trash options__circle components-bg"></i>
+        </div>
+      </div>
+      <div class="view-library__filters">
+        <div class="int-library__filters--seccion">
+          <button mat-button [matMenuTriggerFor]="dataOrder" class="components-bg w-100">
+            <strong class="mr-2">
+              Mostrar
+            </strong>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <mat-menu #dataOrder="matMenu">
+            <button mat-menu-item>
+              5
+            </button>
+            <button mat-menu-item>
+              10
+            </button>
+            <button mat-menu-item>
+              15
+            </button>
+          </mat-menu>
+        </div>
+        <div class="int-library__filters--seccion">
+          <ngb-pagination [maxSize]="3" [rotate]="true" [ellipses]="true" [collectionSize]="paginate.total" [page]="paginate.pagina"
+            [boundaryLinks]="false">
+          </ngb-pagination>
+        </div>
+      </div>
+      <div class="d-blok" *ngIf="isLoad">
+        <div class="mt-5 mb-5">
+          <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+        </div>
+        <div class="mb-5">
+          <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+        </div>
+        <div class="mb-5">
+          <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+          <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+        </div>
+      </div>
+      <div class="view-library__entitys" *ngIf="!isLoad">
+
+        <p><span>Mostrando <strong>{{paginate.from}} - {{paginate.fromTo}}</strong> de <strong>{{ paginate.total}}
+            </strong>documento(s)</span></p>
+
+        <div class="card my-3" *ngFor="let result of resultsEntity; let i = index">
+          <div class="card-header">
+            <a class="skin-color-text" *ngIf="result.link" [routerLink]="[result.link]" tabindex="0">
+              {{result.linkTitle}}
+            </a>
+            <a class="skin-color-text" *ngIf="result.href" [href]="[result.href]" target="_blank" tabindex="0">
+              {{result.linkTitle}}
+            </a>
+          </div>
+
+          <div class="card-body">
+            <p class="components-color text-truncate card-parrafo" *ngFor="let parrafo of result.parrafos"
+              [innerHTML]="sanitizer.bypassSecurityTrustHtml(parrafo)"></p>
+            <div class="row" *ngIf="result.acervo.title">
+              <div class="col-2">
+                <img [src]="result.img" alt="Libro SCJN" class="w-100">
+              </div>
+              <div [ngClass]="{
+                'col-10': result.acervo.temas.length == 0,
+                'col-5': result.acervo.temas.length > 0
+              }">
+                <p class="skin-color-text">{{ result.acervo.title | uppercase}}</p>
+                <p>{{ result.acervo.autor}}</p>
+                <p>{{ result.acervo.collection}}</p>
+                <p>{{ result.acervo.pie}}</p>
+                <p>{{ result.acervo.clasificacion}}</p>
+                <a class="skin-color-text" [href]="urlSCJN" target="_blank" tabindex="0"
+                  *ngFor="let urlSCJN of result.acervo.url">{{ urlSCJN}}</a>
+              </div>
+              <div class="col-5" *ngIf="result.acervo.temas.length > 0">
+                <p>Tema(s):</p>
+                <div class="d-flex flex-wrap">
+                  <div class="label-acervo border-bj" *ngFor="let tema of result.acervo.temas">
+                    <a class="skin-color-text" href="#/busqueda?q={{tema}}&indice=biblioteca">
+                      <p class="text-truncate" style="max-width: 200px;">{{ tema }}</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="label-entity bj-color-bg text-white mt-2">
+              {{result.type | entityName}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section__card-follows">
+      <div class="section__card-follows-title">
+        <p><strong>Seguidores <i class="fa fa-users"></i></strong></p>
+      </div>
+      <div class="section__card-follows-content">
+        <a [routerLink]="['/viewportafolio',subFolder.username]" class="skin-color-text" *ngFor="let subFolder of subs">
+          <span><i class="fa fa-user"></i></span>
+          <span class="ml-2">{{ subFolder.username}}</span>
+        </a>
+        <p *ngIf="subs.length == 0"><strong>No hay ningún seguidor para esta carpeta. <i class="fa fa-folder"></i></strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="int-view-library__commits mt-4">
+    <div class="commits__title border-left-skin-color">
+      <strong>Comentarios</strong>
+    </div>
+    <div class="commits__results components-bg--a2 my-3" *ngFor="let comentario of commits">
+      <div class="commits__results--head">
+        <a class="link__viewport skin-color-text" [ngClass]="{'author': comentario.username==folder.username}"
+          routerLink="/viewportafolio/{{comentario.username}}">
+          <span><strong>{{comentario.username}}</strong></span>
+          <span class="fecha-creacion">{{comentario.fechaCreacion}}</span>
+        </a>
+      </div>
+      <div class="commits__results--text">
+        <p>{{comentario.texto}}</p>
+      </div>
+    </div>
+    <div class="commits__include mt-2">
+      <form [formGroup]="formCommit" novalidate (ngSubmit)="sendCommit()">
+        <textarea name="commit" id="commit" formControlName="commit" cols="30" rows="4" placeholder="Agregue su comentario"
+          class="components-bg--a2"></textarea>
+        <button mat-button class="skin-color-bg text-in-dark mt-3" type="submit">
+          <i class="fa fa-comment-alt"></i>
+          Publicar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

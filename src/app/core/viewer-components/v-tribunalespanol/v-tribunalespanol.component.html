@@ -1,0 +1,44 @@
+<div *ngIf="isLoad">
+    <div class="mt-5 mb-5">
+      <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+    <div class="mb-5">
+      <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+    <div class="mb-5">
+      <div class="mb-2 view-skeleton" style="width: 50%; height: 1rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 2rem;"></div>
+      <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+    </div>
+  </div>
+
+<div class="tribunal-esp" *ngIf="!isLoad">
+  <div class="tribunal-esp__title">
+    <p class="skin-color-text">{{doc?.tipoNumerado}}</p>
+  </div>
+  <div class="tribunal-esp__content">
+    <div class="tribunal-esp__content--head" *ngFor="let ca of doc?.cabecera">
+      <p class="mb-3">{{ca?.componentes}}</p>
+      <p class="mb-3">{{ca?.texto}}</p>
+    </div>
+    <div class="tribunal-esp__content--cab">
+      <p class="mb-3 skin-color-text">I. Antecedentes</p>
+    </div>
+    <div class="tribunal-esp__content--ant" *ngFor="let a of doc?.antecedentes; index as i">
+      <p class="mb-3"> <span class="skin-color-text">{{i + 1}}- </span> {{a?.texto}}</p>
+    </div>
+    <div class="tribunal-esp__content--fund" *ngFor="let f of doc?.fundamentos">
+      <p class="mb-3">{{f?.texto}}</p>
+    </div>
+    <div class="tribunal-esp__content--dict" *ngFor="let d of doc?.dictamen">
+      <p class="mb-3">{{d?.texto}}</p>
+    </div>
+    <div class="tribunal-esp__content--pie" *ngFor="let p of doc?.pie">
+      <p class="mb-3">{{p?.texto}}</p>
+    </div>
+  </div>
+</div>

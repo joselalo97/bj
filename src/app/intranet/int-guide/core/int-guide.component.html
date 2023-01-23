@@ -1,0 +1,81 @@
+<div class="int-guide">
+  <div class="int-guide__information">
+    <h1 class="skin-color-text">Guia de usuario</h1>
+    <p class="components-color">El Buscador Jurídico es la plataforma de recuperación de información institucional que sigue un
+      Modelo de
+      Administración del
+      Conocimiento enfocado en el usuario.
+    </p>
+    <hr>
+    <p class="components-color">Escoja la sección que desea conocer e interactúe con todos los elementos de la imagen. Para
+      conocer más
+      sobre el funcionamiento del
+      Buscador, le sugerimos navegar en cada una de las imágenes que contiene este manual.</p>
+  </div>
+  <div class="int-guide__handbook">
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(0)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_1.png" alt="">
+        <p class="skin-color-text text-center"><strong>Página de inicio</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(1)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_2.png" alt="">
+        <p class="skin-color-text text-center"><strong>Referencias internacionales</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(2)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_3.png" alt="">
+        <p class="skin-color-text text-center"><strong>Historial de búsqueda</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(3)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_4.png" alt="">
+        <p class="skin-color-text text-center"><strong>Análisis de texto</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(4)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_5.png" alt="">
+        <p class="skin-color-text text-center"><strong>Búsqueda avanzada</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(5)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_6.png" alt="">
+        <p class="skin-color-text text-center"><strong>Resultados de búsqueda</strong></p>
+      </div>
+    </div>
+    <div class="int-guide__handbook--card" (click)="openPanelGuide(6)">
+      <div class="card__box bj-border">
+        <img src="../../../../assets/img-int/icons-guide/scjn_icons_7.png" alt="">
+        <p class="skin-color-text text-center"><strong>Sentencias</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="int-guide__panel bg-components" [ngClass]="{ 'view': open}" (keyup)="closePanel()">
+    <div class="d-flex justify-content-end">
+      <i class="fas fa-times ic-circle" (click)="closePanel()" ngbTooltip="Cerrar" placement="left"></i>
+    </div>
+    <div class="int-guide__panel--info">
+      <div class="panel__info">
+        <div class="panel__info--tab">
+          <h5 class="skin-color-text">{{section.tag.title}}</h5>
+          <p>{{section.tag.description}}</p>
+        </div>
+        <div class="panel__info--tab-info border-bj" [ngClass]="{'view':description.title}">
+          <h5 class="skin-color-text border-skin-color">{{description.title}}</h5>
+          <p>{{description.description}}</p>
+        </div>
+      </div>
+      <div class="panel__img">
+        <img class="w-100" [src]="section.img" [alt]="section.tag.title">
+        <i class="fas fa-circle danger-text" [ngbTooltip]="desc.title" [ngClass]="desc.point" *ngFor="let desc of section.description"
+          (mouseover)="onSelectPoint(desc)"></i>
+      </div>
+    </div>
+  </div>
+</div>

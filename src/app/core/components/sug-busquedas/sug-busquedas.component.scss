@@ -1,0 +1,56 @@
+.sug-busqueda {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 2px;
+  padding: 5px;
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+
+  &.view {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__list {
+    &--words {
+      display: flex;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      border-top: 1px solid;
+
+      & .word {
+        flex-basis: 30%;
+      }
+
+      & .link {
+        border-left: 1px solid;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        flex-basis: 70%;
+      }
+
+    }
+  }
+
+
+
+}

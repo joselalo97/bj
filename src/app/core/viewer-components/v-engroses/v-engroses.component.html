@@ -1,0 +1,159 @@
+<div class="" *ngIf="isLoad">
+  <div class="mt-5 mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+  <div class="mb-5">
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 1rem;"></div>
+    <div class="mb-2 view-skeleton" style="width: 100%; height: 7rem;"></div>
+  </div>
+</div>
+
+<div class="v-engroses" *ngIf="!isLoad">
+  <div class="v-engroses__nota alert-warning components-color p-3" *ngIf="!isPub">
+    Nota: Durante el proceso de sistematización los documentos pueden cambiar su formato, <a class="skin-color-text"
+    [href]="urlDocumentoDescarga+documento.idEngrose" role="link" aria-label="Documento origen"> consulte el
+      documento origen.</a>
+    <a class="ml-2 skin-color-text" role="link" [href]="urlDocumentoDescarga+documento.idEngrose" target="_blank">
+      <span hidden>Ir al expediente</span>
+      <i class="fas fa-file-word descargar-archivo" data-toggle="tooltip" data-placement="right" placement="bottom"
+        ngbTooltip="Consulte el documento de origen"></i>
+    </a>
+  </div>
+  <div class="v-engroses__nota alert-warning components-color p-3" *ngIf="isPub">
+    Nota: Durante el proceso de sistematización los documentos pueden cambiar su formato, <a class="skin-color-text"
+    [href]="urlDocumentoDescarga+documento.archivoURL" role="link" arial-label="Documento Origen"> consulte el
+      documento origen.</a>
+    <a class="ml-2 skin-color-text" role="link" [href]="urlDocumentoDescarga+documento.archivoURL" target="_blank" aria-label="Documento origen">
+      <i class="fas fa-file-word descargar-archivo" data-toggle="tooltip" data-placement="right" placement="bottom"
+        ngbTooltip="Consulte el documento de origen"></i>
+    </a>
+  </div>
+  <div class="v-engroses__document">
+    <div class="d-block" *ngIf="documento.registroDigital">
+      <h5 class="skin-color-text text-center mb-3">Rubros tematicos</h5>
+      <ng-container *ngIf="documento.semanarioSemanal">
+        <div *ngFor="let e of accionControversia?.rubro.split('<br>')">
+          <div class="row" *ngIf="e.trim()!=''">
+            <div class="col-11">
+              <p class="font-weight-bold" [innerHTML]="e | safeHTML"></p>
+            </div>
+            <div class="col-1 text-right" (click)="rubrosTematicosSimilares(e)">
+              <i class="fas fa-search tema-controversia-accion" data-toggle="tooltip" data-placement="right"
+                placement="bottom" ngbTooltip="Sugerir rubros temáticos similiares"></i>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container>
+        <div *ngFor="let theme of temas; let i = index">
+          <div class="row">
+            <div class="col">
+              <div class="contenedor-tema mb-4">
+                <i class="far"
+                  [ngClass]="{'fa-plus-square':temasTabs[theme?.idTopic] === false , 'fa-minus-square':temasTabs[theme?.idTopic] === true}"
+                  (click)="collapseTema(theme?.idTopic)" ngbTooltip="Visualizar precedentes" *ngIf="theme?.expandable"
+                  (click)="verPrecedentes(theme?.idTopic)"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span placement="right" ngbTooltip="Ir a párrafo"
+                  class="tema-controversia-accion" (click)="irParrafoTema(theme?.idTopic, theme?.topic)">
+                  {{theme?.topic}}</span>
+                <hr />
+                <div class="temas-contro" *ngFor="let t of temasPrecedentes[theme?.idTopic]">
+
+                  <p (click)="precedentesTemas(t?.idPrecedente, t?.idTopic)"
+                    (click)="colapseSubTema(t?.idPrecedente, theme?.idTopic) "
+                    [ngStyle]="{'display':temasTabs[theme?.idTopic] === false ? 'none' : '' }"
+                    class="tema-controversia-accion-precedentes">
+
+                    <i
+                      [ngClass]="colapseSubTemaGral(t?.idPrecedente, theme?.idTopic) === true ? 'far fa-minus-square' : 'far fa-plus-square' "></i>
+                    {{t?.topic}}
+                  </p>
+                  <div *ngFor="let p of precedentesPorId[ t?.idTopic +''+t?.idPrecedente]; let i = index;">
+
+                    <a role="link" [ngStyle]="{'display':colapseSubTemaGral(t?.idPrecedente, theme?.idTopic) === false ? 'none' : '' }"
+                      [ngbTooltip]="msgPrecedentes[i]" [openDelay]="400" placement="bottom"
+                      class="skin-color-text mt-2 d-block pl-5"
+                      (mouseover)="!msgPrecedentes[i]?irPrecedente(p?.url, theme?.topic,i): null"
+                      [routerLink]="[msgPrecedentes[i] === 'Visualizar precedente'?redirect(p?.url, theme?.topic): null]">
+                      {{p?.topic}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div (click)="rubrosTematicosSimilares(theme?.topic,i)" class="contenedor-tema" placement="bottom"
+                ngbTooltip="Precedentes con rubros temáticos similares">
+                <i class="skin-color-text fas" data-toggle="tooltip" data-placement="right"
+                  [ngClass]="{'fa-search': !isLoading[i], 'fa-circle-notch':isLoading[i]}"></i>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div [innerHTML]="
+         accionControversia?.texto | safeHTML"></div>
+      </ng-container>
+    </div>
+    <div class="v-engroses__document--inner" *ngIf="hasHTML">
+      <div [innerHTML]="html | safeHTML"></div>
+    </div>
+    <div class="v-engroses__document--not-html" *ngIf="!hasHTML">
+      <p class="paragraph" *ngFor="let parrafo of parrafos">
+        {{parrafo?.parrafo}}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="rubros" [ngClass]="{ 'open': isOpen, 'hiden': !isOpen }">
+  <div class="rubros__panel components-bg border-bj" [ngClass]="{ 'expand': isExpand }">
+    <div class="rubros__panel--header">
+      <div class="panel__logo">
+        <div class="panel__logo--circle border-bj border-skin-color">
+          <img src="./assets/img/analisis-text/ic-analisis-texto.svg" alt="Análisis de texto">
+        </div>
+        <p><strong>Precedentes con rubros temáticos similares empleando análisis de texto</strong></p>
+      </div>
+      <div class="panel__settings">
+        <i class="fas" [ngClass]="{'fa-compress-arrows-alt':isExpand, 'fa-expand-arrows-alt':!isExpand }"
+          (click)="isExpand = !isExpand" [ngbTooltip]="isExpand ?'Minimizar' :'Maximizar'" placement="bottom"></i>
+        <i class="fas fa-times" (click)="isOpen = false" ngbTooltip="Cerrar" placement="bottom"></i>
+      </div>
+    </div>
+    <div class="rubros__panel--body border-top-skin-color border-lg p-4">
+
+      <p class="skin-color-text"><strong>Rubro consultado:</strong></p>
+      <div class="components-bg--a3 p-3 my-3" [innerHTML]="texto" style="overflow: auto; height: 80px"></div>
+      <p class="skin-color-text"><strong>Resultados:</strong> </p>
+      <div class="card my-3" *ngFor="let result of resultsEntity; let i = index">
+        <div class="card-header">
+          <a role="link" class="skin-color-text" *ngIf="result.link" [routerLink]="[result.link]" tabindex="0"
+            (click)="isOpen = false">
+            {{result.linkTitle}}
+          </a>
+          <a role="link" class="skin-color-text" *ngIf="result.href" [href]="[result.href]" target="_blank" tabindex="0"
+            (click)="isOpen = false">
+            {{result.linkTitle}}
+          </a>
+        </div>
+
+        <div class="card-body">
+          <p class="components-color text-truncate card-parrafo" *ngFor="let parrafo of result.parrafos"
+            [innerHTML]="parrafo  | safeHTML"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

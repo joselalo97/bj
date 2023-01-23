@@ -1,0 +1,96 @@
+<div class="seeker"
+  [class.flex-row]="!preferences.isHome">
+
+  <form class="seeker__search-form"
+    [class.shadow-lg]="preferences.isHome"
+    [ngStyle]="{ 'border-width': preferences.isHome  ? '0.5rem' : '0.2rem' }"
+    [formGroup]="seekerForm"
+    (ngSubmit)="searchText()">
+
+    <div class="data-source components-bg">
+
+      <input type="hidden" formControlName="dataSource" />
+
+      <button type="button" mat-button [matMenuTriggerFor]="dataSource">
+        <strong class="mr-2">
+          {{ dataSourceSelected.etiqueta }}
+        </strong>
+        <i class="fa fa-caret-down"></i>
+      </button>
+
+      <mat-menu #dataSource="matMenu">
+        <button type="button" mat-menu-item (click)="changeDataSource({ entidad: '', etiqueta: 'Fuentes de datos' })">
+          Fuentes de datos
+        </button>
+        <button mat-menu-item *ngFor="let data of dataSourceList" (click)="changeDataSource( data )">
+          {{ data.etiqueta }}
+        </button>
+      </mat-menu>
+
+    </div>
+
+    <div class="search components-bg w-100 primary-border">
+      <input type="text" class="search-input components-bg w-100" formControlName="search" placeholder="Buscar" autofocus="true" #seeker
+        (input)="includeSearch($event.target.value)" />
+      <sug-busquedas></sug-busquedas>
+      <div data-sug-panel class="search__sug components-bg shadow" id="search_sug" [ngClass]="{'active':viewSug}"
+        (click)="selectSug($event)">
+        <div data-sug class="search__sug--item" *ngFor="let sug of textSug; let i = index" [ngClass]="{'collapse':i === 0}">
+          {{ sug.text }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="question px-3 components-bg d-flex align-items-center justify-content-center">
+
+      <i data-question class="fas fa-question-circle skin-color-text cursor-pointer"></i>
+
+    </div>
+
+    <div class="go-search">
+
+      <button mat-button class="skin-color-bg text-in-dark" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+
+    </div>
+
+  </form>
+
+  <div class="seeker__search-icons ml-2" *ngIf="!preferences.isHome">
+
+    <div class="text-analytics mr-2 icon-button" (click)="isOpen = true"
+      ngbTooltip="Análisis de texto" placement="bottom">
+      <img alt="Anális de texto" src="./assets/Img_BuscadorJuridico/SCJN_analyticstext_p.png" />
+    </div>
+
+    <div class="seeeker-advanced icon-button"
+      ngbTooltip="Búsqueda avanzada" placement="bottom">
+      <img alt="Búsqueda avanzada" src="./assets/Img_BuscadorJuridico/SCJN_advancedsearch_p.png"
+        [routerLink]="['busqueda-avanzada']" />
+    </div>
+
+  </div>
+
+  <div class="seeker__search-label" *ngIf="preferences.isHome">
+
+    <div class="text-analytics" (click)="isOpen = true">
+        <img alt="Anális de texto" src="./assets/Img_BuscadorJuridico/SCJN_analyticstext_b.png" />
+        <span class="text-in-dark">
+          Analizar texto para localizar documentos similares
+        </span>
+    </div>
+
+    <div class="seeeker-advanced">
+        <img alt="Búsqueda avanzada" src="./assets/Img_BuscadorJuridico/SCJN_advancedsearch_b.png">
+        <span class="text-in-dark" [routerLink]="['busqueda-avanzada']">
+          Búsqueda avanzada
+        </span>
+    </div>
+
+  </div>
+
+</div>
+
+<text-analytics [open]="isOpen" (close)="isOpen = $event"></text-analytics>

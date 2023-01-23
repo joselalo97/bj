@@ -1,0 +1,11 @@
+<div class="v-corteuk">
+  <div class="v-corteuk__content" *ngIf="urlVisible">
+    <div *ngIf="cargando">
+      <div class="mt-2 mb-2">
+        <div class="mb-2 view-skeleton" style="width: 100%; height: 100vh;"></div>
+      </div>
+    </div>
+    <pdf-viewer [ngClass]="{ 'v-corteuk__content--pdf': !cargando }" [src]="urlDocumento" [render-text]="true" [show-borders]="true"
+      (error)="onError($event)" (after-load-complete)="callBackFn($event)"></pdf-viewer>
+  </div>
+</div>

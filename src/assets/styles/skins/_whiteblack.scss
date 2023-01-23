@@ -1,0 +1,73 @@
+$style_name: 'whiteblack';
+$theme_style: 'light';
+$components_bg: #ffffff;
+$components_color: #000000;
+$skin_color_bg: #ffffff;
+$skin_color_text: #000000;
+$mark-skin: #ffff00;
+$filter-img: brightness(0.4);
+
+$mat-skin: (
+   50: lighten( $skin_color_bg, 50% ),
+   100: lighten( $skin_color_bg, 45% ),
+   200: lighten( $skin_color_bg, 35% ),
+   300: lighten( $skin_color_bg, 30% ),
+   400: lighten( $skin_color_bg, 20% ),
+   500: $skin_color_bg,
+   600: lighten( $skin_color_bg, 5% ),
+   700: lighten( $skin_color_bg, 10% ),
+   800: lighten( $skin_color_bg, 15% ),
+   900: lighten( $skin_color_bg, 20% ),
+   A100: lighten( $skin_color_bg, 15% ),
+   A200: lighten( $skin_color_bg, 10% ),
+   A400: lighten( $skin_color_bg, 6% ),
+   A700: lighten( $skin_color_bg, 4% ),
+   contrast: (
+      50: #111111,
+      100: #222222,
+      200: #333333,
+      300: #444444,
+      400: #555555,
+      500: #eeeeee,
+      600: #dddddd,
+      700: #cccccc,
+      800: #bbbbbb,
+      900: #aaaaaa,
+      A100: #e9e9e9,
+      A200: #d9d9d9,
+      A400: #c9c9c9,
+      A700: #b9b9b9,
+   )
+);
+
+$bj_color: $skin_color_bg;
+$main_bg: darken( $components_bg, 3% );
+$text_color: $skin_color_text;
+$text-in-dark: $skin_color_text;
+
+$border_sm_color: darken( $components_bg, 5% );
+$border_lg_color: darken( $components_bg, 15% );
+$shadow_sm_color: 0 1px 4px rgba( 38, 38, 38, 0.3 );
+$shadow_lg_color: 0 15px 30px rgba( 0, 0, 0, 0.11 ), 0 5px 5px 0 rgba( 0, 0, 0, 0.08 );
+$hover_color: darken( $components_bg, 5% );
+
+$primary_color: $skin_color_text;
+$dark_primary_color: darken( $primary_color, 30% );
+
+$success_color: lighten( $skin_color_text, 35% );
+$dark_success_color: darken( $success_color, 20% );
+
+$info_color: lighten( $skin_color_text, 35% );
+$dark_info_color: darken( $info_color, 20% );
+
+$warning_color: lighten( $skin_color_text, 35% );
+$dark_warning_color: darken( $warning_color, 20% );
+
+$danger_color: lighten( $skin_color_text, 35% );
+$dark_danger_color: darken( $danger_color, 20% );
+
+$gray_color: #767676;
+$dark_gray_color: darken( $gray_color, 20% );
+
+$inverse_color: #292b2c;
+$dark_inverse_color: darken( $inverse_color, 20% );

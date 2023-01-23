@@ -1,0 +1,53 @@
+// MULTISELECT
+.ms-custom {
+   & .multiselect-dropdown {
+      & .dropdown-btn {
+         border-bottom: none !important;
+         padding: 0.3rem 1rem !important;
+         border: 0.15rem solid $color-hover-element;
+         background-color: $color-element;
+
+         &:hover,
+         &:focus {
+            background-color: $color-hover-element;
+         }
+
+         & span {
+            color: $components_color !important;
+         }
+
+         & .selected-item-container {
+            display: block !important;
+            float: left !important;
+            margin-right: 0.3rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem !important;
+
+            & .selected-item {
+               span {
+                  font-size: 0.6rem;
+                  @if $style_name == 'yellowblack' {
+                     color: lighten( $skin_color_text, 100% ) !important;
+                  } @else {
+                     color: $components_bg !important;
+                  }
+               }
+            }
+         }
+      }
+
+      & .dropdown-list {
+         border: none !important;
+
+         & .multiselect-item-checkbox {
+            &:hover {
+               background-color: $color-hover-element;
+            }
+         }
+
+         & .multiselect-item-checkbox input[type=checkbox]+div:before {
+            border: 2px solid $skin_color_text !important;
+         }
+      }
+   }
+}

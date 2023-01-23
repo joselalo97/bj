@@ -1,0 +1,41 @@
+<div class="seeker-pub">
+  <div class="seeker-pub__logo">
+    <img class="seeker-pub__logo--bj" width="240px" height="128px" src="./assets/pub/img/logo_pub.svg"
+      alt="Buscador Jurídico">
+  </div>
+  <div class="seeker-pub__title">
+    <h1 class="seeker-pub__title--h1" title="Plataforma de consulta y localización de información jurídica">Plataforma
+      de consulta y localización de información jurídica</h1>
+  </div>
+  <form class="seeker-pub__form mt-2" [formGroup]="formSeeker" (ngSubmit)="searchText()">
+    <div class="seeker-pub__form--search border-lg">
+      <div class="search__select">
+        <ng-multiselect-dropdown class="components-bg--a3" formControlName="entity" name="entity" [data]="entitys"
+          [settings]="config" placeholder="Buscar en">
+        </ng-multiselect-dropdown>
+      </div>
+      <div class="search__inpt">
+        <input type="text" class="form-control" autocomplete="off" #seeker (input)="includeSearch($event.target.value)"
+          formControlName="query" name="query" placeholder="Escriba palabras clave o su sintaxis de búsqueda">
+        <sug-busquedas></sug-busquedas>
+        <div data-sug-panel class="search__sug components-bg shadow" id="search_sug" [ngClass]="{'active':viewSug}"
+          (click)="selectSug($event)">
+          <div data-sug class="search__sug--item" *ngFor="let sug of textSug; let i = index"
+            [ngClass]="{'collapse':i === 0}">
+            {{ sug.text }}
+          </div>
+        </div>
+      </div>
+      <div class="search__buttons">
+        <button mat-button type="submit" role="button" class="skin-color-text" aria-label="Buscar"
+          ngbTooltip="Ejecutar búsqueda" placement="bottom">
+          <i class="fas fa-search"></i>
+        </button>
+        <button data-question mat-button role="button" type="button" class="skin-color-text" aria-label="Limpiar"
+          ngbTooltip="Ejemplos de búsquedas" placement="left">
+          <i data-question class="fas fa-question-circle"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

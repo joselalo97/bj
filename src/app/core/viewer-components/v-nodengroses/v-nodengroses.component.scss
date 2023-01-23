@@ -1,0 +1,77 @@
+.v-nodengroses {
+  padding: .5rem;
+
+  &__nodes {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 1rem;
+    overflow-x: hidden;
+    flex-basis: 300px;
+
+    &--card {
+      border: 1px solid;
+      border-radius: 4px;
+
+      & .title-card {
+        padding: .5rem;
+      }
+
+      & .title-engrose {
+        background: #ffff00;
+      }
+
+      & .title-coidh {
+        background: #ad85e4;
+      }
+
+      & .title-jurisprudencia {
+        background: #97c2fc;
+      }
+
+      & .title-ordenamiento {
+        background: #992f87;
+      }
+
+      & .title-expediente {
+        background: #fb7e81;
+      }
+
+      & .title-tratado {
+        background: #eb7df4;
+      }
+
+      & .title-aislada {
+        background: #504286;
+      }
+
+      & .title-acuerdo {
+        background: #6BBBAE;
+      }
+
+      & .title-jurisprudencia,
+      & .title-engrose,
+      & .title-expediente,
+      & .title-ordenamiento,
+      & .title-tratado,
+      & .title-aislada,
+      & .title-coidh,
+      & .title-acuerdo {
+        padding: 8px;
+        font-weight: bold;
+      }
+
+
+
+    }
+
+  }
+
+  &__viz {
+    flex: 1;
+    height: 70vh;
+  }
+
+}

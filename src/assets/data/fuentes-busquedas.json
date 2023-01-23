@@ -1,0 +1,216 @@
+{
+  "tesis": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "rubro",
+      "text": "Título/Subtítulo (Rubro)"
+    },
+    {
+      "value": "texto.contenido",
+      "text": "Texto"
+    },
+    {
+      "value": "notaPrecedente.texto",
+      "text": " Precedentes"
+    },
+    {
+      "value": "registroDigital",
+      "text": " Registro Dígital"
+    }
+  ],
+  "bjdh_coidh": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "caso_bjdh",
+      "text": "Caso"
+    }
+  ],
+  "cidh": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "titulo",
+      "text": "Titulo"
+    }
+  ],
+  "hudoc": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "name",
+      "text": "Caso"
+    }
+  ],
+  "cij": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "docname",
+      "text": "Caso"
+    }
+  ],
+  "sentencias": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "numExpediente",
+      "text": "Número de expediente"
+    },
+    {
+      "value": "preambulo.parrafo",
+      "text": "Proemio"
+    },
+    {
+      "value": "vistos.parrafo",
+      "text": "Vistos"
+    },
+    {
+      "value": "resultando.parrafo",
+      "text": "Resultando"
+    },
+    {
+      "value": "considerando.parrafo",
+      "text": "Considerando"
+    },
+    {
+      "value": "resuelve.parrafo",
+      "text": "Resuelve"
+    }
+  ],
+  "sentencias_pub": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "numExpediente",
+      "text": "Número de expediente"
+    },
+    {
+      "value": "preambulo.parrafo",
+      "text": "Proemio"
+    },
+    {
+      "value": "vistos.parrafo",
+      "text": "Vistos"
+    },
+    {
+      "value": "resultando.parrafo",
+      "text": "Resultando"
+    },
+    {
+      "value": "considerando.parrafo",
+      "text": "Considerando"
+    },
+    {
+      "value": "resuelve.parrafo",
+      "text": "Resuelve"
+    }
+  ],
+  "legilascion": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "ordenamiento",
+      "text": "Nombre del ordenamiento"
+    },
+    {
+      "value": "articulos.contenido",
+      "text": "Artículo"
+    }
+  ],
+  "biblioteca": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "titulo",
+      "text": "Título"
+    },
+    {
+      "value": "contenido.texto",
+      "text": "Texto"
+    },
+    {
+      "value": "tema",
+      "text": "Tema"
+    },
+    {
+      "value": "autor",
+      "text": "Autor"
+    },
+    {
+      "value": "colaborador",
+      "text": "Colaborador"
+    }
+  ],
+  "acuerdos": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "rubro",
+      "text": "Rubro"
+    },
+    {
+      "value": "registroDigital",
+      "text": "Registro Digital"
+    },
+    {
+      "value": "texto",
+      "text": "Texto"
+    },
+    {
+      "value": "organoJurisdiccional",
+      "text": "Órgano Jurisdiccional"
+    }
+  ],
+  "votos": [
+    {
+      "value": "todos",
+      "text": "Todos los campos"
+    },
+    {
+      "value": "rubro",
+      "text": "Rubro"
+    },
+    {
+      "value": "fuente",
+      "text": "Fuente"
+    },
+    {
+      "value": "tipoAsunto",
+      "text": "Tipo de asunto"
+    },
+    {
+      "value": "registroDigital",
+      "text": "Registro Digital"
+    },
+    {
+      "value": "texto",
+      "text": "Texto"
+    },
+    {
+      "value": "numeroExpediente",
+      "text": "Número de expediente"
+    }
+  ]
+}

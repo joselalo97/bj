@@ -1,0 +1,21 @@
+.footer-pub{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -moz-box-align: center;
+
+    &__logo{
+        padding: 1rem;
+        &--scjn{
+            font-size: calc(4rem + .66vw);
+        }
+    }
+
+    &__metadata{
+        text-align: center;
+    }
+
+}
