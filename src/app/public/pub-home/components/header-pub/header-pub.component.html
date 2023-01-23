@@ -60,6 +60,19 @@
           <span hidden>Guía de usuario</span>
         </a>
       </li>
+      <li class="link">
+        <span class="components-color" aria-label="Iniciar Sesión" role="button" ngbTooltip="Iniciar Sesión"
+          placement="bottom">
+          <span class="components-color" color="primary" [matMenuTriggerFor]="menu" aria-label="Ícono de accesibilidad"
+            role="button">
+            <mat-icon>account_box</mat-icon>
+          </span>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Iniciar Sesión</button>
+            <button mat-menu-item>Cerrar Sesión</button>
+          </mat-menu>
+        </span>
+      </li>
       <li class="link" id="entitys-tab" data-tab>
         <i class="material-icons" data-entity-tabs>apps</i>
         <div class="link__tabs shadow components-bg">

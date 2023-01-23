@@ -48,7 +48,13 @@
     <!--Metadatos Documentos-->
     <div class="card my-3" *ngFor="let result of resultsEntity; let i = index" [ngClass]="{'find': !isView}">
 
-      <div class="card-header">
+      <div class="card-header d-flex align-items-center">
+        <span role="button" aria-label="Biblioteca" class="border-lg" ngbTooltip="Agregar a mi biblioteca" [matMenuTriggerFor]="m">
+          <mat-icon>book</mat-icon>
+        </span>
+        <mat-menu #m="matMenu">
+          <button mat-menu-item>Mis favoritos</button>
+        </mat-menu>
         <a class="skin-color-text" *ngIf="result.link" [routerLink]="[result.link]" tabindex="0">
           <strong>{{result.linkTitle}}</strong>
           <em [class]="result.imgFilter?.ic + ' ml-3'" *ngIf="result.imgFilter.ic"></em>

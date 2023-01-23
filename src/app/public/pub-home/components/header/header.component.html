@@ -1,6 +1,7 @@
 <header class="header-pub components-bg border-lg">
   <div class="header-pub__menu">
-    <input role="presentation" id="menu-bar"  aria-label="Menu" type="checkbox" class="header-pub__menu--check" (click)="expandBar()">
+    <input role="presentation" id="menu-bar" aria-label="Menu" type="checkbox" class="header-pub__menu--check"
+      (click)="expandBar()">
     <div class="header-pub__menu--line-1"></div>
     <div class="header-pub__menu--line-2"></div>
     <div class="header-pub__menu--line-3"></div>
@@ -11,6 +12,7 @@
     <span hidden>Buscador Jurídico</span>
   </a>
   <form role="form" id="form-header" class="header-pub__form mt-2" [formGroup]="formSeeker" (ngSubmit)="searchText()">
+
     <div class="header-pub__form--search border-lg">
       <div class="search__select">
         <ng-multiselect-dropdown class="components-bg--a3" formControlName="entity" name="entity" [data]="entitys"
@@ -20,8 +22,8 @@
       <div class="search__inpt">
         <input type="text" class="form-control" autocomplete="off" #seeker (input)="includeSearch($event.target.value)"
           formControlName="query" name="query" placeholder="Escriba palabras clave o su sintaxis de búsqueda">
-        <a class="search__inpt--clear fas fa-times skin-color-text" *ngIf="seeker.value" role="link" routerLink="busqueda"
-          [queryParams]="{ q: '*'}" (click)="seeker.value = ''"></a>
+        <a class="search__inpt--clear fas fa-times skin-color-text" *ngIf="seeker.value" role="link"
+          routerLink="busqueda" [queryParams]="{ q: '*'}" (click)="seeker.value = ''"></a>
         <div data-sug-panel class="search__sug components-bg shadow" id="search_sug" [ngClass]="{'active':viewSug}"
           (click)="selectSug($event)">
           <div data-sug class="search__sug--item" *ngFor="let sug of textSug; let i = index"
@@ -34,15 +36,38 @@
         <button mat-button role="button" aria-label="búsqueda" type="submit" class="skin-color-text">
           <i class="fas fa-search"></i>
         </button>
-        <a role="link" routerLink="guia-de-usuario" aria-label="Guía de Usuario" mat-button type="button" class="skin-color-text">
+        <a role="link" routerLink="guia-de-usuario" aria-label="Guía de Usuario" mat-button type="button"
+          class="skin-color-text">
           <i class="fas fa-question-circle"></i>
           <span hidden>Guía de Usuario</span>
         </a>
       </div>
     </div>
-    <div class="header-pub__form--external">
+    <div class="header-pub__form--external p-2 d-flex justify-content-between">
       <a role="link" routerLink="busqueda-avanzada" class="advance components-color"><span class="mr-2">→</span>Búsqueda
         avanzada</a>
+        <div class="d-flex flex-wrap">
+          <div class="mr-2">
+            <span role="button" aria-label="Historial" class="components-color align-items-center justify-content-center card d-flex flex-row p-1 border-lg" mat-mini-fab>
+              <span>Historial</span><mat-icon>history</mat-icon>
+            </span>
+          </div>
+          <div class="mr-2">
+            <span role="button" aria-label="Biblioteca" class="components-color align-items-center justify-content-center card d-flex flex-row p-1 border-lg">
+              <span>Mi biblioteca</span><mat-icon>book</mat-icon>
+            </span>
+          </div>
+          <div>
+            <span role="button" aria-label="Cuenta" class="components-color align-items-center justify-content-center card d-flex flex-row p-1 border-lg">
+              <span>Iniciar Sesión</span><mat-icon>account_box</mat-icon>
+            </span>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Iniciar Sesión</button>
+              <button mat-menu-item>Cerrar Sesión</button>
+            </mat-menu>
+          </div>
+        </div>
+     
     </div>
   </form>
 </header>
